@@ -1,0 +1,10 @@
+.header-left
+  = image_tag "readory_logo.png", class: "header-logo" 
+  = image_tag "i_flu_y.png", class: "logo-icon" 
+.header-right
+  .header-mypage-box
+    = link_to '/', class: "header-mypage-box__btn" do
+      MY PAGE
+  .header-logout-box
+    = link_to '/', class: "header-logout-box__btn" do
+      LOG OUT

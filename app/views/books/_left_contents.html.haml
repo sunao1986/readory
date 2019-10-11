@@ -1,0 +1,18 @@
+.left-wrap
+  .left-column
+    .user-top
+      .user-top__image
+        -# = current_user.image
+      .user-top__name
+        小林・D・リードリー
+        -# = current_user.name
+      .user-top__introduction
+        ここの自己紹介文がユーザー検索の時の曖昧検索に引っかかるように設定する。<br/>
+        usersテーブルのカラムにintroductionを追加しておく。<br/>
+        紹介文の文字数に制限をつけて、ユーザー編集でタグを追加する方法も考えておく。
+        -# = current_user.introduction
+    .contents-mypage-box
+      = link_to '/', class: "contents-mypage-box__btn" do
+        MY PAGE
+    .user-bottom
+      ステータス系の予定

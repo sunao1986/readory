@@ -1,0 +1,86 @@
+.right-wrap{
+  float: right;
+  .right-column{
+  // display: inline-block;
+  height: 100vh;
+  width: 300px;
+  overflow-y: scroll;
+  // overflow-x: hidden;
+  // background-color: bisque;
+    .ranking-title{
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 50px;
+    }
+    .ranking-field{
+      height: 100vh;
+      width: 280px;
+      margin: 20px auto 0 auto;
+      // background-color: darkgray;
+      .ranking-review{
+        height: 100px;
+        width: 280px;
+        border-bottom: solid 1px #2e4453;
+        // background-color: cornflowerblue;
+        .ranking-review-number{
+          height: 15px;
+          width: 280px;
+          // background-color: burlywood;
+          font-size: 6px;
+        }
+        .ranking-review-left{
+          float: left;
+          height: 85px;
+          width: 70px;
+          // background-color: darkcyan;
+          &__image{
+            height: 80px;
+            width: 60px;
+            background-color: #2e4453;
+          }
+        }
+        .ranking-review-right{
+          float: left;
+          height: 85px;
+          width: 210px;
+          // background-color: chartreuse;
+          .ranking-review-right-top{
+            height: 60px;
+            width: 210px;
+            // background-color: brown;
+            &__title{
+              line-height: 45px;
+              font-size: 14px; 
+              font-weight: bold;
+              color: black;
+            }
+          }
+          .ranking-review-right-bottom{
+            height: 25px;
+            width: 210px;
+            // background-color: cornflowerblue;
+            &__user{
+              float: left;
+              height: 40px;
+              width: 90px;  
+              font-size: 10px;  
+              line-height: 25px;
+              color: black;            
+            }
+            &__btn{
+              float: right;
+              height: 40px;
+              width: 40px;   
+              font-size: 10px;  
+              line-height: 25px;
+              color: black; 
+            }
+          }
+        }
+      }
+    }
+  }      
+}

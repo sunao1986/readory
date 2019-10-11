@@ -1,0 +1,66 @@
+.header-field{
+  height: 45px;
+  width: 100%;
+  border-bottom: solid 1px #2e4453;
+  // border-bottom: solid 2px #ffc20e;
+  // background-color: #f8f8f3;
+  .header-left{
+    float: left;
+    width: calc(100% - 300px);
+    .header-logo{
+      width: 100px;
+      height: 30px;
+      margin-top: 8px;
+      margin-left: 50px;
+    }
+    .logo-icon{
+      width: 18px;
+      height: 18px;
+      margin-top: 12px;
+      margin-left: 0px;
+    }
+  }
+  .header-right{
+    float: left;
+    width: 300px;
+    height: 45px;
+    // background-color: aquamarine;
+    position: relative;
+    .header-mypage-box{
+      position: absolute;
+      float: left;
+      width: 100px;
+      height: 30px;
+      border: solid 1px #182630;
+      font-size: 12px;
+      font-family: 'Yu Gothic';
+      text-align: center;
+      line-height: 30px; 
+      left: 30px;
+      top: 7px;
+      background-color: #f8f8f3;
+      &__btn{          
+        text-decoration: none;
+        color: #182630;
+      }
+
+    }
+    .header-logout-box{
+      position: absolute;
+      float: left;
+      width: 100px;
+      height: 30px;
+      border: solid 1px #182630;
+      font-size: 12px;
+      font-family: 'Yu Gothic';
+      text-align: center;
+      line-height: 30px; 
+      left: 150px;
+      top: 7px;
+      &__btn{                   
+        text-decoration: none;
+        color: #182630;
+      }
+    }
+  }
+}

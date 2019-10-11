@@ -1,0 +1,75 @@
+-# 全体レイアウト用ファイル
+.wrapper
+  .header
+    .header-left
+      = image_tag "readory_logo.png", class: "header-logo" 
+      = image_tag "i_flu_y.png", class: "logo-icon" 
+    .header-right
+      .header-mypage-box
+        = link_to '/', class: "header-mypage-box__btn" do
+          MY PAGE
+      .header-logout-box
+        = link_to '/', class: "header-logout-box__btn" do
+          LOG OUT
+  .contents
+    .left-wrap
+      .left-column
+        .user-top
+          .user-top__image
+            -# = current_user.image
+          .user-top__name
+            小林・D・リードリー
+            -# = current_user.name
+          .user-top__introduction
+            ここの自己紹介文がユーザー検索の時の曖昧検索に引っかかるように設定する。<br/>
+            usersテーブルのカラムにintroductionを追加しておく。<br/>
+            紹介文の文字数に制限をつけて、ユーザー編集でタグを追加する方法も考えておく。
+            -# = current_user.introduction
+        .contents-mypage-box
+          = link_to '/', class: "contents-mypage-box__btn" do
+            MY PAGE
+        .user-bottom
+          ステータス系の予定
+
+    .main-wrap
+      .main-column
+        .search-field
+          .title-search
+            本をキーワードでサーチ
+          .search-btn
+            検索
+        .new-review-field
+          .new-review
+            .new-review-top
+              .new-review-top-left
+                .new-review-top-left__user
+              .new-review-top-middle
+                .new-review-top-middle__symbol
+                  ×
+              .new-review-top-right
+                .new-review-top-right__book
+            .new-review-middle
+              .new-review-middle__title
+                ここにレビューのタイトルが入ります
+            .new-review-bottom
+              プルダウンでレビューが読める予定
+
+    .right-wrap
+      .right-column
+        .ranking-title
+          インフルランキング
+        .ranking-field
+          .ranking-review
+            .ranking-review-number
+              1
+            .ranking-review-left
+              .ranking-review-left__image
+            .ranking-review-right
+              .ranking-review-right-top
+                .ranking-review-right-top__title
+                  レビュータイトル
+              .ranking-review-right-bottom
+                .ranking-review-right-bottom__user
+                  ユーザー名
+                .ranking-review-right-bottom__btn
+                  読む

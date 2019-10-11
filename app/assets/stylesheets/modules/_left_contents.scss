@@ -1,0 +1,68 @@
+.left-wrap{
+  float: left;
+  .left-column{
+  // display: inline-block;
+  height: 100vh;
+  width: 300px;
+  overflow-y: scroll;
+  // overflow-x: hidden;
+  // background-color: azure;
+    .user-top{
+      width: 200px;
+      margin-top: 50px;
+      margin-left: 50px;
+      display: inline-block;
+      // background-color: brown;
+
+      &__image{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color: #2e4453;           
+      }
+      &__name{
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+
+      }
+      &__introduction{
+        display: inline-block;
+        width: 200px;
+        // height: 100px;
+        margin: 15px auto;
+        // background-color: aquamarine;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        font-size: 12px;
+      }
+    }
+    .contents-mypage-box{
+      width: 100px;
+      height: 30px;
+      border: solid 1px #182630;
+      font-size: 12px;
+      font-family: 'Yu Gothic';
+      text-align: center;
+      line-height: 30px; 
+      margin: 20px auto;
+      &__btn{
+        text-decoration: none;
+        color: #182630;
+      }
+    }
+    .user-bottom{
+      width: 200px;
+      height: 500px;
+      margin: 0 auto;
+      font-family: 'Yu Gothic';
+      font-size: 12px;
+      border-top: solid 1px #182630;
+      // background-color: antiquewhite;
+    }
+  }
+}
