@@ -1,0 +1,53 @@
+.sign-wrape
+  .sign-mount
+    .sign-logo
+      = image_tag "readory_logo.png", class: "main-logo" 
+    .sign-consept
+      人を変える本は、人が見つける
+    .icon-area
+      .icon-left
+        = image_tag "i_flu_g.png", class: "icon-l" 
+      .icon-middle
+        = image_tag "i_flu_y.png", class: "icon-m" 
+      .icon-right
+        = image_tag "i_flu_g.png", class: "icon-r" 
+    .sign-field
+      .sign-field-wrape
+        .sign-page
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = devise_error_messages!
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :name
+              .sign-input-field__text
+                = f.text_field :name, autofocus: true
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :image_url
+              .sign-input-field__text
+                = f.file_field :image_url, autofocus: true
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :introduction
+              .sign-input-field__intro
+                = f.text_area :introduction, class: "intro-control", autofocus: true
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :email
+              .sign-input-field__text
+                = f.email_field :email
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :password
+                %i (英数字8文字以上)
+              .sign-input-field__text
+                = f.password_field :password, autocomplete: "off"
+            .sign-input-field
+              .sign-input-field__label
+                = f.label :password_confirmation
+              .sign-input-field__text
+                = f.password_field :password_confirmation, autocomplete: "off"
+            .sign-btn-field
+              = f.submit "Create Account", class: 'btn'
+            .login-return
+              = link_to "Log in へ戻る", new_session_path(resource_name) 

@@ -1,0 +1,14 @@
+.left-wrap
+  .left-column
+    .user-top
+      .user-top__image
+        = image_tag current_user.image_url.url, class: 'user-thumbnail' 
+      .user-top__name
+        = current_user.name
+      .user-top__introduction
+        = simple_format(current_user.introduction)
+    .contents-mypage-box
+      = link_to '/', class: "contents-mypage-box__btn" do
+        MY PAGE
+    .user-bottom
+      ステータス系の予定

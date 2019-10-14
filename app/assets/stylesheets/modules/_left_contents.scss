@@ -19,7 +19,12 @@
         height: 60px;
         border-radius: 50%;
         margin: 0 auto;
-        background-color: #2e4453;           
+        // background-color: #2e4453; 
+        .user-thumbnail {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }       
       }
       &__name{
         text-align: center;

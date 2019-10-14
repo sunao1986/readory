@@ -1,0 +1,34 @@
+.pop-wrape
+  .pop-black
+    .pop-mount
+      .pop-review-head
+        .pop-review-head-left
+          .pop-review-head-left__message
+            レビューを書いてください
+        .pop-review-head-right
+          .pop-review-head-right__btn
+            %input{ name: "戻る", class: "return-btn", value: "戻る" , type: "submit" }
+      .pop-review-field
+        .pop-review
+          .pop-review-top
+            .pop-review-top-left
+              .pop-review-top-left__user
+                = image_tag current_user.image_url.url, class: 'review-thumbnail'
+            .pop-review-top-middle
+              .pop-review-top-middle__symbol
+                ×
+            .pop-review-top-right
+              #pop-review-image
+                -# = book.title
+                -# %img{src: book['mediumImageUrl'], class: 'result-thumbnail'} 
+                = image_tag "", alt: 'review-book', class: 'book-thumbnail'
+
+          .pop-review-middle
+            = form_tag( "/", method: :post ) do
+              .pop-review-middle__rate
+                -# = f.number_field_tag :rate, class: 'review_rate'
+              .pop-review-middle__title
+                = text_field :review_title, class: 'review_title', placeholder: 'レビュータイトル記入欄(20文字以内)'
+              .pop-review-bottom
+              .pop-review-text
+                = text_area :review, class: 'review_text', placeholder: 'ここにテキストを書いてください(未記入でも保存できます)'

@@ -1,0 +1,20 @@
+.logpop-wrape
+  .logpop-page
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
+      = devise_error_messages!
+      .logpop-input-field
+        .logpop-input-field__label
+          = f.label :email 
+        .logpop-input-field__text
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "logpop-email"
+      .logpop-input-field
+        .logpop-input-field__label
+          = f.label :password 
+        .logpop-input-field__text
+          = f.password_field :password, autocomplete: "current-password" 
+        - if devise_mapping.rememberable?
+          .logpop-input-field
+            = f.check_box :remember_me 
+            = f.label :remember_me 
+          .logpop-btn-field
+            = f.submit "Log in" ,class: 'btn'

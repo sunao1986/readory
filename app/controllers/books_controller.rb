@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    binding.pry
+    # binding.pry
     # @books = []
     # @title = params[:title]
     # if @title.present?

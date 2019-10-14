@@ -1,0 +1,29 @@
+.main-wrap
+  .main-column   
+    .search-field
+      .search-box
+        = form_tag( "/book_reviews/search", method: :get ) do 
+          = text_field :book, "", class: "search-body", name: "title", placeholder: '  本のタイトルでサーチ'
+          .search-btn
+            = submit_tag "検索", class: "btn-body"
+      .search-box
+        = form_tag( "/book_reviews/search", method: :get ) do 
+          = text_field :author, "", class: "search-body", name: "author", placeholder: '  本の著者でサーチ'
+          .search-btn
+            = submit_tag "検索", class: "btn-body"
+      -# ここから下は新着レビューを表示
+    .new-review-field
+      .new-review
+        .new-review-top
+          .new-review-top-left
+            .new-review-top-left__user
+          .new-review-top-middle
+            .new-review-top-middle__symbol
+              ×
+          .new-review-top-right
+            .new-review-top-right__book
+        .new-review-middle
+          .new-review-middle__title
+            ここにレビューのタイトルが入ります
+        .new-review-bottom
+          プルダウンでレビューが読める予定

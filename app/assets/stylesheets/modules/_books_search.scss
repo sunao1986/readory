@@ -2,7 +2,7 @@
   float: left;
   .main-column{
   // display: inline-block;  
-  height: 100vh;   
+  height: 100%;   
   // width: calc(100vw - 600px);
   width: 600px;
   min-width: 600px;
@@ -10,43 +10,43 @@
   overflow-y: scroll; 
   position: relative;    
   // overflow-x: visible;
-  background-color: beige;
+  // background-color: beige;
     .search-field{
       position: absolute;  
       width: 600px;
       height: 100px;
-      margin: 50px auto 0 auto;
-      line-height: 40px;
+      margin: 0 auto 0 auto;
+      // line-height: 40px;
       // background-color: aquamarine;
-      .title-search{
+      .search-box{
         width: 600px;
         height: 50px;
         position: relative;
         // background-color: cadetblue;
-        .books_search{
+        .search-body{
           position: absolute;
-          left: 180px;
+          left: 100px;
           width: 300px;
           height: 35px;         
         }
-      }
-      .search-btn{
-        width: 600px;
-        height: 40px;
-        position: absolute;
-        left: 260px;
-        top: 40px;
-        .books_btn{
-          border-style: none;
-          cursor: pointer;
-          width: 80px;
-          height: 30px;
-          font-size: 12px;
-          font-family: 'Yu Gothic';
-          border: solid 1px #182630;
-          text-align: center;
-          line-height: 30px; 
-          box-shadow:1px 1px #182630;
+        .search-btn{
+          width: 600px;
+          height: 40px;
+          position: absolute;
+          left: 420px;
+          top: -3px;
+          .btn-body{
+            border-style: none;
+            cursor: pointer;
+            width: 80px;
+            height: 30px;
+            font-size: 12px;
+            font-family: 'Yu Gothic';
+            border: solid 1px #182630;
+            text-align: center;
+            line-height: 30px; 
+            box-shadow:1px 1px #182630;
+          }
         }
       }
     }
@@ -55,20 +55,19 @@
       position: absolute;
       top:150px;
       width: 600px;
-      height: 100vh;
+      height: 100%;
       margin: 30px auto 0 auto;
       border-top: solid 1px #2e4453;
       // background-color: cornsilk;
       .result-field{
         float: left;
-        margin: 20px 0 100px 0;
+        margin: 20px 0 20px 0;
         width: 200px;
-        height: 100px;
+        height: 220px;
         // background-color: aqua;
         .result-image{
           text-align: center;
-          .result-thumbnail{
-
+          #result-thumbnail{
           }
         }
         .result-title{
@@ -80,7 +79,17 @@
           font-family: 'Yu Gothic';
           color: #2e4453;
         }
+        .review-btn{
+          text-align: center;
+          margin-top: 5px;
+          width: 180px;
+          height: 30px;
+          .review-sub{
+            text-align: center;
+            cursor: pointer;
+          }
+        }
       }
-    }
-  }     
+    } 
+  }  
 }

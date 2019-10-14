@@ -1,0 +1,135 @@
+.guest-wrape{
+  width: 100vw;
+  height: 100vh;
+  position: relative;;
+  // background-color: aliceblue;
+  .guest-field{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    bottom: 55%;
+    margin: auto;
+    width:500px;
+    height:400px;
+    // background-color: beige;
+    .guest-logo{
+      text-align: center;
+      .main-logo{
+        width:324px;
+        height:144px;
+      }
+    }
+    .guest-consept{
+      width:500px;
+      font-size: 16px;
+      font-family: 'Hiragino Mincho Pro';
+      color: #182630;
+      text-align: center;
+    }
+    .icon-area{
+      width:500px;
+      height:25px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      // background-color: aquamarine;
+      position: relative;
+      .icon-left{
+        position: absolute;
+        left: 200px;
+        .icon-l{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+      .icon-middle{
+        position: absolute;
+        left: 250px;
+        .icon-m{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          
+        }       
+      }
+      .icon-right{
+        position: absolute;
+        left: 300px;
+        .icon-r{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .logpop-field{
+      display:none;
+    }
+    .guest-login-area{
+      width:500px;
+      height:40px;
+      .guest-login-btn{
+        cursor: pointer;
+        margin: 0 auto;
+        width:150px;
+        height:30px;
+        background-color: #182630;
+        text-align: center;
+        color:white;
+        line-height: 30px;
+        box-shadow: 1px 1px rgb(191, 191, 192);
+        font-family: 'Yu Gothic';
+        font-size: 12px;
+
+      }
+    }
+    .guest-signin-area{
+      width:500px;
+      height:40px;
+      .guest-signin-btn{       
+        cursor: pointer;
+        margin: 10px auto 0 auto;
+        width:150px;
+        height:30px;
+        background-color: #182630;
+        text-align: center;
+        line-height: 30px;
+        box-shadow: 1px 1px rgb(191, 191, 192);
+        font-family: 'Yu Gothic';
+        font-size: 12px;
+        .sign-btn{
+          text-decoration: none;
+          color:white;
+        }
+      }
+    }
+  }
+  .guest-hidden-field{
+    display: none;
+    position: relative;
+    width:500px;
+    height:500px;
+    margin: 0 auto;
+    .readory-use{
+      position: absolute;
+      // width:300px;
+      // height:300px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      // background-color: antiquewhite;
+    }
+    .readory-introduction{
+      position: absolute;
+      // width:300px;
+      // height:300px;
+      top: 0;
+      left: 100;
+      right:0;
+      bottom: 0;
+      margin: auto;
+      // background-color: rgb(241, 172, 81);
+    }
+  }
+}

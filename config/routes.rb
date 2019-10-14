@@ -5,13 +5,17 @@ Rails.application.routes.draw do
     collection do 
       get 'search'
     end
+    # resources :book_reviews do
+      # collection do 
+        # get 'search'
+      # end
+    # end
   end
-  resources :books do
-    resources :reviews
+  resources :book_reviews do
       collection do 
         get 'search'
       end
   end
-  # root 'books#index'
-  root 'books#search'
+  root 'book_reviews#index'
+  # root 'book_reviews#search'
 end
