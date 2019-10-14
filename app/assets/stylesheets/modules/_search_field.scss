@@ -1,0 +1,39 @@
+.search-field{
+  position: absolute;  
+  width: 600px;
+  height: 100px;
+  margin: 0 auto 0 auto;
+  // line-height: 40px;
+  // background-color: aquamarine;
+  .search-box{
+    width: 600px;
+    height: 50px;
+    position: relative;
+    // background-color: cadetblue;
+    .search-body{
+      position: absolute;
+      left: 100px;
+      width: 300px;
+      height: 35px;         
+    }
+    .search-btn{
+      width: 600px;
+      height: 40px;
+      position: absolute;
+      left: 420px;
+      top: -3px;
+      .btn-body{
+        border-style: none;
+        cursor: pointer;
+        width: 80px;
+        height: 30px;
+        font-size: 12px;
+        font-family: 'Yu Gothic';
+        border: solid 1px #182630;
+        text-align: center;
+        line-height: 30px; 
+        box-shadow:1px 1px #182630;
+      }
+    }
+  }
+}

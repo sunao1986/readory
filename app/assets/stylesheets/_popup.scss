@@ -1,9 +1,10 @@
+input:focus {
+ outline: none;
+}
 .pop-wrape{
   display: none;
   height:100%;
   width:100%;
-  // background-color: #182630;
-  // opacity: 0.7;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,21 +14,22 @@
     width:100%;
     background-color: rgba(8, 8, 8, 0.5);
     .pop-mount{
-      background-color: rgb(255, 255, 255);
-      opacity: 2;
+      background-color: rgba(255, 255, 255, 0.959);
+      opacity: 3;
       z-index: 30;
       width: 650px;
       height:450px;
       position: fixed;
-      top: 20%;
+      top: 13%;
       left: 20%;
       .pop-review-head{
+        margin-top: 10px;
         height:20px;
-        width: 800px;
+        width: 650px;
         .pop-review-head-left{
           float: left;
           &__message{
-            text-align: center;
+            margin-left: 200px;
             font-size: 18px;
             font-family: 'Yu Gothic';
             color: #182630;
@@ -36,7 +38,7 @@
         .pop-review-head-right{
           float: right;
           &__btn{
-
+            margin-right: 20px;
           }
         }
       }
@@ -109,18 +111,26 @@
           }
           .pop-review-middle{
             width: 600px;
-            height: 40px;
-            // background-color: rgb(235, 235, 53);
+            height: 60px;
             &__rate{
-
+              width: 600px;
+              height: 30px;
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630; 
+              text-align: center;            
             }
             &__title{
-              font-size: 21px;
+              width: 600px;
+              height: 30px;
               font-family: 'Yu Gothic';
-              color: #182630;
-              font-weight: bold;
-              text-align: center;               
-              line-height: 40px;
+              text-align: center;
+              color: #182630; 
+              #review_title{
+                padding-left: 10px;
+                width: 450px;
+                height: 30px;
+              }
             }
           }
           .pop-review-bottom{
@@ -135,13 +145,17 @@
             border-top: solid 1px #182630;             
             background-color: #ffc20e;
           }
-          .pop-review-text{
-            .review_text{
-              width: 600px;
-              height: 20px;
+          .pop-review-bottom-text{
+            text-align: center;
+            #review{
+              padding-left: 10px;
+              width: 590px;
+              height: 100px;
               resize: none;
-
             }
+          }
+          .pop-review-bottom-btn{
+            text-align: center;
           }
         }
       }

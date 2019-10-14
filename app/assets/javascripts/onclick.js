@@ -1,22 +1,22 @@
 window.addEventListener('DOMContentLoaded',function(){ 
  
-  // 試験用
-  $('review-sub').on('click',function(e){
-    e.preventDefault();
-    var thumbnailsrc = $('.result-thumbnail').attr('src');
-    $('').empty();
-    $('').append(thumbnailsrc);  
-    //  debugger;
-    // window.location.hlef = '/book_reviews/search';
-    $('.pop-wrape').fadeIn();
-  });
-
   // 本を選択してpopupレビューフォームを表示
   $('.review-btn').on('click',function(e){
     e.preventDefault();
     // var resultsrc = $('#result-thumbnail').attr('src');
     var resultsrc = $(this).data("image-url");
+    var resulttitle = $(this).data("book-title");
+    var resultauthor = $(this).data("author");
+    var resultdetail = $(this).data("datail");
+    var resultisbn = $(this).data("isbn");
+    var resultitem = $(this).data("item-url");
     $('.book-thumbnail').attr('src',resultsrc);
+    $('.hidden-image').attr('value',resultsrc);
+    $('.hidden-title').attr('value',resulttitle);
+    $('.hidden-author').attr('value',resultauthor);
+    $('.hidden-datail').attr('value',resultdetail);
+    $('.hidden-isbn').attr('value',resultisbn);
+    $('.hidden-item').attr('value',resultitem);
     $('.pop-wrape').fadeIn();
     // debugger;
   });

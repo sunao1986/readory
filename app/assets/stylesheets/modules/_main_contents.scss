@@ -1,113 +1,88 @@
-.main-wrap{
-  float: left;
-  
-  .main-column{
-  height: 100vh; 
+.new-review-field{
+  position: absolute;
+  top:150px;
   width: 600px;
-  min-width: 600px;
-  overflow-y: scroll; 
-  position: relative;   
-    .search-field{
-      position: absolute;  
+  height: calc(100vh - 100px);
+  margin: 30px auto 0 auto;
+  // background-color: cornsilk;
+  .new-review{
+    width: 600px;
+    height: 200px;
+    // border-bottom: solid 1px #182630;
+    // background-color: darkgray;
+    .new-review-top{
       width: 600px;
-      height: 100px;
-      margin: 0 auto 0 auto;
-      // background-color: aquamarine;
-      .title-search{
-
-        // background-color: cadetblue;
-      }
-      .search-btn{
-
-      }
-    }
-    .new-review-field{
-      position: absolute;
-      top:150px;
-      width: 600px;
-      height: calc(100vh - 100px);
-      margin: 30px auto 0 auto;
-      // background-color: cornsilk;
-      .new-review{
-        width: 600px;
-        height: 200px;
-        // border-bottom: solid 1px #182630;
-        // background-color: darkgray;
-        .new-review-top{
-          width: 600px;
-          height: 130px;
-          // background-color: powderblue;
-          .new-review-top-left{
-            float: left;
-            width: 270px;
-            height: 130px;
-            // background-color: darkgoldenrod;
-            position: relative;
-            &__user{
-              width: 80px;
-              height: 80px;
-              border-radius: 50%;
-              background-color: #2e4453;
-              position: absolute;
-              top: 20px;
-              left: 150px;
-            }
-          }
-          .new-review-top-middle{
-            float: left;
-            width: 60px;
-            height: 130px;
-            // background-color: antiquewhite;
-            &__symbol{
-              font-size: 18px;
-              font-weight: bold;
-              text-align: center;
-              line-height: 130px;
-            }
-          }
-          .new-review-top-right{
-            float: left;
-            width: 270px;
-            height: 130px;
-            // background-color: azure;
-            position: relative;
-            &__book{
-              width: 80px;
-              height: 100px;
-              background-color: #2e4453;
-              position: absolute;
-              top: 10px;
-              left: 40px;
-            }
-          }
+      height: 130px;
+      // background-color: powderblue;
+      .new-review-top-left{
+        float: left;
+        width: 270px;
+        height: 130px;
+        // background-color: darkgoldenrod;
+        position: relative;
+        &__user{
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: #2e4453;
+          position: absolute;
+          top: 20px;
+          left: 150px;
         }
-        .new-review-middle{
-          width: 600px;
-          height: 40px;
-          // background-color: rgb(235, 235, 53);
-          &__title{
-            font-size: 21px;
-            font-family: 'Yu Gothic';
-            color: #182630;
-            font-weight: bold;
-            text-align: center;               
-            line-height: 40px;
-          }
-        }
-        .new-review-bottom{
-          width: 600px;
-          height: 20px;
-          line-height: 20px;
+      }
+      .new-review-top-middle{
+        float: left;
+        width: 60px;
+        height: 130px;
+        // background-color: antiquewhite;
+        &__symbol{
+          font-size: 18px;
+          font-weight: bold;
           text-align: center;
-          font-family: 'Yu Gothic';
-          font-size: 10px;
-          color: #182630;
-          border-bottom: solid 1px #182630;
-          border-top: solid 1px #182630;             
-          background-color: #ffc20e;
-
+          line-height: 130px;
+        }
+      }
+      .new-review-top-right{
+        float: left;
+        width: 270px;
+        height: 130px;
+        // background-color: azure;
+        position: relative;
+        &__book{
+          width: 80px;
+          height: 100px;
+          background-color: #2e4453;
+          position: absolute;
+          top: 10px;
+          left: 40px;
         }
       }
     }
-  }     
+    .new-review-middle{
+      width: 600px;
+      height: 40px;
+      // background-color: rgb(235, 235, 53);
+      &__title{
+        font-size: 21px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        font-weight: bold;
+        text-align: center;               
+        line-height: 40px;
+      }
+    }
+    .new-review-bottom{
+      width: 600px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-family: 'Yu Gothic';
+      font-size: 10px;
+      color: #182630;
+      border-bottom: solid 1px #182630;
+      border-top: solid 1px #182630;             
+      background-color: #ffc20e;
+
+    }
+  }
 }

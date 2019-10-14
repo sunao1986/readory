@@ -3,12 +3,16 @@
   .header-field  
     = render 'header'
 
-    = render 'popup'
+    -# = render 'popup'
 
   .contents
     = render 'left_contents'
 
-    = render 'books_search'  
+    .main-wrap
+      .main-column
+        = render 'search_field'         
+        = render 'books_search'  
+        = render 'popup'
 
     = render 'right_contents'
 

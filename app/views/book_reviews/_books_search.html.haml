@@ -1,34 +1,17 @@
-.main-wrap
-  .main-column   
-    =
-    .search-field
-      .search-box
-        = form_tag( "/book_reviews/search", method: :get ) do 
-          = text_field :book, "", class: "search-body", name: "title", placeholder: '  本のタイトルでサーチ'
-          .search-btn
-            = submit_tag "検索", class: "btn-body"
-      .search-box
-        = form_tag( "/book_reviews/search", method: :get ) do 
-          = text_field :author, "", class: "search-body", name: "author", placeholder: '  本の著者でサーチ'
-          .search-btn
-            = submit_tag "検索", class: "btn-body"
-      -# ここから下が楽天apiを表示するコード
-    .books-result-field     
-      - if @books.present?
-        - @books.each do |book|
-          = form_tag( "/book_reviews/search", method: :get, id: "pop-form") do
-            .result-field
-              .result-image
-                %img{src: book['mediumImageUrl'], id: 'result-thumbnail'}                               
-              .result-title
-                = book.title.truncate(15)
-                = hidden_field_tag :book_title, book.title
-              .review-btn{'data-image-url': book['mediumImageUrl']}
-                = submit_tag "レビューを書く", class: "review-sub" 
-                = hidden_field_tag :image_url, book['mediumImageUrl']            
-                = hidden_field_tag :author, book['author']
-                = hidden_field_tag :detail, book['itemCaption']
-                = hidden_field_tag :isbn, book['isbn']
-                = hidden_field_tag :item_url, book['itemUrl']
-         
-                
+.books-result-field     
+  - if @books.present?
+    - @books.each do |book|
+      = form_tag("/book_reviews/search", method: :get) do
+        .result-field
+          .result-image
+            %img{src: book['mediumImageUrl'], id: 'result-thumbnail'}                               
+          .result-title
+            = book.title.truncate(15)
+          .review-btn{'data-image-url': book['mediumImageUrl'],'data-book-title': book.title,'data-author': book['author'],'data-detail': book['itemCaption'],'data-isbn': book['isbn'],'data-item-url': book['itemUrl']}
+            = submit_tag "レビューを書く", class: "review-sub" 
+            -# = hidden_field_tag :image_url, book['mediumImageUrl']  
+            -# = hidden_field_tag :book_title, book.title          
+            -# = hidden_field_tag :author, book['author']
+            -# = hidden_field_tag :detail, book['itemCaption']
+            -# = hidden_field_tag :isbn, book['isbn']
+            -# = hidden_field_tag :item_url, book['itemUrl']

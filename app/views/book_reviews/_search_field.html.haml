@@ -1,0 +1,11 @@
+.search-field
+  .search-box
+    = form_tag( "/book_reviews/search", method: :get ) do 
+      = text_field :book, "", class: "search-body", name: "title", placeholder: '  本のタイトルでサーチ'
+      .search-btn
+        = submit_tag "検索", class: "btn-body"
+  .search-box
+    = form_tag( "/book_reviews/search", method: :get ) do 
+      = text_field :author, "", class: "search-body", name: "author", placeholder: '  本の著者でサーチ'
+      .search-btn
+        = submit_tag "検索", class: "btn-body"

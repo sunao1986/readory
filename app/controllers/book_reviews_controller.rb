@@ -7,16 +7,12 @@ class BookReviewsController < ApplicationController
   end
 
   def new
-    binding.pry
+    # まだ使ってない 10/14
     # @book_review = BookReview.new
-
-    if params[:image_url]
-      @img = BookReview.find(params[:image_url])
-    end
   end
 
   def create
-    binding.pry
+    # binding.pry
     @book_review = BookReview.create(
       review_title: book_review_params[:review_title], 
       review: book_review_params[:review], 
@@ -30,7 +26,7 @@ class BookReviewsController < ApplicationController
       user_id: current_user.id
       )
     if @book_review.save
-      redirect_to action: :search
+      redirect_to action: :index
     else
       # @book_review = BookReview.new indexに戻るときはつけてあげる。もしくはキャンセルしたparamsが残っていたら
       render :search
@@ -49,8 +45,8 @@ class BookReviewsController < ApplicationController
       c.affiliate_id = '195eb844.7af45415.195eb845.fd63d685'
     end
 
+    # 今のところ使ってない 10/14
     if params[:image_url].present?
-      # binding.pry
       @image = params[:image_url]
       # binding.pry
     end
@@ -68,10 +64,9 @@ class BookReviewsController < ApplicationController
   end
 
   private
-
+   # form_tagで打ち込むときはrequire(:book_review)を外す。
   def book_review_params
-    params.require(:book_review).permit(:review_title, :review, :rate, :book_title, :author, :image_url, :detail, :isbn, :item_url)
+    params.permit(:review_title, :review, :rate, :book_title, :author, :image_url, :detail, :isbn, :item_url)
   end
-
 
 end

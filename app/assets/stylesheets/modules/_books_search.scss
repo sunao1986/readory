@@ -1,95 +1,40 @@
-.main-wrap{
-  float: left;
-  .main-column{
-  // display: inline-block;  
-  height: 100%;   
-  // width: calc(100vw - 600px);
+.books-result-field{
+  position: absolute;
+  top:150px;
   width: 600px;
-  min-width: 600px;
-  // min-width: 600px;
-  overflow-y: scroll; 
-  position: relative;    
-  // overflow-x: visible;
-  // background-color: beige;
-    .search-field{
-      position: absolute;  
-      width: 600px;
-      height: 100px;
-      margin: 0 auto 0 auto;
-      // line-height: 40px;
-      // background-color: aquamarine;
-      .search-box{
-        width: 600px;
-        height: 50px;
-        position: relative;
-        // background-color: cadetblue;
-        .search-body{
-          position: absolute;
-          left: 100px;
-          width: 300px;
-          height: 35px;         
-        }
-        .search-btn{
-          width: 600px;
-          height: 40px;
-          position: absolute;
-          left: 420px;
-          top: -3px;
-          .btn-body{
-            border-style: none;
-            cursor: pointer;
-            width: 80px;
-            height: 30px;
-            font-size: 12px;
-            font-family: 'Yu Gothic';
-            border: solid 1px #182630;
-            text-align: center;
-            line-height: 30px; 
-            box-shadow:1px 1px #182630;
-          }
-        }
+  height: 100%;
+  margin: 30px auto 0 auto;
+  border-top: solid 1px #2e4453;
+  // background-color: cornsilk;
+  .result-field{
+    float: left;
+    margin: 20px 0 20px 0;
+    width: 200px;
+    height: 220px;
+    // background-color: aqua;
+    .result-image{
+      text-align: center;
+      #result-thumbnail{
       }
     }
-    
-    .books-result-field{
-      position: absolute;
-      top:150px;
-      width: 600px;
-      height: 100%;
-      margin: 30px auto 0 auto;
-      border-top: solid 1px #2e4453;
-      // background-color: cornsilk;
-      .result-field{
-        float: left;
-        margin: 20px 0 20px 0;
-        width: 200px;
-        height: 220px;
-        // background-color: aqua;
-        .result-image{
-          text-align: center;
-          #result-thumbnail{
-          }
-        }
-        .result-title{
-          width: 180px;
-          height: 15px;
-          font-size: 12px;
-          margin: 0 auto;
-          text-align: center;
-          font-family: 'Yu Gothic';
-          color: #2e4453;
-        }
-        .review-btn{
-          text-align: center;
-          margin-top: 5px;
-          width: 180px;
-          height: 30px;
-          .review-sub{
-            text-align: center;
-            cursor: pointer;
-          }
-        }
+    .result-title{
+      width: 180px;
+      height: 15px;
+      font-size: 12px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #2e4453;
+    }
+    .review-btn{
+      text-align: center;
+      margin-top: 5px;
+      width: 180px;
+      height: 30px;
+      .review-sub{
+        text-align: center;
+        cursor: pointer;
       }
-    } 
-  }  
-}
+    }
+  }
+} 
