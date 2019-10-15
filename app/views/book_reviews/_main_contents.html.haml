@@ -1,15 +1,24 @@
-.new-review-field
-  .new-review
-    .new-review-top
-      .new-review-top-left
-        .new-review-top-left__user
-      .new-review-top-middle
-        .new-review-top-middle__symbol
-          ×
-      .new-review-top-right
-        .new-review-top-right__book
-    .new-review-middle
-      .new-review-middle__title
-        ここにレビューのタイトルが入ります
-    .new-review-bottom
-      プルダウンでレビューが読める予定
+- @reviews.each do |review|
+  .new-review-field
+    .new-review
+      .new-review-top
+        .new-review-top-left
+          .new-review-top-left__user
+            = image_tag "#{review.user.image_url}", class: 'user-thumbnail'
+        .new-review-top-middle
+          .new-review-top-middle__symbol
+            ×
+        .new-review-top-right
+          .new-review-top-right__book
+            - if review.image_url.present?
+              %img(src="#{review.image_url}" alt="本の画像" class="book-thumbnail")
+            - else
+              = image_tag 'i_flu_g.png', class: 'thumbnail'
+      .new-review-middle
+        .new-review-middle__title
+          = review.review_title
+      .new-review-bottom
+        プルダウンでレビューが読める予定
+      .new-review-text-area
+        .new-review-text-area__cont
+          = review.review

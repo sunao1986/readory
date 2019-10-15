@@ -1,0 +1,16 @@
+.wrapper
+  .header-field
+    = render 'book_reviews/header'
+
+  .contents
+    = render 'book_reviews/left_contents'
+
+    .main-wrap
+      .main-column
+        = render 'user_search' 
+        = render 'user_contents'  
+
+
+    = render 'book_reviews/right_contents'
+
+  .footer

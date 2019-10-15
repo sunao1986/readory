@@ -2,9 +2,11 @@
   = image_tag "readory_logo.png", class: "header-logo" 
   = image_tag "i_flu_y.png", class: "logo-icon" 
 .header-right
+  .header-top-box
+    = link_to '/book_reviews', class: "header-top-box__btn" do
+      TOP
   .header-mypage-box
-    = link_to '/', class: "header-mypage-box__btn" do
-      -# = link_to '/users/current_user.id', class: 'mypage' do
+    = link_to '/users/current_user.id', class: "header-mypage-box__btn" do
       MY PAGE
   .header-logout-box
     = link_to destroy_user_session_path, method: :delete, class: "header-logout-box__btn" do

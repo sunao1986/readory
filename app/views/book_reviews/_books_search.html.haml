@@ -9,9 +9,3 @@
             = book.title.truncate(15)
           .review-btn{'data-image-url': book['mediumImageUrl'],'data-book-title': book.title,'data-author': book['author'],'data-detail': book['itemCaption'],'data-isbn': book['isbn'],'data-item-url': book['itemUrl']}
             = submit_tag "レビューを書く", class: "review-sub" 
-            -# = hidden_field_tag :image_url, book['mediumImageUrl']  
-            -# = hidden_field_tag :book_title, book.title          
-            -# = hidden_field_tag :author, book['author']
-            -# = hidden_field_tag :detail, book['itemCaption']
-            -# = hidden_field_tag :isbn, book['isbn']
-            -# = hidden_field_tag :item_url, book['itemUrl']

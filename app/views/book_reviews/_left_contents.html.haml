@@ -8,7 +8,7 @@
       .user-top__introduction
         = simple_format(current_user.introduction)
     .contents-mypage-box
-      = link_to '/', class: "contents-mypage-box__btn" do
+      = link_to '/users/current_user.id', class: "contents-mypage-box__btn" do
         MY PAGE
     .user-bottom
       ステータス系の予定

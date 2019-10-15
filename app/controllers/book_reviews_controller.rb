@@ -3,7 +3,7 @@ class BookReviewsController < ApplicationController
   def index
     #ユーザー登録後のトップページになるようにroot指定
     # @book_review = BookReview.new
-    @book_reviews = BookReview.includes(:user).order("created_at DESC")
+    @reviews = BookReview.includes(:user).order("created_at DESC")
   end
 
   def new

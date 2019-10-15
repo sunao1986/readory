@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded',function(){
   // 本を選択してpopupレビューフォームを表示
   $('.review-btn').on('click',function(e){
     e.preventDefault();
-    // var resultsrc = $('#result-thumbnail').attr('src');
     var resultsrc = $(this).data("image-url");
     var resulttitle = $(this).data("book-title");
     var resultauthor = $(this).data("author");
@@ -20,9 +19,18 @@ window.addEventListener('DOMContentLoaded',function(){
     $('.pop-wrape').fadeIn();
     // debugger;
   });
-
+  // レビューフォームを閉じる
   $('.return-btn').on('click',function(){
     $('.pop-wrape').fadeOut();
+  });
+
+  // indexでレビューの詳細をドロップダウン
+  $('.new-review-text-area').on('click',function(){
+    $(this).slideDown();
+  });
+  // レビュー詳細を閉じる
+  $('.new-review-text-area').on('click',function(){
+    $('.new-review-text-area').slideUp();
   });
 
   // ゲストページでインフルアイコンをクリックするとHowToを表示
@@ -43,5 +51,6 @@ window.addEventListener('DOMContentLoaded',function(){
   $('').on('click',function(){
     $('').fadeOut();
   });
+
 
 }); 
