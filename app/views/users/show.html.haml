@@ -3,14 +3,20 @@
     = render 'book_reviews/header'
 
   .contents
-    = render 'book_reviews/left_contents'
+    = render 'user_left'
 
     .main-wrap
       .main-column
         = render 'user_search' 
         = render 'user_contents'  
+        = render 'detail_pop'
+        = render 'edit_pop'
 
 
-    = render 'book_reviews/right_contents'
+    = render 'user_right'
 
   .footer
+
+  
+-# scssはindex.scssと共通
+-# - if current_user == @reviews.user_id

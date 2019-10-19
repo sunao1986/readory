@@ -6,7 +6,7 @@
     = link_to '/book_reviews', class: "header-top-box__btn" do
       TOP
   .header-mypage-box
-    = link_to '/users/current_user.id', class: "header-mypage-box__btn" do
+    %a{:href => "/users/#{current_user.id}", class: "user-btn"}
       MY PAGE
   .header-logout-box
     = link_to destroy_user_session_path, method: :delete, class: "header-logout-box__btn" do

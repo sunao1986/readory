@@ -1,0 +1,38 @@
+.detail-wrape
+  .pop-black
+    .pop-mount
+      .pop-review-head
+        .pop-review-head-left
+        .pop-review-head-right
+          .pop-review-head-right__btn
+            %input{ name: "戻る", class: "return-btn", value: "戻る" , type: "submit" }              
+      .pop-review-field
+        .new-review
+          .new-review-top
+            .new-review-top-left
+              .new-review-top-left__user
+                %img(src="" alt="ユーザーの画像" class="detail_user")
+            .new-review-top-middle
+              .new-review-top-middle__symbol
+                ×
+            .new-review-top-right
+              .new-review-top-right__book
+                %img(src="" alt="本の画像" class="detail_book")
+          .new-review-middle
+            .new-review-middle__title
+              %p{class: "detail_title"}
+          .new-review-bottom
+            クリックすると詳細レビューが読めます
+            .new-review-text-area
+              .new-review-text-area__cont
+                = simple_format("")
+        - if current_page?(current_user)
+          .pop-review-bottom-btn
+            = submit_tag :edit
+
+
+-# マイページからpopupで出現するレビュー詳細ページ
+-#  ifでcurrent_userの時だけ編集するボタンをつける。
+-# 編集ボタン発火でfedeIn入れ替え、もしくempty&display:noneで隠したappendにする
+-# %a{:href => "/articles/#{article.id}", class: "article_details"} 内容を編集する
+-# = link_to '/articles/article.id', class: 'article_details' do

@@ -1,0 +1,45 @@
+.edit-wrape
+  .pop-black
+    .pop-mount
+      .pop-review-head
+        .pop-review-head-left
+          .pop-review-head-left__message
+            あなたにとってどんな本でしたか？
+        .pop-review-head-right
+          .pop-review-head-right__btn
+            %input{ name: "戻る", class: "return-edit-btn", value: "戻る" , type: "submit" }
+      .pop-review-field
+        = form_tag("", method: :patch, id: "edit-form") do
+          .pop-review
+            .pop-review-top
+              .pop-review-top-left
+                .pop-review-top-left__user
+                  %img(src="" alt="ユーザーの画像" class="detail_user")
+              .pop-review-top-middle
+                .pop-review-top-middle__symbol
+                  ×
+              .pop-review-top-right
+                #pop-review-image
+                  %img(src="" alt="本の画像" class="detail_book")
+            .pop-review-middle         
+              .pop-review-middle__rate                
+                = radio_button_tag :rate, "1"
+                = label_tag '影響された'
+                = radio_button_tag :rate, "2"
+                = label_tag 'どちらとも言えない'
+                = radio_button_tag :rate, "3"
+                = label_tag '影響されなかった'
+              .pop-review-middle__title
+                = text_field_tag :review_title
+              .pop-review-bottom
+                投稿後はプルダウンで隠されます
+              .pop-review-bottom-text
+                = text_area_tag :review         
+              .pop-review-bottom-btn-edit
+                = submit_tag :update
+
+
+
+-#  detailpopから編集ボタンからのpopupページ
+-# inputの初期値にはjqueryからdata属性で引っ張ってきた値をvalueに入れて表示させる
+-# 更新ボタンはmethodをpatch、pathはbook_reviewsコントローラのupdateに飛ばす

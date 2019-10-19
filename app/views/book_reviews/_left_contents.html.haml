@@ -6,9 +6,9 @@
       .user-top__name
         = current_user.name
       .user-top__introduction
-        = simple_format(current_user.introduction)
+        = simple_format(current_user.introduction)     
     .contents-mypage-box
-      = link_to '/users/current_user.id', class: "contents-mypage-box__btn" do
+      %a{:href => "/users/#{current_user.id}", class: "user-btn"}         
         MY PAGE
     .user-bottom
       ステータス系の予定

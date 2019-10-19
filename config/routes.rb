@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       # end
     # end
   end
-  resources :book_reviews do
+  resources :book_reviews, only: [:index, :create, :update] do
       collection do 
         get 'search'
       end

@@ -33,9 +33,19 @@ class BookReviewsController < ApplicationController
     end
   end
 
-  def show
-    #まだいるかわからない（保留）
+  def update
+    # binding.pry
+    review = BookReview.find(params[:id])
+    if review.user_id == current_user.id
+       review.update(book_review_params)
+       redirect_to action: :index
+      #update(カラム名: 更新する情報)は引数の指定の仕方が決まっている。このコードは(tweet_paramsメソッド)なのでtext,imageが更新される
+    end
   end
+
+  # def show
+    #まだいるかわからない（保留）
+  # end
 
   def search
     # @book_review = BookReview.new
