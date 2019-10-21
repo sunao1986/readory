@@ -1,0 +1,11 @@
+.search-field
+  .search-box
+    = form_tag( "/users/search", method: :get ) do 
+      = text_field :name, "", class: "search-body", name: "name", placeholder: '  ユーザーを名前で検索'
+      .search-btn
+        = submit_tag "検索", class: "btn-body"
+  .search-box
+    = form_tag( "/users/search", method: :get ) do 
+      = text_field :introduction, "", class: "search-body", name: "introduction", placeholder: '  自己紹介文をフリー検索'
+      .search-btn
+        = submit_tag "検索", class: "btn-body"

@@ -1,0 +1,37 @@
+.books-result-field{
+  position: absolute;
+  top:150px;
+  width: 600px;
+  height: 100%;
+  margin: 50px auto 0 auto;
+  .result-field{
+    float: left;
+    margin: 20px 0 20px 0;
+    width: 200px;
+    height: 220px;
+    .result-image{
+      text-align: center;
+      #result-thumbnail{
+      }
+    }
+    .result-title{
+      width: 180px;
+      height: 15px;
+      font-size: 12px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #2e4453;
+    }
+    .review-btn{
+      text-align: center;
+      margin-top: 5px;
+      width: 180px;
+      height: 30px;
+      .review-sub{
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+} 

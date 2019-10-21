@@ -1,0 +1,28 @@
+.logpop-wrape{
+  width:500px;
+  height:400px;
+  margin: 0 auto;
+  .logpop-page{
+    width:250px;
+    height:300px;
+    margin: 0 auto;
+    .logpop-input-field{
+
+      &__label{
+
+      }
+      &__text{
+        width: 250px;
+        height:40px;
+        // background-color: aqua;
+        input {
+          width: 250px;
+          height:30px;          
+        }
+      }
+    }
+    .logpop-btn-field{
+
+    }
+  }
+}

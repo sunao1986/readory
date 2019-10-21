@@ -1,0 +1,17 @@
+-# books_controllerのsearchアクションより
+.wrapper
+  .header-field  
+    = render 'header'
+
+  .contents
+    = render 'left_contents'
+
+    .main-wrap
+      .main-column
+        = render 'search_field'         
+        = render 'books_search'  
+        = render 'popup'
+
+    = render 'right_contents'
+
+  .footer

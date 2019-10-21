@@ -1,0 +1,11 @@
+.books-result-field     
+  - if @books.present?
+    - @books.each do |book|
+      = form_tag("/book_reviews/search", method: :get) do
+        .result-field
+          .result-image
+            %img{src: book['mediumImageUrl'], id: 'result-thumbnail'}                               
+          .result-title
+            = book.title.truncate(15)
+          .review-btn{'data-image-url': book['mediumImageUrl'],'data-book-title': book.title,'data-author': book['author'],'data-detail': book['itemCaption'],'data-isbn': book['isbn'],'data-item-url': book['itemUrl']}
+            = submit_tag "レビューを書く", class: "review-sub" 

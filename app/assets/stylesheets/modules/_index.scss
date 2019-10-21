@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  .contents{
+    width: auto;
+    height: 100vh;
+    position: relative;
+    .main-wrap{
+      position: absolute;
+      left: 320px;
+      .main-column{
+        height: 100vh;   
+        width: 600px;
+        overflow-y: scroll;
+      }
+    }
+  }
+  .footer{
+    width: 100%;
+    height: 70px;
+  } 
+}
+ 

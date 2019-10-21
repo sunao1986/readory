@@ -1,0 +1,15 @@
+.left-wrap
+  .left-column
+    .user-top
+      .user-top__image
+        = image_tag @user.image_url.url, class: 'user-thumbnail' 
+      .user-top__name
+        = @user.name
+      .user-top__introduction
+        = simple_format(@user.introduction)
+    - if current_user.id.to_i == @user.id
+      .contents-mypage-box
+        = link_to '/users/edit', class: "contents-mypage-box__btn" do
+          EDIT
+    .user-bottom
+      ステータス系の予定

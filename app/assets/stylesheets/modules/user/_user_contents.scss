@@ -1,0 +1,57 @@
+.my-review-field{
+  width: auto;
+  height: 900px;
+  overflow-x: scroll;
+  // background-color: antiquewhite;
+  .my-review-menu{
+    width: auto;
+    height: 35px;
+    border: solid 1px #182630;
+    // background-color: aqua;
+  }
+  .shelf-title{
+    width: auto;
+    height: 30px;
+    margin-bottom:20px;
+    // background-color: cadetblue;
+  }
+  .rate-shelf{
+    width: auto;
+    height: 150px;
+    display: flex;
+    overflow-x: scroll;
+    // background-color: azure;
+    .book-field{
+      float: left;
+      width: auto;
+      height: 150px;
+      margin-right: 55px;
+      // background-color: blue;
+      .book-freame{
+        width: auto;
+        height: auto;
+        margin: auto;
+        position: relative;
+        // background-color: blueviolet;
+        .pop-info{
+          display: none;
+          width: 100%;
+          height: 30px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          line-height: 30px;
+          opacity: 0.9;
+          background-color: rgb(182, 194, 75);
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: bold;
+          font-family: 'Yu Gothic';
+          color: #182630;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+-# books_controllerのindexアクション。ユーザー登録後のトップページ
+.wrapper
+  .header-field
+    = render 'header'
+
+  .contents
+    = render 'left_contents'
+
+    .main-wrap
+      .main-column
+        = render 'search_field' 
+        = render 'main_contents' 
+
+
+    = render 'right_contents'
+
+  .footer

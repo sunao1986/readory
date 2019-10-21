@@ -1,0 +1,13 @@
+.header-left
+  = image_tag "readory_logo.png", class: "header-logo" 
+  = image_tag "i_flu_y.png", class: "logo-icon" 
+.header-right
+  .header-top-box
+    = link_to '/book_reviews', class: "header-top-box__btn" do
+      TOP
+  .header-mypage-box
+    %a{:href => "/users/#{current_user.id}", class: "user-btn"}
+      MY PAGE
+  .header-logout-box
+    = link_to destroy_user_session_path, method: :delete, class: "header-logout-box__btn" do
+      LOG OUT

@@ -1,0 +1,45 @@
+.pop-wrape
+  .pop-black
+    .pop-mount
+      .pop-review-head
+        .pop-review-head-left
+          .pop-review-head-left__message
+            あなたにとってどんな本でしたか？
+        .pop-review-head-right
+          .pop-review-head-right__btn
+            %input{ name: "戻る", class: "return-btn", value: "戻る" , type: "submit" }
+      .pop-review-field
+        = form_tag("/book_reviews", method: :post) do
+          .pop-review
+            .pop-review-top
+              .pop-review-top-left
+                .pop-review-top-left__user
+                  = image_tag current_user.image_url.url, class: 'review-thumbnail'
+              .pop-review-top-middle
+                .pop-review-top-middle__symbol
+                  ×
+              .pop-review-top-right
+                #pop-review-image
+                  = image_tag "", alt: 'review-book', class: 'book-thumbnail'
+                  = hidden_field_tag :image_url, "", class: 'hidden-image'
+                  = hidden_field_tag :book_title, "", class: 'hidden-title'
+                  = hidden_field_tag :author, "", class: 'hidden-author'
+                  = hidden_field_tag :detail, "", class: 'hidden-detail'
+                  = hidden_field_tag :isbn, "", class: 'hidden-isbn'
+                  = hidden_field_tag :item_url, "", class: 'hidden-item'
+            .pop-review-middle         
+              .pop-review-middle__rate                
+                = radio_button_tag :rate, "1"
+                = label_tag '影響された'
+                = radio_button_tag :rate, "2"
+                = label_tag 'どちらとも言えない'
+                = radio_button_tag :rate, "3"
+                = label_tag '影響されなかった'
+              .pop-review-middle__title
+                = text_field_tag :review_title
+              .pop-review-bottom
+                投稿後はプルダウンで隠されます
+              .pop-review-bottom-text
+                = text_area_tag :review
+              .pop-review-bottom-btn
+                = submit_tag

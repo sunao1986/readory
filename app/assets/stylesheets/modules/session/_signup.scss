@@ -1,0 +1,113 @@
+.sign-wrape{
+  width: 100vw;
+  height: 100vh;
+  position: relative;;
+  // background-color: aliceblue;
+  .sign-mount{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    bottom: 55%;
+    margin: auto;
+    width:500px;
+    height:400px;
+    // background-color: beige;
+    .sign-logo{
+      text-align: center;
+      .main-logo{
+        width:324px;
+        height:144px;
+      }
+    }
+    .sign-consept{
+      width:500px;
+      font-size: 16px;
+      font-family: 'Hiragino Mincho Pro';
+      color: #182630;
+      text-align: center;
+    }
+    .icon-area{
+      width:500px;
+      height:25px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      // background-color: aquamarine;
+      position: relative;
+      .icon-left{
+        position: absolute;
+        left: 200px;
+        .icon-l{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+      .icon-middle{
+        position: absolute;
+        left: 250px;
+        .icon-m{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          
+        }       
+      }
+      .icon-right{
+        position: absolute;
+        left: 300px;
+        .icon-r{
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .sign-field{
+
+      .sign-field-wrape{
+        width:500px;
+        height:600px;
+        margin: 0 auto;
+        .sign-page{
+          width:250px;
+          height:300px;
+          margin: 0 auto;
+          .sign-input-field{
+            resize: none;
+            &__label{
+      
+            }
+            &__text{
+              width: 250px;
+              height:40px;
+              // background-color: aqua;
+              input {
+                width: 250px;
+                height:30px;          
+              }
+            }
+            &__intro{
+              width: 250px;
+              height:100px;
+              .intro-control{
+                resize: none;
+                width: 250px;
+                height:100px;
+              }             
+              input {               
+         
+              }
+            }
+          }
+          .sign-btn-field{
+      
+          }
+          .login-return{
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.wrapper
+  .header-field
+    = render 'book_reviews/header'
+
+  .contents
+    = render 'user_left'
+
+    .main-wrap
+      .main-column
+        = render 'user_search' 
+        = render 'user_contents'  
+        = render 'detail_pop'
+        = render 'edit_pop'
+
+
+    = render 'user_right'
+
+  .footer
+
+  
+-# scssはindex.scssと共通
+-# - if current_user == @reviews.user_id
