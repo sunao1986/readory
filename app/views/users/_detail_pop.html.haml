@@ -19,6 +19,7 @@
               .new-review-top-right__book
                 %img(src="" alt="本の画像" class="detail_book")
           .new-review-middle
+            = render partial: 'likes/like', locals: { book_review: @book_review, likes: @likes, like: @like}
             .new-review-middle__title
               %p{class: "detail_title"}
           .new-review-bottom

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_083604) do
+ActiveRecord::Schema.define(version: 2019_10_20_041525) do
 
   create_table "book_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "review_title", null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_083604) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "item_url"
+    t.integer "likes_count"
     t.index ["user_id"], name: "index_book_reviews_on_user_id"
   end
 
@@ -53,6 +54,15 @@ ActiveRecord::Schema.define(version: 2019_10_14_083604) do
     t.integer "review_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_review_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_review_id"], name: "index_likes_on_book_review_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_10_14_083604) do
   add_foreign_key "book_reviews", "users"
   add_foreign_key "book_users", "books"
   add_foreign_key "book_users", "users"
+  add_foreign_key "likes", "book_reviews"
+  add_foreign_key "likes", "users"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
 end

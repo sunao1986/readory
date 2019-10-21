@@ -1,9 +1,18 @@
 class BookReviewsController < ApplicationController
+  # before_action :set_review, only: [:index]
 
   def index
     #ユーザー登録後のトップページになるようにroot指定
     # @book_review = BookReview.new
-    @reviews = BookReview.includes(:user).order("created_at DESC")
+    @book_reviews = BookReview.includes(:user).order("created_at DESC")
+    @user_reviews = BookReview.where(user_id: current_user.id)
+   
+    # binding.pry
+    if params[:id].present?
+      binding.pry
+      @book_review = BookReview.find(params[:id])
+    end
+   
   end
 
   def new
@@ -77,6 +86,10 @@ class BookReviewsController < ApplicationController
    # form_tagで打ち込むときはrequire(:book_review)を外す。
   def book_review_params
     params.permit(:review_title, :review, :rate, :book_title, :author, :image_url, :detail, :isbn, :item_url)
+  end
+
+  def set_review
+    @book_review = BookReview.find(params[:id])
   end
 
 end

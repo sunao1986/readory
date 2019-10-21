@@ -6,6 +6,8 @@ class User < ApplicationRecord
   # has_many :reviews
   # has_many :book_users
   # has_many :books, through: :book_users  
-  has_many :book_reviews
+  has_many :book_reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
+
   mount_uploader :image_url, ImageUploader
 end

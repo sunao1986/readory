@@ -1,26 +1,27 @@
-- @reviews.each do |review|
+- @book_reviews.each do |book_review|
   .new-review-field
     .new-review
       .new-review-top
         .new-review-top-left
           .new-review-top-left__user
-            - if review.user.image_url.present?
-              %a{:href => "/users/#{review.user.id}", class: "user-btn"} 
-                = image_tag "#{review.user.image_url}", class: 'user-thumbnail'
+            - if book_review.user.image_url.present?
+              %a{:href => "/users/#{book_review.user.id}", class: "user-btn"} 
+                = image_tag "#{book_review.user.image_url}", class: 'user-thumbnail'
             - else
-              %a{:href => "/users/#{review.user.id}", class: "user-btn"} 
+              %a{:href => "/users/#{book_review.user.id}", class: "user-btn"} 
                 = image_tag 'i_flu_g.png', class: 'thumbnail'
         .new-review-top-middle
           .new-review-top-middle__symbol
             ×
         .new-review-top-right
+          = render partial: 'likes/like', locals:{ book_review: book_review, likes: @likes, like: @like}
           .new-review-top-right__book
-            %img(src="#{review.image_url}" alt="本の画像" class="book-thumbnail")
+            %img(src="#{book_review.image_url}" alt="本の画像" class="book-thumbnail")
       .new-review-middle
         .new-review-middle__title
-          = review.review_title
+          = book_review.review_title
       .new-review-bottom
         クリックすると詳細レビューが読めます
         .new-review-text-area
           .new-review-text-area__cont
-            = simple_format(review.review)
+            = simple_format(book_review.review)

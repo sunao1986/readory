@@ -12,3 +12,11 @@
         MY PAGE
     .user-bottom
       ステータス系の予定
+      .user_review_count
+        レビュー数 : 
+        = @user_reviews.count
+        本
+      .user_likes_count
+        総インフル数 : 
+        = @user_reviews.all.sum(:likes_count)
+        フル    
