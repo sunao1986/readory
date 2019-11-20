@@ -1,7 +1,7 @@
 input:focus {
  outline: none;
 }
-.pop-wrape{
+.create-wrape{
   display: none;
   height:100%;
   width:100%;
@@ -9,11 +9,11 @@ input:focus {
   top: 0;
   left: 0;
   z-index: 20;
-  .pop-black{
+  .create-black{
     height:100%;
     width:100%;
     background-color: rgba(8, 8, 8, 0.5);
-    .pop-mount{
+    .create-mount{
       background-color: rgba(255, 255, 255, 0.959);
       opacity: 3;
       z-index: 30;
@@ -22,41 +22,60 @@ input:focus {
       position: fixed;
       top: 13%;
       left: 20%;
-      .pop-review-head{
+      .create-review-head{
         margin-top: 10px;
         height:20px;
         width: 650px;
-        .pop-review-head-left{
+        .create-review-head-left{
           float: left;
           &__message{
-            margin-left: 200px;
+            margin-left: 180px;
             font-size: 18px;
             font-family: 'Yu Gothic';
             color: #182630;
           }
         }
-        .pop-review-head-right{
+        .create-review-head-right{
           float: right;
           &__btn{
             margin-right: 20px;
+            .return-btn{
+              text-align: center;
+              cursor: pointer;
+              border: none;
+              border-radius: 4px;
+              font-family: 'Yu Gothic';
+              color: #2e4453;
+              font-size: 12px;
+              width: 50px;
+              height: 20px;
+              box-shadow: 1px 1px 3px gray;
+              background-color: #f5f3ed;
+            }
+            .return-btn:hover{
+              opacity: 0.8;
+            }
+            .return-btn:active{
+              box-shadow: 2px 2px 3px #ffc20e;
+            }
           }
         }
       }
-      .pop-review-field{
+      .create-review-field{
         width: 600px;
         height: 100%;
         margin: 30px auto 0 auto;
         // background-color: cornsilk;
-        .pop-review{
+        .create-review{
           width: 600px;
           height: 200px;
           // border-bottom: solid 1px #182630;
           // background-color: darkgray;
-          .pop-review-top{
+          .create-review-top{
             width: 600px;
             height: 130px;
             // background-color: powderblue;
-            .pop-review-top-left{
+            .create-review-top-left{
               float: left;
               width: 270px;
               height: 130px;
@@ -73,11 +92,12 @@ input:focus {
                 .review-thumbnail{
                   width: 80px;
                   height: 80px;
-                  border-radius: 50%;                 
+                  border-radius: 50%;
+                  box-shadow: 1px 1px 3px gray;                 
                 }
               }
             }
-            .pop-review-top-middle{
+            .create-review-top-middle{
               float: left;
               width: 60px;
               height: 130px;
@@ -89,13 +109,13 @@ input:focus {
                 line-height: 130px;
               }
             }
-            .pop-review-top-right{
+            .create-review-top-right{
               float: left;
               width: 270px;
               height: 130px;
               // background-color: azure;
               position: relative;
-              #pop-review-image{
+              #create-review-image{
                 width: 84px;
                 height: 120px;
                 // background-color: #2e4453;
@@ -105,11 +125,12 @@ input:focus {
                 .book-thumbnail{
                   width: 67.2px;
                   height: 96px;
+                  box-shadow: 1px 1px 3px gray;
                 }
               }
             }
           }
-          .pop-review-middle{
+          .create-review-middle{
             width: 600px;
             height: 60px;
             &__rate{
@@ -128,12 +149,17 @@ input:focus {
               color: #182630; 
               #review_title{
                 padding-left: 10px;
-                width: 450px;
+                width: 580px;
                 height: 30px;
+                font-size: 22px;
+              }
+              #review_title::placeholder{
+                font-size: 14px;
+                line-height: 30px;
               }
             }
           }
-          .pop-review-bottom{
+          .create-review-bottom{
             width: 600px;
             height: 20px;
             line-height: 20px;
@@ -145,7 +171,7 @@ input:focus {
             border-top: solid 1px #182630;             
             background-color: #ffc20e;
           }
-          .pop-review-bottom-text{
+          .create-review-bottom-text{
             text-align: center;
             #review{
               padding-left: 10px;
@@ -153,9 +179,31 @@ input:focus {
               height: 100px;
               resize: none;
             }
+            #review::placeholder{
+              font-size: 14px;
+            }
           }
-          .pop-review-bottom-btn{
+          .create-review-bottom-btn{
             text-align: center;
+            .new-review-sub{
+              text-align: center;
+              cursor: pointer;
+              border: none;
+              border-radius: 4px;
+              font-family: 'Yu Gothic';
+              color: #2e4453;
+              font-size: 12px;
+              width: 150px;
+              height: 20px;
+              box-shadow: 1px 1px 3px gray;
+              background-color: #f5f3ed;
+            }
+            .new-review-sub:hover{
+              opacity: 0.8;
+            }
+            .new-review-sub:active{
+              box-shadow: 2px 2px 3px #ffc20e;
+            }
           }
         }
       }

@@ -1,10 +1,13 @@
 .right-wrap{
-  position: absolute;
-  left: 940px;
+  float: left;
+  width: 280px;
+  height: auto;
+  // background-color: plum;
   .right-column{
-  height: 100vh;
-  width: 300px;
-  overflow-y: scroll;
+    height: 100vh;
+    width: 280px;
+    margin: 0 auto 0 0;
+    overflow-y: scroll;
     .ranking-title{
       text-align: center;
       font-family: 'Yu Gothic';
@@ -16,15 +19,19 @@
     .ranking-field{
       height: 100vh;
       width: 280px;
-      margin: 20px auto 0 auto;
+      margin: 20px auto 0px auto;
       .ranking-review{
         height: 100px;
         width: 280px;
         border-bottom: solid 1px #2e4453;
+        margin-bottom: 30px;
         .ranking-review-number{
           height: 15px;
           width: 280px;
           font-size: 6px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          font-weight: bold;
         }
         .ranking-review-left{
           float: left;
@@ -34,7 +41,12 @@
           &__image{
             height: 80px;
             width: 60px;
-            background-color: #2e4453;
+            // background-color: #2e4453;
+            .ranking-book-thumbnail{
+              height: 80px;
+              width: 60px;
+              box-shadow: 1px 1px 3px gray;
+            }
           }
         }
         .ranking-review-right{
@@ -47,8 +59,7 @@
             width: 210px;
             // background-color: brown;
             &__title{
-              line-height: 45px;
-              font-size: 14px; 
+              font-size: 16px; 
               font-weight: bold;
               color: black;
             }
@@ -60,18 +71,38 @@
             &__user{
               float: left;
               height: 40px;
-              width: 90px;  
+              width: 130px;  
               font-size: 10px;  
-              line-height: 25px;
+              // line-height: 25px;
               color: black;            
             }
-            &__btn{
+            .ranking-review-right-bottom-btn{
               float: right;
               height: 40px;
-              width: 40px;   
+              width: 50px;   
               font-size: 10px;  
-              line-height: 25px;
+              margin-right:15px;
+              // line-height: 25px;
               color: black; 
+              .ranking-sub{
+                text-align: center;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+                font-family: 'Yu Gothic';
+                color: #2e4453;
+                font-size: 10px;
+                width: 45px;
+                height: 15px;
+                box-shadow: 1px 1px 3px gray;
+                background-color: #f5f3ed;
+              }
+              .ranking-sub:hover{
+                opacity: 0.8;
+              }
+              .ranking-sub:active{
+                box-shadow: 2px 2px 3px #ffc20e;
+              }
             }
           }
         }

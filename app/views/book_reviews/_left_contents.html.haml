@@ -2,7 +2,10 @@
   .left-column
     .user-top
       .user-top__image
-        = image_tag current_user.image_url.url, class: 'user-thumbnail' 
+        - if current_user.image_url.present?
+          = image_tag current_user.image_url.url, class: 'user-thumbnail' 
+        - else
+          = image_tag 'i_flu_g.png', class: 'user-thumbnail'
       .user-top__name
         = current_user.name
       .user-top__introduction
@@ -11,7 +14,8 @@
       %a{:href => "/users/#{current_user.id}", class: "user-btn"}         
         MY PAGE
     .user-bottom
-      ステータス系の予定
+      .status-top
+        ステータス
       .user_review_count
         レビュー数 : 
         = @user_reviews.count

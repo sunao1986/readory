@@ -1,13 +1,14 @@
 .search-field{
-  width: 600px;
-  height: 145px;
-  margin-top: 50px;
+  height: 200px;
+  padding-top:50px;
   border-bottom: solid 1px #182630;
+  // background-color: yellowgreen;
+  overflow-y: scroll;
   .search-box{
-    width: 600px;
-    height: 30px;
-    margin-top: 20px;
-    margin-left: 100px;
+    width: 400px;
+    height: 55px;
+    margin: 0 auto;
+    // background-color: yellow;
     .search-body{
       float: left;
       width: 300px;

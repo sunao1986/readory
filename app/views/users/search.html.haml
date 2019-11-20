@@ -9,10 +9,11 @@
       .main-column
         = render 'user_search' 
         = render 'user_result'  
+        = render 'detail_pop'
 
-
-    = render 'book_reviews/right_contents'
+    = render 'book_reviews/right_contents', locals:{ book_review: @ranking_reviews}
 
   .footer
-
+    = link_to "/", class:"footlink" do
+      %p 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ
   -# ユーザーサーチしたあとの画面

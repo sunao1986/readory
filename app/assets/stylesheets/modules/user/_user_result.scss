@@ -1,5 +1,5 @@
 .user-result-field{
-  position: absolute;
+  // position: absolute;
   top: 200px;
   width: 601px;
   height: auto;
@@ -14,13 +14,22 @@
     // border: solid 2px #182630;
     .user-field{
       width: 200px;
-      height: 200px;
+      height: 240px;
       z-index: 20;
       // border-right: solid 1px #182630;
       // border-bottom: solid 1px #182630;
       // position: relative;
       // background-color: chocolate;
       .user-result-top{
+        .hidden-message{
+          display: none;
+          height:10px;
+          font-size:8px;
+          width:200px;
+          text-align: center;
+          font-family: 'Yu Gothic';
+          color: #182630;
+        }
         &__image{
           width: 60px;
           height: 60px;
@@ -29,7 +38,9 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-
+          }
+          &--thumbnail:hover{
+            border: solid 1.5px #ffc20e;
           }
         }
       }
@@ -49,7 +60,8 @@
         border: solid 1px #182630;
         text-align: center;
         line-height: 20px;
-        font-size: 12px;
+        font-size: 11px;
+        margin: 0 auto;
         cursor: pointer;
         .hidden-area{
           display: none;
@@ -60,12 +72,22 @@
             height: auto;
             font-family: 'Yu Gothic';
             color: #182630;
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.97;
+            padding: 5px;
             background-color: #f5f3ed;
           }
         }
+      }
+      .user-result-bottom:hover{
+        color: #ffc20e;
       } 
     }
+  }
+  .no-result{
+    font-family: 'Yu Gothic';
+    color: #748591;
+    font-size: 16px;
+    margin-left:10px;
   }
 }

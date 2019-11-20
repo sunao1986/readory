@@ -1,10 +1,13 @@
 .header-field{
-  height: 50px;
+  height: 55px;
   width: 100vw;
   border-bottom: solid 1px #2e4453;
+  // background-color: olivedrab;
   .header-left{
     float: left;
-    width: calc(100vw - 500px);
+    width: calc(100vw - 400px);
+    max-width: 1200px;
+    // background-color: orange;
     .header-logo{
       width: 111px;
       height: 48px;
@@ -12,28 +15,25 @@
       margin-left: 50px;
     }
     .logo-icon{
-      width: 18px;
-      height: 18px;
-      margin-bottom: 8px;
     }
   }
   .header-right{
     float: left;
-    width: 500px;
+    width: 400px;
     height: 45px;
     // background-color: aquamarine;
-    position: relative;
     .header-top-box{
-      position: absolute;
       float: left;
       width: 100px;
       height: 30px;
+      margin-top: 10px;
+      margin-right: 20px;
       border: solid 1px #182630;
       font-size: 12px;
       font-family: 'Yu Gothic';
       text-align: center;
       line-height: 30px; 
-      top: 7px;
+      box-shadow: 1px 1px 3px gray;
       background-color: #f8f8f3;
       &__btn{          
         text-decoration: none;
@@ -41,35 +41,34 @@
       }
     }
     .header-mypage-box{
-      position: absolute;
       float: left;
       width: 100px;
       height: 30px;
+      margin-top: 10px;
+      margin-right: 20px;
       border: solid 1px #182630;
       font-size: 12px;
       font-family: 'Yu Gothic';
       text-align: center;
       line-height: 30px; 
-      left: 120px;
-      top: 7px;
+      box-shadow: 1px 1px 3px gray;
       background-color: #f8f8f3;
-      &__btn{          
+      .user-btn{          
         text-decoration: none;
         color: #182630;
       }
     }
     .header-logout-box{
-      position: absolute;
       float: left;
       width: 100px;
       height: 30px;
+      margin-top: 10px;
       border: solid 1px #182630;
       font-size: 12px;
       font-family: 'Yu Gothic';
       text-align: center;
       line-height: 30px; 
-      left: 240px;
-      top: 7px;
+      box-shadow: 1px 1px 3px gray;
       background-color: #f8f8f3;
       &__btn{                   
         text-decoration: none;

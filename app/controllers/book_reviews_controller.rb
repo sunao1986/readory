@@ -5,9 +5,12 @@ class BookReviewsController < ApplicationController
     #ユーザー登録後のトップページになるようにroot指定
     # @book_review = BookReview.new
     @book_reviews = BookReview.includes(:user).order("created_at DESC")
+    # ユーザーステータス用
     @user_reviews = BookReview.where(user_id: current_user.id)
-   
-    # binding.pry
+    # ランキング用(like_count数が大きい順に10件取得)
+    @ranking_reviews = BookReview.order("likes_count DESC").limit(10)
+
+    #まだ
     if params[:id].present?
       binding.pry
       @book_review = BookReview.find(params[:id])
@@ -63,6 +66,10 @@ class BookReviewsController < ApplicationController
       c.application_id = '1006308901675971343'
       c.affiliate_id = '195eb844.7af45415.195eb845.fd63d685'
     end
+    # ユーザー情報用
+    @user_reviews = BookReview.where(user_id: current_user.id)
+    # ランキング用(like_count数が大きい順に10件取得)
+    @ranking_reviews = BookReview.order("likes_count DESC").limit(10)
 
     # 今のところ使ってない 10/14
     if params[:image_url].present?
@@ -70,12 +77,13 @@ class BookReviewsController < ApplicationController
       # binding.pry
     end
 
-    if params[:title]
+    if params[:title].present?
        # binding.pry
       @books = RakutenWebService::Books::Book.search(title: params[:title])
+
     end
 
-    if params[:author]
+    if params[:author].present?
        # binding.pry
       @books = RakutenWebService::Books::Book.search(author: params[:author])
        # @items = RakutenWebService::Ichiba::Item.search(keyword: params[:keyword])

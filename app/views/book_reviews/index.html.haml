@@ -10,8 +10,10 @@
       .main-column
         = render 'search_field' 
         = render 'main_contents' 
-
+        = render 'users/detail_pop'
 
     = render 'right_contents'
 
   .footer
+    = link_to "/", class:"footlink" do
+      %p 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ

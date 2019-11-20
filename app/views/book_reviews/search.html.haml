@@ -9,9 +9,14 @@
     .main-wrap
       .main-column
         = render 'search_field'         
-        = render 'books_search'  
+        = render 'books_search' 
+        = render 'users/detail_pop' 
         = render 'popup'
+        
+        
 
     = render 'right_contents'
 
   .footer
+    = link_to "/", class:"footlink" do
+      %p 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ

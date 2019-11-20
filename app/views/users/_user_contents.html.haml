@@ -1,42 +1,42 @@
 .my-review-field
   .my-review-menu 
-    ソート用メニュボタンを導入予定
+    -# ソート用メニュボタンを導入予定
   .shelf-title
-    Rate:1 影響を与えた本
+    %p.shelf-title__text Rate:1 影響を与えた本
   .rate-shelf
     - @reviews_one.each do |one|
       .book-field
         .book-freame
-          = image_tag "#{one.image_url}", class: ''
+          = image_tag "#{one.image_url}", class: 'my-book'
           .pop-info{'data-book-title': one.book_title,'data-image-url': one.image_url,'data-review-title': one.review_title,'data-review': one.review,'data-user-image': one.user.image_url,'data-url': "/book_reviews/#{one.id}"}
             詳細
 
   .shelf-title
-    Rate:2 面白かった本
+    %p.shelf-title__text Rate:2 面白かった本
   .rate-shelf
     - @reviews_two.each do |two|  
       .book-field
         .book-freame
           = image_tag "#{two.image_url}", class: ''
-          .pop-info{'data-book-title': two.book_title,'data-image-url': two.image_url,'data-review-title': two.review_title,'data-review': two.review,'data-user-image': two.user.image_url}
-            詳 細
+          .pop-info{'data-book-title': two.book_title,'data-image-url': two.image_url,'data-review-title': two.review_title,'data-review': two.review,'data-user-image': two.user.image_url,'data-url': "/book_reviews/#{two.id}"}
+            詳細
 
   .shelf-title
-    Rate:3 つまらなかった本
+    %p.shelf-title__text Rate:3 つまらなかった本
   .rate-shelf
     - @reviews_three.each do |three|  
       .book-field
         .book-freame
           = image_tag "#{three.image_url}", class: ''
-          .pop-info{'data-book-title': three.book_title,'data-image-url': three.image_url,'data-review-title': three.review_title,'data-review': three.review,'data-user-image': three.user.image_url}
+          .pop-info{'data-book-title': three.book_title,'data-image-url': three.image_url,'data-review-title': three.review_title,'data-review': three.review,'data-user-image': three.user.image_url,'data-url': "/book_reviews/#{three.id}"}
             詳細
 
   .shelf-title
-    Rate:4 なんとも思わなかった本
+    %p.shelf-title__text Rate:4 なんとも思わなかった本
   .rate-shelf
     - @reviews_four.each do |four|  
       .book-field
         .book-freame
           = image_tag "#{four.image_url}", class: ''
-          .pop-info{'data-book-title': four.book_title,'data-image-url': four.image_url,'data-review-title': four.review_title,'data-review': four.review,'data-user-image': four.user.image_url}
+          .pop-info{'data-book-title': four.book_title,'data-image-url': four.image_url,'data-review-title': four.review_title,'data-review': four.review,'data-user-image': four.user.image_url,'data-url': "/book_reviews/#{four.id}"}
             詳細

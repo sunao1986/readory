@@ -3,17 +3,20 @@
     .ranking-title
       インフルランキング
     .ranking-field
-      .ranking-review
-        .ranking-review-number
-          1
-        .ranking-review-left
-          .ranking-review-left__image
-        .ranking-review-right
-          .ranking-review-right-top
-            .ranking-review-right-top__title
-              レビュータイトル
-          .ranking-review-right-bottom
-            .ranking-review-right-bottom__user
-              ユーザー名
-            .ranking-review-right-bottom__btn
-              読む
+      - @ranking_reviews.each.with_index(1) do |book_review,i|
+        .ranking-review
+          .ranking-review-number
+            = i
+            位
+          .ranking-review-left
+            .ranking-review-left__image
+              %img(src="#{book_review.image_url}" alt="本の画像" class="ranking-book-thumbnail")
+          .ranking-review-right
+            .ranking-review-right-top
+              .ranking-review-right-top__title
+                = book_review.review_title
+            .ranking-review-right-bottom
+              .ranking-review-right-bottom__user
+                = book_review.user.name
+              .ranking-review-right-bottom-btn{'data-book-title': book_review.book_title,'data-image-url': book_review.image_url,'data-review-title': book_review.review_title,'data-review': book_review.review,'data-user-image': book_review.user.image_url}
+                = submit_tag "読む", class: "ranking-sub"

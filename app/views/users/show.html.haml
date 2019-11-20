@@ -3,7 +3,7 @@
     = render 'book_reviews/header'
 
   .contents
-    = render 'user_left'
+    = render partial: 'user_left' , locals:{ user_reviews: @user_reviews}
 
     .main-wrap
       .main-column
@@ -13,9 +13,11 @@
         = render 'edit_pop'
 
 
-    = render 'user_right'
+    = render partial: 'book_reviews/right_contents', locals:{ book_review: @ranking_reviews}
 
   .footer
+    = link_to "/", class:"footlink" do
+      %p.footmessage 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ
 
   
 -# scssはindex.scssと共通

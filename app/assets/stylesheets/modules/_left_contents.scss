@@ -1,19 +1,22 @@
 .left-wrap{
-  position: absolute;
-  
+  float: left;
+  width: 250px;
+  height: auto;
+  // background-color: rosybrown;
   .left-column{
-  height: 100vh;
-  width: 300px;
-  overflow-y: scroll;
+    width: 200px;
+    height: 100vh;
+    margin: 0 0 0 auto;
+    // background-color: seagreen;
+    overflow-y: scroll;
     .user-top{
       width: 200px;
+      height: auto;
       margin-top: 50px;
-      margin-left: 50px;
       display: inline-block;
+      // background-color: steelblue;
       &__image{
         width: 60px;
-        height: 60px;
-        border-radius: 50%;
         margin: 0 auto;
         .user-thumbnail {
           width: 60px;
@@ -32,10 +35,7 @@
       }
       &__introduction{
         display: inline-block;
-        width: 200px;
-        // height: 100px;
-        margin: 15px auto;
-        // background-color: aquamarine;
+        margin: 15px 0;
         font-family: 'Yu Gothic';
         color: #182630;
         font-size: 12px;
@@ -49,20 +49,42 @@
       font-family: 'Yu Gothic';
       text-align: center;
       line-height: 30px; 
+      box-shadow: 1px 1px 3px gray;
+      background-color: #f5f3ed;
       margin: 20px auto;
-      &__btn{
+      .user-btn{
         text-decoration: none;
         color: #182630;
       }
     }
     .user-bottom{
       width: 200px;
-      height: 500px;
-      margin: 0 auto;
+      height: auto;
       font-family: 'Yu Gothic';
       font-size: 12px;
       border-top: solid 1px #182630;
-      // background-color: antiquewhite;
+      padding-bottom: 50px;
+      .status-top{
+        margin: 20px auto;
+        width: 100px;
+        height: auto;
+        text-align: center;
+        border: solid 1px #182630;
+      }
+      .user_review_count{
+        margin-top: 10px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        font-size: 12px;
+        text-align: center;
+      }
+      .user_likes_count{
+        margin-top: 10px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        font-size: 12px;
+        text-align: center;
+      }
     }
   }
 }

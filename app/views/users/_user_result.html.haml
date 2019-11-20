@@ -5,6 +5,9 @@
         = form_tag(" /users/search", method: :get) do       
           .user-field
             .user-result-top
+              .hidden-message                         
+                = user.name
+                さんのマイページへ
               .user-result-top__image
                 %a{:href => "/users/#{user.id}", class: "user-btn"} 
                   = image_tag user.image_url.url, class: 'user-result-top__image--thumbnail' 
@@ -13,7 +16,10 @@
               .user-result-middle__name
                 = user.name
             .user-result-bottom
-              Rede More
+              自己紹介を読む
               .hidden-area
                 .hidden-text
                   = user.introduction
+    - else
+      .no-result
+        検索に一致する結果はありませんでした。

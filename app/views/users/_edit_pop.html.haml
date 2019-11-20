@@ -4,7 +4,7 @@
       .pop-review-head
         .pop-review-head-left
           .pop-review-head-left__message
-            あなたにとってどんな本でしたか？
+            ※ 影響ボタンの押し忘れにご注意ください
         .pop-review-head-right
           .pop-review-head-right__btn
             %input{ name: "戻る", class: "return-edit-btn", value: "戻る" , type: "submit" }
@@ -36,7 +36,7 @@
               .pop-review-bottom-text
                 = text_area_tag :review         
               .pop-review-bottom-btn-edit
-                = submit_tag :update
+                = submit_tag "この内容で更新する", class: "updata-review-sub"
 
 
 

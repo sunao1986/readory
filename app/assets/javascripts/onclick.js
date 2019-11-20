@@ -16,12 +16,12 @@ window.addEventListener('DOMContentLoaded',function(){
     $('.hidden-datail').attr('value',resultdetail);
     $('.hidden-isbn').attr('value',resultisbn);
     $('.hidden-item').attr('value',resultitem);
-    $('.pop-wrape').fadeIn();
+    $('.create-wrape').fadeIn();
     // debugger;
   });
   // レビューフォームを閉じる
   $('.return-btn').on('click',function(){
-    $('.pop-wrape').fadeOut();
+    $('.create-wrape').fadeOut();
   });
 
   // indexでレビューの詳細をドロップダウン
@@ -35,8 +35,8 @@ window.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     $('.readory-use').fadeIn();
   });
-  $('').on('click',function(){
-    $('').fadeOut();
+  $('use-back').on('click',function(){
+    $('.readory-use').fadeOut();
   });
 
   // ゲストページでログインボタンを押すとボタンが消えて入力フォーム出現
@@ -45,8 +45,8 @@ window.addEventListener('DOMContentLoaded',function(){
     $('#guest-empty-field').empty();
     $('.logpop-field').fadeIn();
   });
-  $('').on('click',function(){
-    $('').fadeOut();
+  $('.back-btn').on('click',function(){
+    $('.logpop-field').fadeOut();
   });
 
   // マイページで本を選択して詳細メッセージを表示
@@ -96,4 +96,32 @@ window.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     $('.hidden-area',this).slideToggle();
   }); 
+// ユーザー検索のサムネイルのマウスオーバーでメッセージ出現
+  $('.user-result-top__image').mouseenter(function(e){
+    e.preventDefault();
+    $(this).prev('.hidden-message').fadeIn();
+  }).mouseleave(function() {
+    $(this).prev('.hidden-message').fadeOut();
+  });
+
+    // ランキングから詳細を読むボタン
+  $('.ranking-review-right-bottom-btn').on('click',function(e){
+    e.preventDefault();
+    var detailuser = $(this).data("user-image");
+    $('.detail_user').attr('src',detailuser);
+    var detailsrc = $(this).data("image-url");
+    $('.detail_book').attr('src',detailsrc);
+    var detailtitle = $(this).data("review-title");
+    $('p.detail_title').text(detailtitle);
+    $('#review_title').attr('value',detailtitle);
+    var detailreview = $(this).data("review");
+    $('.new-review-text-area__cont').text(detailreview);
+    $('#review').val(detailreview);
+    $('.detail-wrape').fadeIn();
+  });
+  $('.return-btn').on('click',function(){
+    $('.detail-wrape').fadeOut();
+
+  });
+
 }); 
