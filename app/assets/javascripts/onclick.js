@@ -6,14 +6,16 @@ window.addEventListener('DOMContentLoaded',function(){
     var resultsrc = $(this).data("image-url");
     var resulttitle = $(this).data("book-title");
     var resultauthor = $(this).data("author");
-    var resultdetail = $(this).data("datail");
+    var resultdetail = $(this).data("detail");
     var resultisbn = $(this).data("isbn");
     var resultitem = $(this).data("item-url");
+    console.log(resultdetail)
+    console.log(resultsrc)
     $('.book-thumbnail').attr('src',resultsrc);
     $('.hidden-image').attr('value',resultsrc);
     $('.hidden-title').attr('value',resulttitle);
     $('.hidden-author').attr('value',resultauthor);
-    $('.hidden-datail').attr('value',resultdetail);
+    $('.hidden-detail').attr('value',resultdetail);
     $('.hidden-isbn').attr('value',resultisbn);
     $('.hidden-item').attr('value',resultitem);
     $('.create-wrape').fadeIn();

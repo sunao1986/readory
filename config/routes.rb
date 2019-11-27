@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :book_reviews, only: [:index, :create, :update] do
+  resources :book_reviews, only: [:index, :create, :update, :show] do
     resources :likes, only: [:create, :destroy]
       collection do 
         get 'search'

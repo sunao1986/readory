@@ -1,79 +1,68 @@
-.header-field{
-  height: 55px;
-  width: 100vw;
-  border-bottom: solid 1px #2e4453;
-  // background-color: olivedrab;
-  .header-left{
+.header-left{
+  float: left;
+  width: 950px;
+  // background-color: orange;
+  .header-logo{
+    width: 111px;
+    height: 48px;
+    margin-top: -2px;
+    margin-left: 50px;
+  }
+}
+.header-right{
+  float: left;
+  // background-color: aquamarine;
+  .header-top-box{
     float: left;
-    width: calc(100vw - 400px);
-    max-width: 1200px;
-    // background-color: orange;
-    .header-logo{
-      width: 111px;
-      height: 48px;
-      margin-top: -2px;
-      margin-left: 50px;
-    }
-    .logo-icon{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: solid 1px #182630;
+    font-size: 12px;
+    font-family: 'Yu Gothic';
+    text-align: center;
+    line-height: 30px; 
+    box-shadow: 1px 1px 3px gray;
+    background-color: #f8f8f3;
+    &__btn{          
+      text-decoration: none;
+      color: #182630;
     }
   }
-  .header-right{
+  .header-mypage-box{
     float: left;
-    width: 400px;
-    height: 45px;
-    // background-color: aquamarine;
-    .header-top-box{
-      float: left;
-      width: 100px;
-      height: 30px;
-      margin-top: 10px;
-      margin-right: 20px;
-      border: solid 1px #182630;
-      font-size: 12px;
-      font-family: 'Yu Gothic';
-      text-align: center;
-      line-height: 30px; 
-      box-shadow: 1px 1px 3px gray;
-      background-color: #f8f8f3;
-      &__btn{          
-        text-decoration: none;
-        color: #182630;
-      }
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: solid 1px #182630;
+    font-size: 12px;
+    font-family: 'Yu Gothic';
+    text-align: center;
+    line-height: 30px; 
+    box-shadow: 1px 1px 3px gray;
+    background-color: #f8f8f3;
+    .user-btn{          
+      text-decoration: none;
+      color: #182630;
     }
-    .header-mypage-box{
-      float: left;
-      width: 100px;
-      height: 30px;
-      margin-top: 10px;
-      margin-right: 20px;
-      border: solid 1px #182630;
-      font-size: 12px;
-      font-family: 'Yu Gothic';
-      text-align: center;
-      line-height: 30px; 
-      box-shadow: 1px 1px 3px gray;
-      background-color: #f8f8f3;
-      .user-btn{          
-        text-decoration: none;
-        color: #182630;
-      }
-    }
-    .header-logout-box{
-      float: left;
-      width: 100px;
-      height: 30px;
-      margin-top: 10px;
-      border: solid 1px #182630;
-      font-size: 12px;
-      font-family: 'Yu Gothic';
-      text-align: center;
-      line-height: 30px; 
-      box-shadow: 1px 1px 3px gray;
-      background-color: #f8f8f3;
-      &__btn{                   
-        text-decoration: none;
-        color: #182630;
-      }
+  }
+  .header-logout-box{
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    border: solid 1px #182630;
+    font-size: 12px;
+    font-family: 'Yu Gothic';
+    text-align: center;
+    line-height: 30px; 
+    box-shadow: 1px 1px 3px gray;
+    background-color: #f8f8f3;
+    &__btn{                   
+      text-decoration: none;
+      color: #182630;
     }
   }
 }

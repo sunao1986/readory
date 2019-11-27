@@ -1,19 +1,21 @@
 .wrapper
   .header-field
-    = render 'book_reviews/header'
+    .header-position
+      = render 'book_reviews/header'
 
-  .contents
-    = render partial: 'user_left' , locals:{ user_reviews: @user_reviews}
+  .contents-field
+    .contents
+      = render partial: 'user_left' , locals:{ user_reviews: @user_reviews}
 
-    .main-wrap
-      .main-column
-        = render 'user_search' 
-        = render 'user_contents'  
-        = render 'detail_pop'
-        = render 'edit_pop'
+      .main-wrap
+        .main-column
+          = render 'user_search' 
+          = render 'user_contents'  
+          = render 'detail_pop'
+          = render 'edit_pop'
 
 
-    = render partial: 'book_reviews/right_contents', locals:{ book_review: @ranking_reviews}
+      = render partial: 'book_reviews/right_contents', locals:{ book_review: @ranking_reviews}
 
   .footer
     = link_to "/", class:"footlink" do

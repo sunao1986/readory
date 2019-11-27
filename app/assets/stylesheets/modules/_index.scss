@@ -4,21 +4,40 @@
 .wrapper{
   width: 100vw;
   height: 100vh;
-  .contents{
-    width: 100vw;
-    height: 100vh;
-    .main-wrap{
-      float: left;
-      height: auto;
-      width: calc(100vw - 500px);
-      max-width: 800px;
-      // background-color: tomato;
-      .main-column{
-        height: 100vh;
-        margin: 0 auto;   
-        width: 90%;
-        overflow-y: scroll;
-        // background-color: turquoise;
+  // background-color: blueviolet;
+  .header-field{
+    width: 100%;
+    height: 55px;
+    border-bottom: solid 1px #2e4453;
+    // background-color: chartreuse;
+    .header-position{
+      width: 1500px;
+      height: 55px;
+      margin: 0 auto;
+      
+    }
+  }
+  .contents-field{
+    width: 1500px;
+    margin: 0 auto;
+    // background-color: aqua;
+    .contents{
+      // width: 2500px;
+      // background-color: darkblue;
+      .main-wrap{
+        float: left;
+        height: auto;
+        width: 800px;
+        // width: calc(100vw - 500px);
+        // max-width: 800px;
+        // background-color: tomato;
+        .main-column{
+          height: 100vh;
+          margin: 0 auto;   
+          width: 90%;
+          overflow-y: scroll;
+          // background-color: turquoise;
+        }
       }
     }
   }

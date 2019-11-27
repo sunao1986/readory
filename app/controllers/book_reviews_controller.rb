@@ -1,5 +1,5 @@
 class BookReviewsController < ApplicationController
-  # before_action :set_review, only: [:index]
+  # before_action :set_review, only: [:index, :show]
 
   def index
     #ユーザー登録後のトップページになるようにroot指定
@@ -55,9 +55,9 @@ class BookReviewsController < ApplicationController
     end
   end
 
-  # def show
-    #まだいるかわからない（保留）
-  # end
+  def show
+    @book = BookReview.find(params[:id])
+  end
 
   def search
     # @book_review = BookReview.new

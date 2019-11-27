@@ -1,18 +1,19 @@
 -# books_controllerのindexアクション。ユーザー登録後のトップページ
 .wrapper
   .header-field
-    = render 'header'
+    .header-position
+      = render 'header'
+  .contents-field
+    .contents
+      = render 'left_contents'
 
-  .contents
-    = render 'left_contents'
+      .main-wrap
+        .main-column
+          = render 'search_field' 
+          = render 'main_contents' 
+          = render 'users/detail_pop'
 
-    .main-wrap
-      .main-column
-        = render 'search_field' 
-        = render 'main_contents' 
-        = render 'users/detail_pop'
-
-    = render 'right_contents'
+      = render 'right_contents'
 
   .footer
     = link_to "/", class:"footlink" do
