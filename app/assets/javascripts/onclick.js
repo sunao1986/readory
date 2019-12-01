@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded',function(){
   });
 
   // indexでレビューの詳細をドロップダウン
-  $('.new-review-bottom').click(function(e){
+  $('new-review-bottom').click(function(e){
     e.preventDefault();
     $('.new-review-text-area',this).slideToggle();
   });
@@ -106,8 +106,8 @@ window.addEventListener('DOMContentLoaded',function(){
     $(this).prev('.hidden-message').fadeOut();
   });
 
-    // ランキングから詳細を読むボタン
-  $('.ranking-review-right-bottom-btn').on('click',function(e){
+    // indexから詳細を読むボタン
+  $('.new-review-bottom').on('click',function(e){
     e.preventDefault();
     var detailuser = $(this).data("user-image");
     $('.detail_user').attr('src',detailuser);

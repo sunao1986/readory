@@ -11,7 +11,6 @@
           .new-review-top
             .new-review-top-left
               .new-review-top-left__user
-                -# - if src == null
                 %img(src="" alt="ユーザーの画像" class="detail_user")
             .new-review-top-middle
               .new-review-top-middle__symbol
@@ -20,11 +19,9 @@
               .new-review-top-right__book
                 %img(src="" alt="本の画像" class="detail_book")
           .new-review-middle
-            -# = render partial: 'likes/like', locals:{ book_review: @book_review, likes: @likes, like: @like}
             .new-review-middle__title
               %p{class: "detail_title"}
           .new-review-bottom
-            クリックすると詳細レビューが読めます
             .new-review-text-area
               .new-review-text-area__cont
                 = simple_format("")

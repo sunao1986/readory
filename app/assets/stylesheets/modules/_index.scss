@@ -6,15 +6,15 @@
   height: 100vh;
   // background-color: blueviolet;
   .header-field{
-    width: 100%;
+    width: auto;
     height: 55px;
     border-bottom: solid 1px #2e4453;
     // background-color: chartreuse;
     .header-position{
-      width: 1500px;
+      width: 1400px;
       height: 55px;
       margin: 0 auto;
-      
+      border-bottom: solid 1px #2e4453;
     }
   }
   .contents-field{

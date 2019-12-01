@@ -6,15 +6,18 @@ class LikesController < ApplicationController
     # binding.pry
     @like = Like.create(user_id: current_user.id, book_review_id: params[:book_review_id])
     @likes =Like.where(params[:book_review_id])
-    @book_review = BookReview.find(params[:book_review_id])
+    respond_to do |format|
+      format.json
+    end
   end
 
   def destroy
     # binding.pry
-    @like = Like.find_by(user_id: current_user.id, book_review_id: params[:book_review_id])
     @like.destroy
     @likes =Like.where(book_review_id: params[:book_review_id])
-    @book_review = BookReview.find(params[:book_review_id])
+    respond_to do |format|
+      format.json
+    end
   end
 
   private

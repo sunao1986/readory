@@ -1,22 +1,168 @@
 .right-wrap
   .right-column
     .ranking-title
-      インフルランキング
+      読まれてる本ランキング
     .ranking-field
-      - @ranking_reviews.each.with_index(1) do |book_review,i|
-        .ranking-review
-          .ranking-review-number
-            = i
-            位
-          .ranking-review-left
-            .ranking-review-left__image
-              %img(src="#{book_review.image_url}" alt="本の画像" class="ranking-book-thumbnail")
-          .ranking-review-right
-            .ranking-review-right-top
-              .ranking-review-right-top__title
-                = book_review.review_title
-            .ranking-review-right-bottom
-              .ranking-review-right-bottom__user
-                = book_review.user.name
-              .ranking-review-right-bottom-btn{'data-book-title': book_review.book_title,'data-image-url': book_review.image_url,'data-review-title': book_review.review_title,'data-review': book_review.review,'data-user-image': book_review.user.image_url}
-                = submit_tag "読む", class: "ranking-sub"
+      .ranking-review
+        .ranking-review-number-one
+          = fa_icon 'star', alt: 'award', class: 'star-icon-g'
+          %span.rannum 1位 
+          %span.subnum 登録数 
+          = @ranking_book_num[0]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[0][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[0][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[0][1]
+      .ranking-review
+        .ranking-review-number
+          = fa_icon 'star', alt: 'award', class: 'star-icon-s'
+          %span.rannum 2位 
+          %span.subnum 登録数 
+          = @ranking_book_num[1]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[1][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[1][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[1][1]
+      .ranking-review
+        .ranking-review-number
+          = fa_icon 'star', alt: 'award', class: 'star-icon-b'
+          %span.rannum 3位 
+          %span.subnum 登録数 
+          = @ranking_book_num[2]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[2][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[2][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[2][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 4位 
+          %span.subnum 登録数 
+          = @ranking_book_num[3]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[3][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[3][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[3][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 5位 
+          %span.subnum 登録数 
+          = @ranking_book_num[4]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[4][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[4][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[4][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 6位 
+          %span.subnum 登録数 
+          = @ranking_book_num[5]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[5][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[5][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[5][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 7位 
+          %span.subnum 登録数 
+          = @ranking_book_num[6]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[6][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[6][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[6][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 8位 
+          %span.subnum 登録数 
+          = @ranking_book_num[7]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[7][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[7][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[7][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 9位 
+          %span.subnum 登録数 
+          = @ranking_book_num[8]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[8][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[8][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[8][1]
+      .ranking-review
+        .ranking-review-number
+          %span.rannum 10位 
+          %span.subnum 登録数 
+          = @ranking_book_num[9]
+          %span.subnum 本
+        .ranking-review-left
+          .ranking-review-left__image
+            %img(src="#{@ranking_book[9][2]}" alt="本の画像" class="ranking-book-thumbnail")
+        .ranking-review-right
+          .ranking-review-right-top
+            .ranking-review-right-top__title
+              = @ranking_book[9][0]
+          .ranking-review-right-bottom
+            .ranking-review-right-bottom__user
+              = @ranking_book[9][1]

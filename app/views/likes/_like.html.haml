@@ -1,8 +1,8 @@
 - if book_review.like_user(current_user.id)
-  = button_to book_review_like_path(book_review.like_user(current_user.id),book_review_id: book_review.id), method: :delete, id: "like-button", remote: true do 
+  = button_to book_review_like_path(book_review.like_user(current_user.id),book_review_id: book_review.id), method: :delete, id: "like-button", remote: true do
     = image_tag "i_flu_y.png", class: "like-icony", width: "15", height: "15"
     = book_review.likes_count
-- else 
-  = button_to book_review_likes_path(book_review), method: :post, id: "like-button", remote: true do 
+- else
+  = button_to book_review_likes_path(book_review), method: :post, id: "like-button", remote: true do
     = image_tag "i_flu_g.png", class: "like-icong", width: "15", height: "15"
     = book_review.likes_count

@@ -1,19 +1,50 @@
-.right-wrap
-  .right-column
-    .ranking-title
-      オススメの本！
-    .ranking-field
-      .ranking-review
-        .ranking-review-number
-          1
-        .ranking-review-left
-          .ranking-review-left__image
-        .ranking-review-right
-          .ranking-review-right-top
-            .ranking-review-right-top__title
-              レビュータイトル
-          .ranking-review-right-bottom
-            .ranking-review-right-bottom__user
-              ユーザー名
-            .ranking-review-right-bottom__btn
-              読む
+.user-right-wrap
+  .user-right-column
+    .user-ranking-title
+      = current_user.name
+      さんが読んだ本を読んでいるユーザーがいます
+    .user-ranking-title-new
+      最新の既読本
+    .user-ranking-title-new-name
+      「
+      = @user_reviews.first.book_title
+      」
+    .user-ranking-field
+      - @match_reviews.each do |match_user|
+        .user-ranking-review
+          .user-ranking-review-number
+            = fa_icon 'bookmark', alt: 'award', class: 'star-icon' 
+            %span.user-subnum 登録時期 
+            = match_user.created_at
+          .match-user-left
+            .match-user-left__image
+              %img(src="#{match_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
+          .user-ranking-review-right
+            .user-ranking-review-right-top
+              .user-ranking-review-right-top__name
+                = match_user.user.name
+            .user-ranking-review-right-bottom
+              .user-ranking-review-right-bottom__intro
+                = match_user.user.introduction.truncate(43)
+
+    .user-ranking-title-new
+      ランダムピックアップ
+    .user-ranking-field
+      - @match_rand.each do |rand_user|
+        .user-ranking-review
+          .user-ranking-title-new-name
+            = rand_user.book_title
+          .user-ranking-review-number
+            = fa_icon 'bookmark', alt: 'award', class: 'star-icon' 
+            %span.user-subnum 登録時期 
+            = rand_user.created_at
+          .match-user-left
+            .match-user-left__image
+              %img(src="#{rand_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
+          .user-ranking-review-right
+            .user-ranking-review-right-top
+              .user-ranking-review-right-top__name
+                = rand_user.user.name
+            .user-ranking-review-right-bottom
+              .user-ranking-review-right-bottom__intro
+                = rand_user.user.introduction.truncate(43)

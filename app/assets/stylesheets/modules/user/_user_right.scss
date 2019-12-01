@@ -1,0 +1,107 @@
+.user-right-wrap{
+  float: left;
+  width: auto;
+  height: auto;
+  // background-color: plum;
+  .user-right-column{
+    height: 100vh;
+    width: 280px;
+    margin: 0 auto 0 0;
+    overflow-y: scroll;
+    .user-ranking-title{
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 50px;
+    }
+    .user-ranking-title-new{
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .user-ranking-title-new-name{
+      text-align: center;
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .user-ranking-field{
+      height: auto;
+      width: 280px;
+      margin: 20px auto 0px auto;
+      .user-ranking-review{
+        height: 110px;
+        width: 280px;
+        border-bottom: solid 1px #2e4453;
+        margin-bottom: 30px;
+        .star-icon{
+          font-size: 14px;
+          color: #182630;
+        }
+        .user-ranking-review-number{
+          height: 20px;
+          width: 280px;
+          font-size: 9px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          font-weight: bold;
+        }
+        span.user-subnum{
+          font-size: 9px;
+        }
+        .match-user-left{
+          float: left;
+          &__image{
+            height: 60px;
+            width: 60px;
+            margin-top: 10px;
+            .match-user-thumbnail{
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              box-shadow: 1px 1px 3px gray;
+            }
+          }
+        }
+        .user-ranking-review-right{
+          float: left;
+          height: 85px;
+          width: 210px;
+          padding-left: 15px;
+          // background-color: chartreuse;
+          .user-ranking-review-right-top{
+            // background-color: brown;
+            &__name{
+              height: 50px;
+              width: 210px;
+              font-size: 16px; 
+              font-weight: bold;
+              color: black;
+              display: table-cell;
+              vertical-align: middle;
+            }
+          }
+          .user-ranking-review-right-bottom{
+            height: 30px;
+            width: 210px;
+            // background-color: cornflowerblue;
+            &__intro{
+              float: left;
+              height: 30px;
+              width: 210px;  
+              font-size: 8px;  
+              color: black;
+              display: table-cell;
+              vertical-align: middle;            
+            }
+          }
+        }
+      }
+    }
+  }      
+}

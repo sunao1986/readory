@@ -2,13 +2,18 @@ class BookReviewsController < ApplicationController
   # before_action :set_review, only: [:index, :show]
 
   def index
-    #ユーザー登録後のトップページになるようにroot指定
-    # @book_review = BookReview.new
+    #最近の投稿一覧
     @book_reviews = BookReview.includes(:user).order("created_at DESC")
     # ユーザーステータス用
     @user_reviews = BookReview.where(user_id: current_user.id)
-    # ランキング用(like_count数が大きい順に10件取得)
-    @ranking_reviews = BookReview.order("likes_count DESC").limit(10)
+    # 最近読んだ本を読んだ他のユーザー一覧で使う
+    user_new_reviews = BookReview.where(user_id: current_user.id).order("created_at DESC")
+    user_new_review = user_new_reviews.first
+    @match_reviews = BookReview.where(book_title: user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC")
+    # よく読まれる本のランキング用
+    book_count = BookReview.group(:book_title, :author,:image_url).order('count_all DESC').count
+    @ranking_book = Hash[book_count].keys 
+    @ranking_book_num = Hash[book_count].values
 
     #まだ
     if params[:id].present?
@@ -68,9 +73,11 @@ class BookReviewsController < ApplicationController
     end
     # ユーザー情報用
     @user_reviews = BookReview.where(user_id: current_user.id)
-    # ランキング用(like_count数が大きい順に10件取得)
-    @ranking_reviews = BookReview.order("likes_count DESC").limit(10)
-
+    # ランキング用
+    book_count = BookReview.group(:book_title, :author,:image_url).order('count_all DESC').count
+    @ranking_book = Hash[book_count].keys 
+    @ranking_book_num = Hash[book_count].values
+    
     # 今のところ使ってない 10/14
     if params[:image_url].present?
       @image = params[:image_url]

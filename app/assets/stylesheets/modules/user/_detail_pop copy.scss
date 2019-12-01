@@ -14,21 +14,29 @@
        background-color: rgba(255, 255, 255, 0.959);
        opacity: 3;
        z-index: 40;
-       width: 500px;
-       height:auto;
+       width: 650px;
+       height:340px;
        border-radius: 5px;
        position: fixed;
        top: 13%;
-       left: 25%;
-       padding-bottom: 50px;
+       left: 20%;
        .pop-review-head{
-         height: 40px;
+         margin-top: 10px;
+         height:20px;
+         width: 650px;
          .pop-review-head-left{
+           float: left;
+           &__message{
+             margin-left: 200px;
+             font-size: 18px;
+             font-family: 'Yu Gothic';
+             color: #182630;
+           }
          }
          .pop-review-head-right{
            float: right;
            &__btn{
-             margin: 20px 20px 0 0;
+             margin-right: 20px;
              .return-btn{
               text-align: center;
               cursor: pointer;
@@ -52,23 +60,25 @@
          }
        }
        .pop-review-field{
-         width: 400px;
+         width: 600px;
          height: 100%;
          margin: 10px auto 0 auto;
          position: relative;
          // background-color: cornsilk;
         .new-review{
-          width: 400px;
-          height: auto;
+          width: 600px;
+          height: 200px;
           .new-review-top{
-            width: 400px;
+            position: relative;
+            z-index: 40;
+            width: 600px;
             height: 130px;
             .new-review-top-left{
               float: left;
-              width: auto;
+              width: 270px;
               height: 130px;
               &__user{
-                margin-left: 100px;
+                margin-left: 160px;
                 margin-top: 10px;
                 .detail_user{
                   width: 80px;
@@ -80,20 +90,23 @@
             }
             .new-review-top-middle{
               float: left;
+              width: 60px;
+              height: 130px;
               &__symbol{
-                width: 60px;
-                height: 100px;
-                line-height: 100px;
-                text-align: center;
+                width: 30px;
+                height: 30px;
                 font-size: 25px;
                 font-weight: bold;
+                margin-top: 30px;
               }
             }
             .new-review-top-right{
               float: left;
+              width: 270px;
+              height: 130px;
               &__book{
-                width: auto;
-                height: 130px;
+                width: 80px;
+                height: 100px;
                 .detail_book{
                   width: 67.2px;
                   height: 96px;
@@ -103,23 +116,40 @@
             }
           }
           .new-review-middle{
+            position: relative;
+            z-index: 40;
+            width: 600px;
+            height: 40px;
             &__title{
-              width: 400px;
-              height: 80px;
               font-size: 21px;
               font-family: 'Yu Gothic';
               color: #182630;
               font-weight: bold;
               text-align: center;               
-              display: table-cell;
-              vertical-align: middle;
+              line-height: 40px;
             }
           }
           .new-review-bottom{
+            position: relative;
+            z-index: 45;
+            width: 600px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-family: 'Yu Gothic';
+            font-size: 10px;
+            color: #182630;
+            border-bottom: solid 1px #182630;
+            border-top: solid 1px #182630;             
+            background-color: #ffc20e;
             .new-review-text-area{
+              position: relative;
+              z-index: 50;
+              display: none;
               margin: 0 auto;
-              width: 350px;
+              width: 600px;
               height: auto;
+              border-bottom: solid 1px #182630;     
               &__cont{
                 font-family: 'Yu Gothic';
                 font-size: 12px;
@@ -127,13 +157,17 @@
                 text-align: left;
                 padding-left: 10px;
                 padding-top:5px;
+                opacity: 0.97;
+                background-color: #f5f3ed 
               }
             }
           }
         }
         .pop-review-bottom-btn{
           text-align: center;
-          margin-top: 30px;
+          position: absolute;
+          left: 240px;
+          bottom: 50px;
           .edit-review-sub{
             text-align: center;
             cursor: pointer;
