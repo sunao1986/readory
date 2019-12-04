@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_041525) do
+ActiveRecord::Schema.define(version: 2019_12_02_120357) do
 
   create_table "book_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "review_title", null: false
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 2019_10_20_041525) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "shelves", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shelves_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "image_url"
@@ -89,6 +97,10 @@ ActiveRecord::Schema.define(version: 2019_10_20_041525) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shelfa"
+    t.string "shelfb"
+    t.string "shelfc"
+    t.string "shelfd"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -101,4 +113,5 @@ ActiveRecord::Schema.define(version: 2019_10_20_041525) do
   add_foreign_key "likes", "users"
   add_foreign_key "reviews", "books"
   add_foreign_key "reviews", "users"
+  add_foreign_key "shelves", "users"
 end

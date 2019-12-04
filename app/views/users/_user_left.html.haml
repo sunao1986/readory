@@ -1,8 +1,15 @@
 .left-wrap
   .left-column
     .user-top
+      .user-top__intro
+        = fa_icon 'book', alt: 'bars', class: 'book-icon' 
+        = @user.name
+        さんの本棚
       .user-top__image
-        = image_tag @user.image_url.url, class: 'user-thumbnail' 
+        - if @user.image_url.present?
+          = image_tag @user.image_url.url, class: 'user-thumbnail' 
+        - else
+          = image_tag 'i_flu_g.png', class: 'user-thumbnail'
       .user-top__name
         = @user.name
       .user-top__introduction
@@ -12,4 +19,33 @@
         = link_to '/users/edit', class: "contents-mypage-box__btn" do
           EDIT
     .user-bottom
-      ステータス系の予定
+      .status-top
+        ステータス
+      .user_review_count.status-title
+        レビュー数
+      .status-text
+        = @user_reviews.count
+        本
+      .user-new-book-title.status-title
+        最新の既読本
+      .user-new-book-name.status-text
+        - if @user_new_review.present?
+          = @user_new_review.book_title
+          %p
+          = @user_new_review.author
+        - else 
+          まだ読まれた本はありません
+      .user-book-shelf-title.status-title
+        本棚の名前
+      .user-book-shelf-name.status-text
+      %p.status-text
+        = current_user.shelfa
+      %p.status-text
+        = current_user.shelfb
+      %p.status-text
+        = current_user.shelfc
+      %p.status-text
+        = current_user.shelfd
+      - if @shelf_add_name.present?
+        %p.status-text
+          = @shelf_add_name.name

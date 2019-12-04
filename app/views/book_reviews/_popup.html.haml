@@ -1,45 +1,53 @@
-.pop-wrape
-  .pop-black
-    .pop-mount
-      .pop-review-head
-        .pop-review-head-left
-          .pop-review-head-left__message
+.create-wrape
+  .create-black
+    .create-mount
+      .create-review-head
+        .create-review-head-left
+          .create-review-head-left__message
             あなたにとってどんな本でしたか？
-        .pop-review-head-right
-          .pop-review-head-right__btn
+        .create-review-head-right
+          .create-review-head-right__btn
             %input{ name: "戻る", class: "return-btn", value: "戻る" , type: "submit" }
-      .pop-review-field
-        = form_tag("/book_reviews", method: :post) do
-          .pop-review
-            .pop-review-top
-              .pop-review-top-left
-                .pop-review-top-left__user
-                  = image_tag current_user.image_url.url, class: 'review-thumbnail'
-              .pop-review-top-middle
-                .pop-review-top-middle__symbol
+      .create-review-field
+        = form_with  model: BookReview.new, local: true do |f|
+          -# = form_tag("/book_reviews", method: :post) do
+          .create-review
+            .create-review-top
+              .create-review-top-left
+                .create-review-top-left__user
+                  - if current_user.image_url.present?
+                    = image_tag current_user.image_url.url, class: 'review-thumbnail'
+                  - else
+                    = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+              .create-review-top-middle
+                .create-review-top-middle__symbol
                   ×
-              .pop-review-top-right
-                #pop-review-image
+              .create-review-top-right
+                #create-review-image
                   = image_tag "", alt: 'review-book', class: 'book-thumbnail'
-                  = hidden_field_tag :image_url, "", class: 'hidden-image'
-                  = hidden_field_tag :book_title, "", class: 'hidden-title'
-                  = hidden_field_tag :author, "", class: 'hidden-author'
-                  = hidden_field_tag :detail, "", class: 'hidden-detail'
-                  = hidden_field_tag :isbn, "", class: 'hidden-isbn'
-                  = hidden_field_tag :item_url, "", class: 'hidden-item'
-            .pop-review-middle         
-              .pop-review-middle__rate                
-                = radio_button_tag :rate, "1"
-                = label_tag '影響された'
-                = radio_button_tag :rate, "2"
-                = label_tag 'どちらとも言えない'
-                = radio_button_tag :rate, "3"
-                = label_tag '影響されなかった'
-              .pop-review-middle__title
-                = text_field_tag :review_title
-              .pop-review-bottom
-                投稿後はプルダウンで隠されます
-              .pop-review-bottom-text
-                = text_area_tag :review
-              .pop-review-bottom-btn
-                = submit_tag
+                  = f.hidden_field :image_url, class: 'hidden-image'
+                  = f.hidden_field :book_title, class: 'hidden-title'
+                  = f.hidden_field :author, class: 'hidden-author'
+                  = f.hidden_field :detail, class: 'hidden-detail'
+                  = f.hidden_field :isbn, class: 'hidden-isbn'
+                  = f.hidden_field :item_url, class: 'hidden-item'
+                  -# = hidden_field_tag :image_url, "", class: 'hidden-image'
+                  -# = hidden_field_tag :book_title, "", class: 'hidden-title'
+                  -# = hidden_field_tag :author, "", class: 'hidden-author'
+                  -# = hidden_field_tag :detail, "", class: 'hidden-detail'
+                  -# = hidden_field_tag :isbn, "", class: 'hidden-isbn'
+                  -# = hidden_field_tag :item_url, "", class: 'hidden-item'
+            .create-review-middle         
+              .create-review-middle__rate
+                -# = f.select :rate, @shelf_name, {prompt: "---", name: 'book_review[rate]'}, {class: 'book_review_rate', id: 'book_review_rate'}
+                = f.select :rate, options_for_select(@shelf_name.map{|c|[c[:name], c[:id]]}), {name: 'book_review[rate]'}, {class: 'book_review_rate', id: 'book_review_rate'}
+              .create-review-middle__title
+                -# = text_field_tag :review_title,"", placeholder: "ここにレビュータイトルを記入してください(25字以内)", maxlength: "25"
+                = f.text_field :review_title, class: "input_book_title", placeholder: "ここにレビュータイトルを記入してください(25字以内)", maxlength: "25"
+              .create-review-bottom-text
+                -# = text_area_tag :review,"", placeholder: "ここにレビュー内容を記入してください。空欄でも投稿できます(max500字)", maxlength: "500"
+                = f.text_area :review, class: "input_review", placeholder: "ここにレビュー内容を記入してください。空欄でも投稿できます(max500字)", maxlength: "500"
+              .create-review-bottom-btn
+                -# = submit_tag "この内容で投稿する", class: "new-review-sub"
+                = f.submit "この内容で投稿する", class: "new-review-sub"
+              -# = f.fields_for :shelves  do |shelf|

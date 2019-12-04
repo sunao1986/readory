@@ -6,26 +6,28 @@ window.addEventListener('DOMContentLoaded',function(){
     var resultsrc = $(this).data("image-url");
     var resulttitle = $(this).data("book-title");
     var resultauthor = $(this).data("author");
-    var resultdetail = $(this).data("datail");
+    var resultdetail = $(this).data("detail");
     var resultisbn = $(this).data("isbn");
     var resultitem = $(this).data("item-url");
+    console.log(resultdetail)
+    console.log(resultsrc)
     $('.book-thumbnail').attr('src',resultsrc);
     $('.hidden-image').attr('value',resultsrc);
     $('.hidden-title').attr('value',resulttitle);
     $('.hidden-author').attr('value',resultauthor);
-    $('.hidden-datail').attr('value',resultdetail);
+    $('.hidden-detail').attr('value',resultdetail);
     $('.hidden-isbn').attr('value',resultisbn);
     $('.hidden-item').attr('value',resultitem);
-    $('.pop-wrape').fadeIn();
+    $('.create-wrape').fadeIn();
     // debugger;
   });
   // レビューフォームを閉じる
   $('.return-btn').on('click',function(){
-    $('.pop-wrape').fadeOut();
+    $('.create-wrape').fadeOut();
   });
 
   // indexでレビューの詳細をドロップダウン
-  $('.new-review-bottom').click(function(e){
+  $('new-review-bottom').click(function(e){
     e.preventDefault();
     $('.new-review-text-area',this).slideToggle();
   });
@@ -35,8 +37,8 @@ window.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     $('.readory-use').fadeIn();
   });
-  $('').on('click',function(){
-    $('').fadeOut();
+  $('use-back').on('click',function(){
+    $('.readory-use').fadeOut();
   });
 
   // ゲストページでログインボタンを押すとボタンが消えて入力フォーム出現
@@ -45,8 +47,8 @@ window.addEventListener('DOMContentLoaded',function(){
     $('#guest-empty-field').empty();
     $('.logpop-field').fadeIn();
   });
-  $('').on('click',function(){
-    $('').fadeOut();
+  $('.back-btn').on('click',function(){
+    $('.logpop-field').fadeOut();
   });
 
   // マイページで本を選択して詳細メッセージを表示
@@ -61,7 +63,13 @@ window.addEventListener('DOMContentLoaded',function(){
   $('.pop-info').on('click',function(e){
     e.preventDefault();
     var detailuser = $(this).data("user-image");
-    $('.detail_user').attr('src',detailuser);
+    if(detailuser === ""){
+      var detailuser = "/assets/i_flu_g-4ad9149e4d4751b6d4552050e848c19b7d8c6d5cc23400e15de1d3ebacb8dcd9.png"
+      $('.detail_user').attr('src',detailuser);
+      }
+      else{
+        $('.detail_user').attr('src',detailuser);
+      }
     var detailsrc = $(this).data("image-url");
     $('.detail_book').attr('src',detailsrc);
     var detailtitle = $(this).data("review-title");
@@ -73,6 +81,9 @@ window.addEventListener('DOMContentLoaded',function(){
     var detailurl = $(this).data("url");
     // $('#edit-form').attr('method','patch');
     $('#edit-form').attr('action',detailurl);
+    var detailid = $(this).data("book-id");
+    $('.btn-done').attr('href',"book_review/"+ detailid);
+    $('.btn-done').attr('book_id',detailid);
 
     $('.detail-wrape').fadeIn();
   });
@@ -96,4 +107,38 @@ window.addEventListener('DOMContentLoaded',function(){
     e.preventDefault();
     $('.hidden-area',this).slideToggle();
   }); 
+// ユーザー検索のサムネイルのマウスオーバーでメッセージ出現
+  $('.user-result-top__image').mouseenter(function(e){
+    e.preventDefault();
+    $(this).prev('.hidden-message').fadeIn();
+  }).mouseleave(function() {
+    $(this).prev('.hidden-message').fadeOut();
+  });
+
+    // indexから詳細を読むボタン
+  $('.new-review-bottom').on('click',function(e){
+    e.preventDefault();
+    var detailuser = $(this).data("user-image");
+    if(detailuser === ""){
+      var detailuser = "/assets/i_flu_g-4ad9149e4d4751b6d4552050e848c19b7d8c6d5cc23400e15de1d3ebacb8dcd9.png"
+      $('.detail_user').attr('src',detailuser);
+      }
+      else{
+        $('.detail_user').attr('src',detailuser);
+      }
+    var detailsrc = $(this).data("image-url");
+    $('.detail_book').attr('src',detailsrc);
+    var detailtitle = $(this).data("review-title");
+    $('p.detail_title').text(detailtitle);
+    $('#review_title').attr('value',detailtitle);
+    var detailreview = $(this).data("review");
+    $('.new-review-text-area__cont').text(detailreview);
+    $('#review').val(detailreview);
+    $('.detail-wrape').fadeIn();
+  });
+  $('.return-btn').on('click',function(){
+    $('.detail-wrape').fadeOut();
+
+  });
+
 }); 

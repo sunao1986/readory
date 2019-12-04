@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # has_many :books, through: :book_users  
   has_many :book_reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :shelves
 
   mount_uploader :image_url, ImageUploader
 end

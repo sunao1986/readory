@@ -1,18 +1,21 @@
 .wrapper
   .header-field
-    = render 'book_reviews/header'
+    .header-position
+      = render 'book_reviews/header'
 
-  .contents
-    = render 'book_reviews/left_contents'
+  .contents-field
+    .contents
+      = render 'book_reviews/left_contents'
 
-    .main-wrap
-      .main-column
-        = render 'user_search' 
-        = render 'user_result'  
+      .main-wrap
+        .main-column
+          = render 'user_search' 
+          = render 'user_result'  
+          = render 'detail_pop'
 
-
-    = render 'book_reviews/right_contents'
+      = render partial: 'user_right', locals:{ book_review: @ranking_reviews}
 
   .footer
-
+    = link_to "/", class:"footlink" do
+      %p 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ
   -# ユーザーサーチしたあとの画面

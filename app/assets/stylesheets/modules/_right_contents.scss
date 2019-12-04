@@ -1,10 +1,13 @@
 .right-wrap{
-  position: absolute;
-  left: 940px;
+  float: left;
+  width: auto;
+  height: auto;
+  // background-color: plum;
   .right-column{
-  height: 100vh;
-  width: 300px;
-  overflow-y: scroll;
+    height: 100vh;
+    width: 280px;
+    margin: 0 auto 0 0;
+    overflow-y: scroll;
     .ranking-title{
       text-align: center;
       font-family: 'Yu Gothic';
@@ -16,15 +19,45 @@
     .ranking-field{
       height: 100vh;
       width: 280px;
-      margin: 20px auto 0 auto;
+      margin: 20px auto 0px auto;
       .ranking-review{
-        height: 100px;
+        height: 110px;
         width: 280px;
         border-bottom: solid 1px #2e4453;
-        .ranking-review-number{
-          height: 15px;
+        margin-bottom: 30px;
+        .ranking-review-number-one{
+          height: 20px;
           width: 280px;
-          font-size: 6px;
+          font-size: 9px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          font-weight: bold;
+        }
+        .star-icon-g{
+          font-size: 14px;
+          color: #ffc20e;
+        }
+        .star-icon-s{
+          font-size: 14px;
+          color: silver;
+        }
+        .star-icon-b{
+          font-size: 14px;
+          color: rgb(122, 44, 39);
+        }
+        .ranking-review-number{
+          height: 20px;
+          width: 280px;
+          font-size: 9px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          font-weight: bold;
+        }
+        span.rannum{
+          font-size: 12px;
+        }
+        span.subnum{
+          font-size: 9px;
         }
         .ranking-review-left{
           float: left;
@@ -34,7 +67,12 @@
           &__image{
             height: 80px;
             width: 60px;
-            background-color: #2e4453;
+            // background-color: #2e4453;
+            .ranking-book-thumbnail{
+              height: 80px;
+              width: 60px;
+              box-shadow: 1px 1px 3px gray;
+            }
           }
         }
         .ranking-review-right{
@@ -43,14 +81,15 @@
           width: 210px;
           // background-color: chartreuse;
           .ranking-review-right-top{
-            height: 60px;
-            width: 210px;
             // background-color: brown;
             &__title{
-              line-height: 45px;
-              font-size: 14px; 
+              height: 60px;
+              width: 210px;
+              font-size: 16px; 
               font-weight: bold;
               color: black;
+              display: table-cell;
+              vertical-align: middle;
             }
           }
           .ranking-review-right-bottom{
@@ -60,18 +99,9 @@
             &__user{
               float: left;
               height: 40px;
-              width: 90px;  
-              font-size: 10px;  
-              line-height: 25px;
+              width: 130px;  
+              font-size: 15px;  
               color: black;            
-            }
-            &__btn{
-              float: right;
-              height: 40px;
-              width: 40px;   
-              font-size: 10px;  
-              line-height: 25px;
-              color: black; 
             }
           }
         }

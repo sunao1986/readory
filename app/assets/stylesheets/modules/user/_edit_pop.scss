@@ -29,7 +29,7 @@ input:focus {
          .pop-review-head-left{
            float: left;
            &__message{
-             margin-left: 200px;
+             margin-left: 180px;
              font-size: 18px;
              font-family: 'Yu Gothic';
              color: #182630;
@@ -39,6 +39,25 @@ input:focus {
            float: right;
            &__btn{
              margin-right: 20px;
+             .return-edit-btn{
+              text-align: center;
+              cursor: pointer;
+              border: none;
+              border-radius: 4px;
+              font-family: 'Yu Gothic';
+              color: #2e4453;
+              font-size: 12px;
+              width: 50px;
+              height: 20px;
+              box-shadow: 1px 1px 3px gray;
+              background-color: #f5f3ed;
+            }
+            .return-edit-btn:hover{
+              opacity: 0.8;
+            }
+            .return-edit-btn:active{
+              box-shadow: 2px 2px 3px #ffc20e;
+            }
            }
          }
        }
@@ -70,10 +89,11 @@ input:focus {
                  position: absolute;
                  top: 20px;
                  left: 150px;
-                 .review-thumbnail{
+                 .detail_user{
                    width: 80px;
                    height: 80px;
-                   border-radius: 50%;                 
+                   border-radius: 50%;   
+                   box-shadow: 1px 1px 3px gray;               
                  }
                }
              }
@@ -102,9 +122,10 @@ input:focus {
                  position: absolute;
                  top: 10px;
                  left: 40px;
-                 .book-thumbnail{
+                 .detail_book{
                    width: 67.2px;
                    height: 96px;
+                   box-shadow: 1px 1px 3px gray; 
                  }
                }
              }
@@ -115,21 +136,36 @@ input:focus {
              &__rate{
                width: 600px;
                height: 30px;
-               font-size: 14px;
-               font-family: 'Yu Gothic';
-               color: #182630; 
-               text-align: center;            
+               text-align: center;
+               #book_review_rate{
+                font-size: 12px;
+                width: 250px;
+                height: 20px;
+                font-family: 'Yu Gothic';
+                color: #182630;
+                border-style: none;
+                background-color: #fff;
+                border: solid 1px #b8b8b8;
+              }
+              #book_review_rate:focus{
+                outline: 0;
+              }           
              }
              &__title{
-               width: 600px;
+               width: 590px;
                height: 30px;
                font-family: 'Yu Gothic';
                text-align: center;
                color: #182630; 
                #review_title{
                  padding-left: 10px;
-                 width: 450px;
+                 width: 580px;
                  height: 30px;
+                 font-size: 14px;
+               }
+               #review_title::placeholder{
+                 font-size: 14px;
+                 line-height: 30px;
                }
              }
            }
@@ -147,15 +183,40 @@ input:focus {
            }
            .pop-review-bottom-text{
              text-align: center;
+             margin-top:10px;
              #review{
                padding-left: 10px;
                width: 590px;
                height: 100px;
                resize: none;
+               border-style: none;
+               border: solid 1px #b8b8b8;
              }
+             #review:focus{
+              outline: 0;
+            }
            }
-           .pop-review-bottom-btn{
+           .pop-review-bottom-btn-edit{
              text-align: center;
+             .updata-review-sub{
+              text-align: center;
+              cursor: pointer;
+              border: none;
+              border-radius: 4px;
+              font-family: 'Yu Gothic';
+              color: #2e4453;
+              font-size: 12px;
+              width: 150px;
+              height: 20px;
+              box-shadow: 1px 1px 3px gray;
+              background-color: #f5f3ed;
+            }
+            .updata-review-sub:hover{
+              opacity: 0.8;
+            }
+            .updata-review-sub:active{
+              box-shadow: 2px 2px 3px #ffc20e;
+            }
            }
          }
        }

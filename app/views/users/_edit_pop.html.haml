@@ -22,21 +22,17 @@
                 #pop-review-image
                   %img(src="" alt="本の画像" class="detail_book")
             .pop-review-middle         
-              .pop-review-middle__rate                
-                = radio_button_tag :rate, "1"
-                = label_tag '影響された'
-                = radio_button_tag :rate, "2"
-                = label_tag 'どちらとも言えない'
-                = radio_button_tag :rate, "3"
-                = label_tag '影響されなかった'
+              .pop-review-middle__rate
+                = select_tag :rate, options_for_select(@shelf_name.map{|c|[c[:name], c[:id]]}),{class: 'book_review_rate', id: 'book_review_rate'}
               .pop-review-middle__title
                 = text_field_tag :review_title
-              .pop-review-bottom
-                投稿後はプルダウンで隠されます
               .pop-review-bottom-text
-                = text_area_tag :review         
+                = text_area_tag :review
               .pop-review-bottom-btn-edit
-                = submit_tag :update
+                = submit_tag "この内容で更新する", class: "updata-review-sub"
+              .pop-review-bottom-btn-edit
+                = link_to "", class:"btn-done", book_id: "", method: :delete do
+                  = submit_tag "削除する", class: "updata-review-sub"
 
 
 

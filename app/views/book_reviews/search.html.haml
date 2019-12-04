@@ -1,17 +1,23 @@
 -# books_controllerのsearchアクションより
 .wrapper
-  .header-field  
-    = render 'header'
+  .header-field
+    .header-position
+      = render 'header'
+  .contents-field
+    .contents
+      = render 'left_contents'
 
-  .contents
-    = render 'left_contents'
+      .main-wrap
+        .main-column
+          = render 'search_field'         
+          = render 'books_search' 
+          = render 'users/detail_pop' 
+          = render 'popup'
+          
+          
 
-    .main-wrap
-      .main-column
-        = render 'search_field'         
-        = render 'books_search'  
-        = render 'popup'
-
-    = render 'right_contents'
+      = render 'right_contents'
 
   .footer
+    = link_to "/", class:"footlink" do
+      %p 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ

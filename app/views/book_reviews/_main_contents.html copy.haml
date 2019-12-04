@@ -1,0 +1,39 @@
+- @book_reviews.each do |book_review|
+  .new-review-field
+    .new-review
+      .new-review-head
+        .new-review-head__message
+          「
+          = book_review.user.name
+          」さんが「
+          = book_review.author
+          ・
+          = book_review.book_title
+          」のレビューを投稿しました！
+        .new-review-head__like
+          %span{id:"like-of-#{book_review.id}"}
+            = render partial: 'likes/like', locals:{ book_review: book_review}
+      .new-review-top
+        .new-review-top-left
+          .new-review-top-left__user
+            - if book_review.user.image_url.present?
+              %a{:href => "/users/#{book_review.user.id}", class: "user-btn"} 
+                = image_tag "#{book_review.user.image_url}", class: 'user-thumbnail'
+            - else
+              %a{:href => "/users/#{book_review.user.id}", class: "user-btn"} 
+                = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+        .new-review-top-middle
+          .new-review-top-middle__symbol
+            ×
+        .new-review-top-right
+          .new-review-top-right__book
+            = link_to "#{book_review.item_url}", target: :_blank do
+              %img(src="#{book_review.image_url}" alt="本の画像" class="book-thumbnail")
+      .new-review-middle
+        .new-review-middle__title
+          = book_review.review_title
+      .new-review-bottom
+        クリックすると詳細レビューが読めます
+        .new-review-text-area
+          .index-review
+            = simple_format(book_review.review)

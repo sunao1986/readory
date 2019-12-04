@@ -1,19 +1,78 @@
-.right-wrap
-  .right-column
-    .ranking-title
-      オススメの本！
-    .ranking-field
-      .ranking-review
-        .ranking-review-number
-          1
-        .ranking-review-left
-          .ranking-review-left__image
-        .ranking-review-right
-          .ranking-review-right-top
-            .ranking-review-right-top__title
-              レビュータイトル
-          .ranking-review-right-bottom
-            .ranking-review-right-bottom__user
-              ユーザー名
-            .ranking-review-right-bottom__btn
-              読む
+.user-right-wrap
+  .user-right-column
+    .user-ranking-title
+      = current_user.name
+      さんの既読本と一致するユーザーを表示します
+    .user-ranking-title-new
+      最新の既読本
+    .user-ranking-title-new-name
+      - if @user_reviews.present?
+        「
+        = @user_reviews.first.book_title
+        」を読んだユーザー
+      - else
+        .user-ranking-title-new-name
+          まだ登録された本はありません
+    .user-ranking-field
+      - if @match_reviews.present?
+        - @match_reviews.each do |match_user|
+          .user-ranking-review
+            .user-ranking-review-number
+              = fa_icon 'bookmark', alt: 'bookmark', class: 'star-icon' 
+              %span.user-subnum 登録日
+              = match_user.created_at.strftime("%Y-%m-%d %H:%M")
+            .match-user-left
+              .match-user-left__image
+                - if match_user.user.image_url.present?
+                  %a{:href => "/users/#{match_user.user.id}", class: "user-btn"} 
+                    %img(src="#{match_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
+                - else
+                  = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+            .user-ranking-review-right
+              .user-ranking-review-right-top
+                .user-ranking-review-right-top__name
+                  = match_user.user.name
+              .user-ranking-review-right-bottom
+                .user-ranking-review-right-bottom__intro
+                  = match_user.user.introduction.truncate(43)
+      - else
+        .user-ranking-review-else
+          = fa_icon 'check', alt: 'bookmark', class: 'star-icon' 
+          %span.user-subnum 見つかりませんでした
+
+    .user-ranking-title-new
+      ランダムピックアップ
+    .user-ranking-title-new-name
+      - if @rand_review.present?
+        「
+        = @rand_review.book_title
+        」を読んだユーザー
+      - else
+        .user-ranking-title-new-name
+          まだ登録された本はありません
+    .user-ranking-field
+      - if @match_rand.present?
+        - @match_rand.each do |rand_user|
+          .user-ranking-review
+            .user-ranking-review-number
+              = fa_icon 'bookmark', alt: 'bookmark', class: 'star-icon' 
+              %span.user-subnum 登録日
+              = rand_user.created_at.strftime("%Y-%m-%d %H:%M")
+            .match-user-left
+              .match-user-left__image
+                - if rand_user.user.image_url.present?
+                  %a{:href => "/users/#{rand_user.user.id}", class: "user-btn"} 
+                    %img(src="#{rand_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
+                - else
+                  = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+            .user-ranking-review-right
+              .user-ranking-review-right-top
+                .user-ranking-review-right-top__name
+                  = rand_user.user.name
+              .user-ranking-review-right-bottom
+                .user-ranking-review-right-bottom__intro
+                  = rand_user.user.introduction.truncate(43)
+      - else
+        .user-ranking-review-else
+          = fa_icon 'check', alt: 'bookmark', class: 'star-icon' 
+          %span.user-subnum 見つかりませんでした

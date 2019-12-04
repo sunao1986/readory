@@ -1,21 +1,25 @@
 .wrapper
   .header-field
-    = render 'book_reviews/header'
+    .header-position
+      = render 'book_reviews/header'
 
-  .contents
-    = render 'user_left'
+  .contents-field
+    .contents
+      = render partial: 'user_left' , locals:{ user_reviews: @user_reviews}
 
-    .main-wrap
-      .main-column
-        = render 'user_search' 
-        = render 'user_contents'  
-        = render 'detail_pop'
-        = render 'edit_pop'
+      .main-wrap
+        .main-column
+          = render 'user_search' 
+          = render 'user_contents'  
+          = render 'detail_pop'
+          = render 'edit_pop'
 
 
-    = render 'user_right'
+      = render partial: 'user_right', locals:{ book_review: @ranking_reviews}
 
   .footer
+    = link_to "/", class:"footlink" do
+      %p.footmessage 初めての方へ　利用規約　アカウント停止のルール　お問い合わせ
 
   
 -# scssはindex.scssと共通

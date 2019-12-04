@@ -1,0 +1,51 @@
+.sign-edit-wrape{
+  width: 100vw;
+  height: 100vh;
+  // position: relative;;
+  // background-color: aliceblue;
+  .sign-edit-mount{
+    // position: absolute;
+    margin: 50px auto 0 auto;
+    width:auto;
+    height:auto;
+    .sign-edit-logo{
+      text-align: center;
+    }
+    .sign-edit-field{
+      .sign-edit-field-wrape{
+        width:250px;
+        height:600px;
+        margin: 0 auto;
+        .sign-edit-page{
+          width:250px;
+          height:auto;
+          margin: 0 auto;
+          .sign-input-field{
+            resize: none;
+            &__label{
+      
+            }
+            &__text{
+              width: 250px;
+              height:40px;
+              // background-color: aqua;
+              input {
+                width: 250px;
+                height:30px;          
+              }
+            }
+          }
+          .sign-btn-field{
+      
+          }
+        }
+        .cancel-account{
+
+        }
+        .login-return{
+
+        }
+      }
+    }
+  }
+}
