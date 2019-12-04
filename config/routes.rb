@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :users, only: :update, defaults: { format: 'json' }
   resources :users, only: :show do
     collection do 
       get 'search'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
         get 'search'
       end
   end
-
+  resources :shelves, only: [:create, :destroy, :update], defaults: { format: 'json' }
   root 'book_reviews#index'
-  # root 'book_reviews#search'
+  delete '/users/book_review/:id', to: 'book_reviews#destroy'
 end

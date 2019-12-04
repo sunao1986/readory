@@ -63,7 +63,13 @@ window.addEventListener('DOMContentLoaded',function(){
   $('.pop-info').on('click',function(e){
     e.preventDefault();
     var detailuser = $(this).data("user-image");
-    $('.detail_user').attr('src',detailuser);
+    if(detailuser === ""){
+      var detailuser = "/assets/i_flu_g-4ad9149e4d4751b6d4552050e848c19b7d8c6d5cc23400e15de1d3ebacb8dcd9.png"
+      $('.detail_user').attr('src',detailuser);
+      }
+      else{
+        $('.detail_user').attr('src',detailuser);
+      }
     var detailsrc = $(this).data("image-url");
     $('.detail_book').attr('src',detailsrc);
     var detailtitle = $(this).data("review-title");
@@ -75,6 +81,9 @@ window.addEventListener('DOMContentLoaded',function(){
     var detailurl = $(this).data("url");
     // $('#edit-form').attr('method','patch');
     $('#edit-form').attr('action',detailurl);
+    var detailid = $(this).data("book-id");
+    $('.btn-done').attr('href',"book_review/"+ detailid);
+    $('.btn-done').attr('book_id',detailid);
 
     $('.detail-wrape').fadeIn();
   });
@@ -110,7 +119,13 @@ window.addEventListener('DOMContentLoaded',function(){
   $('.new-review-bottom').on('click',function(e){
     e.preventDefault();
     var detailuser = $(this).data("user-image");
-    $('.detail_user').attr('src',detailuser);
+    if(detailuser === ""){
+      var detailuser = "/assets/i_flu_g-4ad9149e4d4751b6d4552050e848c19b7d8c6d5cc23400e15de1d3ebacb8dcd9.png"
+      $('.detail_user').attr('src',detailuser);
+      }
+      else{
+        $('.detail_user').attr('src',detailuser);
+      }
     var detailsrc = $(this).data("image-url");
     $('.detail_book').attr('src',detailsrc);
     var detailtitle = $(this).data("review-title");

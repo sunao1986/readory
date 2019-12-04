@@ -9,7 +9,8 @@
           .create-review-head-right__btn
             %input{ name: "戻る", class: "return-btn", value: "戻る" , type: "submit" }
       .create-review-field
-        = form_tag("/book_reviews", method: :post) do
+        = form_with  model: BookReview.new, local: true do |f|
+          -# = form_tag("/book_reviews", method: :post) do
           .create-review
             .create-review-top
               .create-review-top-left
@@ -24,25 +25,29 @@
               .create-review-top-right
                 #create-review-image
                   = image_tag "", alt: 'review-book', class: 'book-thumbnail'
-                  = hidden_field_tag :image_url, "", class: 'hidden-image'
-                  = hidden_field_tag :book_title, "", class: 'hidden-title'
-                  = hidden_field_tag :author, "", class: 'hidden-author'
-                  = hidden_field_tag :detail, "", class: 'hidden-detail'
-                  = hidden_field_tag :isbn, "", class: 'hidden-isbn'
-                  = hidden_field_tag :item_url, "", class: 'hidden-item'
+                  = f.hidden_field :image_url, class: 'hidden-image'
+                  = f.hidden_field :book_title, class: 'hidden-title'
+                  = f.hidden_field :author, class: 'hidden-author'
+                  = f.hidden_field :detail, class: 'hidden-detail'
+                  = f.hidden_field :isbn, class: 'hidden-isbn'
+                  = f.hidden_field :item_url, class: 'hidden-item'
+                  -# = hidden_field_tag :image_url, "", class: 'hidden-image'
+                  -# = hidden_field_tag :book_title, "", class: 'hidden-title'
+                  -# = hidden_field_tag :author, "", class: 'hidden-author'
+                  -# = hidden_field_tag :detail, "", class: 'hidden-detail'
+                  -# = hidden_field_tag :isbn, "", class: 'hidden-isbn'
+                  -# = hidden_field_tag :item_url, "", class: 'hidden-item'
             .create-review-middle         
-              .create-review-middle__rate                
-                = radio_button_tag :rate, "1"
-                = label_tag '影響された'
-                = radio_button_tag :rate, "2"
-                = label_tag 'どちらとも言えない'
-                = radio_button_tag :rate, "3"
-                = label_tag '影響されなかった'
+              .create-review-middle__rate
+                -# = f.select :rate, @shelf_name, {prompt: "---", name: 'book_review[rate]'}, {class: 'book_review_rate', id: 'book_review_rate'}
+                = f.select :rate, options_for_select(@shelf_name.map{|c|[c[:name], c[:id]]}), {name: 'book_review[rate]'}, {class: 'book_review_rate', id: 'book_review_rate'}
               .create-review-middle__title
-                = text_field_tag :review_title,"", placeholder: "ここにレビュータイトルを記入してください(25字以内)", maxlength: "25"
-              .create-review-bottom
-                詳細内容は投稿後、プルダウンで隠されます
+                -# = text_field_tag :review_title,"", placeholder: "ここにレビュータイトルを記入してください(25字以内)", maxlength: "25"
+                = f.text_field :review_title, class: "input_book_title", placeholder: "ここにレビュータイトルを記入してください(25字以内)", maxlength: "25"
               .create-review-bottom-text
-                = text_area_tag :review,"", placeholder: "ここにレビュー内容を記入してください。空欄でも投稿できます(max500字)", maxlength: "500"
+                -# = text_area_tag :review,"", placeholder: "ここにレビュー内容を記入してください。空欄でも投稿できます(max500字)", maxlength: "500"
+                = f.text_area :review, class: "input_review", placeholder: "ここにレビュー内容を記入してください。空欄でも投稿できます(max500字)", maxlength: "500"
               .create-review-bottom-btn
-                = submit_tag "この内容で投稿する", class: "new-review-sub"
+                -# = submit_tag "この内容で投稿する", class: "new-review-sub"
+                = f.submit "この内容で投稿する", class: "new-review-sub"
+              -# = f.fields_for :shelves  do |shelf|

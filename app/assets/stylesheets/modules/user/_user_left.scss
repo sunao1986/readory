@@ -15,6 +15,17 @@
       margin-top: 50px;
       display: inline-block;
       // background-color: steelblue;
+      &__intro{
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        .book-icon{
+          font-size: 16px;
+        }
+      }
       &__image{
         width: 60px;
         margin: 0 auto;
@@ -71,15 +82,16 @@
         text-align: center;
         border: solid 1px #182630;
       }
-      .user_review_count{
-        margin-top: 10px;
+      .status-title{
+        margin-top: 15px;
         font-family: 'Yu Gothic';
         color: #182630;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: bold;
         text-align: center;
       }
-      .user_likes_count{
-        margin-top: 10px;
+      .status-text{
+        margin-top: 2px;
         font-family: 'Yu Gothic';
         color: #182630;
         font-size: 12px;

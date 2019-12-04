@@ -4,12 +4,12 @@
       .pop-review-head
         .pop-review-head-left
           .pop-review-head-left__message
-            あなたにとってどんな本でしたか？
         .pop-review-head-right
           .pop-review-head-right__btn
             %input{ name: "戻る", class: "return-edit-btn", value: "戻る" , type: "submit" }
       .pop-review-field
-        = form_tag("", method: :patch, id: "edit-form") do
+        -# = form_tag("", method: :patch, id: "edit-form") do
+        = form_with  model: @bookreview, local: true do |f|
           .pop-review
             .pop-review-top
               .pop-review-top-left
@@ -22,17 +22,14 @@
                 #pop-review-image
                   %img(src="" alt="本の画像" class="detail_book")
             .pop-review-middle         
-              .pop-review-middle__rate
-                = select_tag :rate, options_for_select(@shelf_name.map{|c|[c[:name], c[:id]]}),{class: 'book_review_rate', id: 'book_review_rate'}
+              .pop-review-middle__rate 
+                = f.select :rate, options_for_select(@shelf_name.map{|c|[c[:name], c[:id]]}), {name: 'book_review[rate]'}, {class: 'book_review_rate', id: 'book_review_rate'}
               .pop-review-middle__title
-                = text_field_tag :review_title
+                = f.text_field :review_title
               .pop-review-bottom-text
-                = text_area_tag :review
+                = f.text_area :review
               .pop-review-bottom-btn-edit
-                = submit_tag "この内容で更新する", class: "updata-review-sub"
-              .pop-review-bottom-btn-edit
-                = link_to "", class:"btn-done", book_id: "", method: :delete do
-                  = submit_tag "削除する", class: "updata-review-sub"
+                = f.submit "この内容で更新する", class: "updata-review-sub"
 
 
 

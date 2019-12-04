@@ -20,8 +20,9 @@
       text-align: center;
       font-family: 'Yu Gothic';
       color: #182630;
-      font-size: 12px;
-      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 50px;
     }
     .user-ranking-title-new-name{
       text-align: center;
@@ -101,6 +102,15 @@
             }
           }
         }
+      }
+      .user-ranking-review-else{
+        height: 110px;
+        width: 280px;
+        margin-bottom: 30px;
+        font-size: 12px;
+        font-family: 'Yu Gothic';
+        color: #182630;
+        text-align: center;
       }
     }
   }      

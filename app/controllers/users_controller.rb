@@ -1,26 +1,43 @@
 class UsersController < ApplicationController
-  # before_action :set_review, only: [:show]
+  before_action :set_user, only: [:update, :show]
 
   def show
     # ユーザー情報用
+    @user = User.find(params[:id])
     @user_reviews = BookReview.where(user_id: params[:id]).order("created_at DESC")
-    # ランキング用
-    book_count = BookReview.group(:book_title, :author,:image_url).order('count_all DESC').count
-    @ranking_book = Hash[book_count].keys 
-    @ranking_book_num = Hash[book_count].values
     # 最近読んだ本を読んだ他のユーザー一覧で使う
     user_new_reviews = BookReview.where(user_id: current_user.id).order("created_at DESC")
+    other_new_reviews = BookReview.where(user_id: params[:id]).order("created_at DESC")
     user_new_review = user_new_reviews.first
-    @match_reviews = BookReview.where(book_title: user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
-    rand_review = BookReview.where(user_id: current_user.id).order("RAND()").limit(1)
-    @match_rand = BookReview.where(book_title: rand_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
-    binding.pry
-    # linktoにuseridのparamsを持たせて分岐
-    # @user = User.find(params[:id])
+    @user_new_review = other_new_reviews.first
+    if user_new_review.present?
+      @match_reviews = BookReview.where(book_title: user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
+    end
+    # ランダム既読本を読んだユーザー一覧
+    rand_reviews = BookReview.where(user_id: current_user.id).order("RAND()").limit(10)
+    @rand_review = rand_reviews.first
+    if @rand_review.present?
+      @match_rand = BookReview.where(book_title: @rand_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
+    end
+
+    shelf_name_arry_two = User.where(id: current_user.id).pluck(:shelfa, :shelfb, :shelfc, :shelfd)
+    shelf_name_arry = shelf_name_arry_two.flatten
+    shelf_add_name = Shelf.where(user_id: current_user.id).pluck(:name)
+    shelf_add_arry = shelf_add_name .flatten
+    @shelf_add = [{id: 5, name: "#{shelf_add_arry[0]}"}]
+    if shelf_add_name.present?
+     @shelf_name = [{id: 1, name: "#{shelf_name_arry[0]}"},{id: 2, name: "#{shelf_name_arry[1]}"},{id: 3, name: "#{shelf_name_arry[2]}"},{id: 4, name: "#{shelf_name_arry[3]}"}, {id: 5, name: "#{shelf_add_name[0]}"}]
+    else
+     @shelf_name = [{id: 1, name: "#{shelf_name_arry[0]}"},{id: 2, name: "#{shelf_name_arry[1]}"},{id: 3, name: "#{shelf_name_arry[2]}"},{id: 4, name: "#{shelf_name_arry[3]}"}]
+    end
+    @shelf_add_name = Shelf.find_by(user_id: @user.id)
+    
+
+    # 本棚情報
+    @shelves = Shelf.where(user_id: @user.id).order(id: "ASC")
+
     if current_user.id.to_i == params[:id]
     # rateごとに吸い出して違う変数に保管（5種類）
-      @user = User.find(params[:id])
-      #このデータ意味ない
       @book_review = BookReview.find(params[:id])
       @book_reviews = BookReview.where(user_id: params[:id])
       @reviews_one = BookReview.where(user_id: current_user.id, rate: 1).order("created_at DESC")
@@ -30,7 +47,6 @@ class UsersController < ApplicationController
       @reviews_five = BookReview.where(user_id: current_user.id, rate: 5).order("created_at DESC")
 
     else
-      @user = User.find(params[:id])
       @book_review = BookReview.find(params[:id])
       @book_reviews = BookReview.where(user_id: params[:id])
       @reviews_one = BookReview.where(user_id: params[:id], rate: 1).order("created_at DESC")
@@ -43,12 +59,17 @@ class UsersController < ApplicationController
   end
 
   def search
-    # ランキングからdetailを呼び出す用
-    # @book_review = BookReview.find(params[:id])
     # ユーザー情報用
     @user_reviews = BookReview.where(user_id: current_user.id)
-    # ランキング用(like_count数が大きい順に10件取得)
-    @ranking_reviews = BookReview.order("likes_count DESC").limit(10)
+    # 最近読んだ本を読んだ他のユーザー一覧で使う
+    user_new_reviews = BookReview.where(user_id: current_user.id).order("created_at DESC")
+    user_new_review = user_new_reviews.first
+    @match_reviews = BookReview.where(book_title: user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
+    # ランダム既読本を読んだユーザー一覧
+    rand_reviews = BookReview.where(user_id: current_user.id).order("RAND()").limit(10)
+    @rand_review = rand_reviews.first
+    @match_rand = BookReview.where(book_title: @rand_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
+
     # ユーザー検索用。show_viewの/users/search/パスで発動
     if params[:name].present?
       # binding.pry
@@ -61,8 +82,35 @@ class UsersController < ApplicationController
     end
   end
 
-  def set_review
-    @book_review = BookReview.find(params[:book_review_id])
+  def update
+    if params[:shelfa].present?
+      @user.update(shelfa: params[:shelfa])
+    end
+    if params[:shelfb].present?
+      @user.update(shelfb: params[:shelfb])
+    end
+    if params[:shelfc].present?
+      @user.update(shelfc: params[:shelfc])
+    end
+    if params[:shelfd].present?
+      @user.update(shelfd: params[:shelfd])
+    end
+    # if @user.update(shelfa: params[:shelfa])
+    #   redirect_to action: :show
+    # else
+    #   redirect_to action: :show
+    # end
   end
+
+  private
+  # form_tagで打ち込むときはrequire(:book_review)を外す。
+ def update_user
+   params.require(:user).permit(:name, :image_url, :introduction, :shelfa,:shelfb,:shelfc,:shelfd)
+ end
+
+ def set_user
+   @user = User.find(params[:id])
+ end
+
 
 end

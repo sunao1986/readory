@@ -13,8 +13,6 @@
         .new-review-head__like
           %span{id:"like-of-#{book_review.id}"}
             = render partial: 'likes/like', locals:{ book_review: book_review}
-      -# .bundle-btn
-        -# = link_to "詳細","book_reviews/#{book_review.id}"
       .new-review-top
         .new-review-top-left
           .new-review-top-left__user

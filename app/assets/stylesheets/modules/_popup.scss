@@ -136,24 +136,34 @@ input:focus {
             &__rate{
               width: 600px;
               height: 30px;
-              font-size: 14px;
-              font-family: 'Yu Gothic';
-              color: #182630; 
-              text-align: center;            
+              text-align: center;
+              #book_review_rate{
+                font-size: 12px;
+                width: 250px;
+                height: 20px;
+                font-family: 'Yu Gothic';
+                color: #182630;
+                border-style: none;
+                background-color: #fff;
+                border: solid 1px #b8b8b8;
+              }
+              #book_review_rate:focus{
+                outline: 0;
+              }
             }
             &__title{
-              width: 600px;
+              width: 590px;
               height: 30px;
               font-family: 'Yu Gothic';
               text-align: center;
               color: #182630; 
-              #review_title{
+              #book_review_review_title{
                 padding-left: 10px;
                 width: 580px;
                 height: 30px;
-                font-size: 22px;
+                font-size: 14px;
               }
-              #review_title::placeholder{
+              #book_review_review_title::placeholder{
                 font-size: 14px;
                 line-height: 30px;
               }
@@ -173,14 +183,20 @@ input:focus {
           }
           .create-review-bottom-text{
             text-align: center;
-            #review{
+            margin-top:10px;
+            #book_review_review{
               padding-left: 10px;
               width: 590px;
               height: 100px;
               resize: none;
+              border-style: none;
+              border: solid 1px #b8b8b8;
             }
-            #review::placeholder{
+            #book_review_review::placeholder{
               font-size: 14px;
+            }
+            #book_review_review:focus{
+              outline: 0;
             }
           }
           .create-review-bottom-btn{

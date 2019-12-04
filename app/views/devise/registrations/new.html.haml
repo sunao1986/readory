@@ -47,6 +47,11 @@
                 = f.label :password_confirmation
               .sign-input-field__text
                 = f.password_field :password_confirmation, autocomplete: "off"
+              .sign-hidden
+                = f.hidden_field :shelfa, value: "本棚1"
+                = f.hidden_field :shelfb, value: "本棚2"
+                = f.hidden_field :shelfc, value: "本棚3"
+                = f.hidden_field :shelfd, value: "本棚4"
             .sign-btn-field
               = f.submit "Create Account", class: 'btn'
             .login-return

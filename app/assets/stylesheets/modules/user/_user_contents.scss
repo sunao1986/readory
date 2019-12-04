@@ -3,14 +3,98 @@
   height: 700px;
   margin: 50px auto 0 auto;
   overflow-x: scroll;
-  // background-color: antiquewhite;
   .my-review-menu{
     // width: 600px;
     // height: 35px;
     // border: solid 1px #182630;
-    // background-color: aqua;
+  }
+  .shelf-delete{
+    float: left;
+    margin-bottom:10px;
+    margin-right: 10px;
+  }
+  .shelf-name-edit{
+    float: left;
+    margin-bottom:10px;
+    margin-right: 10px;
+    .shelf-btn{
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Yu Gothic';
+      color: #2e4453;
+      font-size: 12px;
+      width: 140px;
+      height: 20px;
+      box-shadow: 1px 1px 3px gray;
+      background-color: #f5f3ed;
+    }
+    .shelf-btn:hover{
+      opacity: 0.8;
+    }
+    .shelf-btn:active{
+      box-shadow: 2px 2px 3px #ffc20e;
+    }
+  }
+  .shelf-edit{
+    float: left;
+    display:none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    .shelf-btn{
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Yu Gothic';
+      color: #2e4453;
+      font-size: 12px;
+      width: 140px;
+      height: 20px;
+      box-shadow: 1px 1px 3px gray;
+      background-color: #f5f3ed;
+    }
+    .shelf-btn:hover{
+      opacity: 0.8;
+    }
+    .shelf-btn:active{
+      box-shadow: 2px 2px 3px #ffc20e;
+    }
+  }
+  .shelf-cancel{
+    float: left;
+    display:none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    .shelf-btn{
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Yu Gothic';
+      color: #2e4453;
+      font-size: 12px;
+      width: auto;
+      height: 20px;
+      box-shadow: 1px 1px 3px gray;
+      background-color: #f5f3ed;
+    }
+    .shelf-btn:hover{
+      opacity: 0.8;
+    }
+    .shelf-btn:active{
+      box-shadow: 2px 2px 3px #ffc20e;
+    }
+  }
+  .shelf-edit-input{
+    float: left;
+    margin-left: 20px;
+    display: none;
+
   }
   .shelf-title{
+    clear: both;
     width: 700px;
     height: 25px;
     margin-bottom:20px;
@@ -22,7 +106,7 @@
     border-bottom: solid 1px #ffc20e;
     box-shadow: 0 5px 10px -5px #ffc20e;
     background-color: #182630;
-    &__text{
+    .shelf-name{
       margin-left:20px;
     }
   }
@@ -68,5 +152,89 @@
         }
       }
     }
+    .rate-shelf-none{
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-size: 14px;
+      line-height: 80px;
+      margin-left: 20px;
+    }
   }
+  #add-shelf-point-btn{
+    float: left;
+    .add-shelf-submit{
+      .shelf-btn{
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        font-family: 'Yu Gothic';
+        color: #2e4453;
+        font-size: 12px;
+        width: 100px;
+        height: 20px;
+        box-shadow: 1px 1px 3px gray;
+        background-color: #f5f3ed;
+      }
+      .shelf-btn:hover{
+        opacity: 0.8;
+      }
+      .shelf-btn:active{
+        box-shadow: 2px 2px 3px #ffc20e;
+      }
+    }
+  }
+  #delete-shelf-point-btn{
+    float: left;
+    .delete-shelf-submit{
+      .shelf-btn-delete{
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        font-family: 'Yu Gothic';
+        color: #2e4453;
+        font-size: 12px;
+        width: 100px;
+        height: 20px;
+        box-shadow: 1px 1px 3px gray;
+        background-color: #f5f3ed;
+      }
+      .shelf-btn-delete:hover{
+        opacity: 0.8;
+      }
+      .shelf-btn-delete:active{
+        box-shadow: 2px 2px 3px #ffc20e;
+      }
+    }
+  }
+  #add-shelf-first{
+    #add-shelf-point-btn{
+      .add-shelf-submit-first{
+        .shelf-btn-first{
+          text-align: center;
+          cursor: pointer;
+          border: none;
+          border-radius: 4px;
+          font-family: 'Yu Gothic';
+          color: #2e4453;
+          font-size: 12px;
+          width: 100px;
+          height: 20px;
+          box-shadow: 1px 1px 3px gray;
+          background-color: #f5f3ed;
+        }
+        .shelf-btn-first:hover{
+          opacity: 0.8;
+        }
+        .shelf-btn-first:active{
+          box-shadow: 2px 2px 3px #ffc20e;
+        }
+      }
+    }
+  }
+}
+.my-review-foot
+{
+  height: 20px;
 }

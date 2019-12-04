@@ -16,11 +16,32 @@
     .user-bottom
       .status-top
         ステータス
-      .user_review_count
-        レビュー数 : 
+      .user_review_count.status-title
+        レビュー数
+      .status-text
         = @user_reviews.count
         本
-      .user_likes_count
-        総インフル数 : 
-        = @user_reviews.all.sum(:likes_count)
-        フル    
+      .user-new-book-title.status-title
+        最新の既読本
+      .user-new-book-name.status-text
+        - if @user_new_review.present?
+          = @user_new_review.book_title
+          %p
+          = @user_new_review.author
+        - else 
+          まだ読まれた本はありません
+      .user-book-shelf-title.status-title
+        本棚の名前
+      .user-book-shelf-name.status-text
+      %p.status-text
+        = current_user.shelfa
+      %p.status-text
+        = current_user.shelfb
+      %p.status-text
+        = current_user.shelfc
+      %p.status-text
+        = current_user.shelfd
+      - if @shelf_add_name.present?
+        %p.status-text
+          = @shelf_add_name.name
+          

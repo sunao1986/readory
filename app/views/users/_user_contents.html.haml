@@ -1,42 +1,327 @@
-.my-review-field
+.my-review-field{"data-id": "#{@user.id}"}
   .my-review-menu 
     -# ソート用メニュボタンを導入予定
+  - if current_user.id.to_i == @user.id
+    .shelf-name-edit.shelfa-name-edit
+      = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+    .shelf-edit.shelfa-edit
+      = submit_tag "変更する", class: "shelf-btn"
+    .shelf-cancel.shelfa-cancel
+      = submit_tag "変更しない", class: "shelf-btn"
+    .shelf-edit-input.shelfa-edit-input
+      = text_field_tag :shelfa,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
   .shelf-title
-    %p.shelf-title__text Rate:1 影響を与えた本
+    .shelf-name.shelfa-name 
+      = @user.shelfa
   .rate-shelf
-    - @reviews_one.each do |one|
-      .book-field
-        .book-freame
-          = image_tag "#{one.image_url}", class: 'my-book'
-          .pop-info{'data-book-title': one.book_title,'data-image-url': one.image_url,'data-review-title': one.review_title,'data-review': one.review,'data-user-image': one.user.image_url,'data-url': "/book_reviews/#{one.id}"}
-            詳細
+    - if @reviews_one.present?
+      - @reviews_one.each do |one|
+        .book-field
+          .book-freame
+            = image_tag "#{one.image_url}", class: 'my-book'
+            .pop-info{'data-book-id': one.id,'data-book-title': one.book_title,'data-image-url': one.image_url,'data-review-title': one.review_title,'data-review': one.review,'data-user-image': one.user.image_url,'data-url': "/book_reviews/#{one.id}"}
+              詳細
+    - else
+      .rate-shelf-none
+        登録された本はありません
 
+  - if current_user.id.to_i == @user.id
+    .shelf-name-edit.shelfb-name-edit
+      = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+    .shelf-edit.shelfb-edit
+      = submit_tag "変更する", class: "shelf-btn"
+    .shelf-cancel.shelfb-cancel
+      = submit_tag "変更しない", class: "shelf-btn"
+    .shelf-edit-input.shelfb-edit-input
+      = text_field_tag :shelfb,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
   .shelf-title
-    %p.shelf-title__text Rate:2 面白かった本
+    .shelf-name.shelfb-name
+      = @user.shelfb
   .rate-shelf
-    - @reviews_two.each do |two|  
-      .book-field
-        .book-freame
-          = image_tag "#{two.image_url}", class: ''
-          .pop-info{'data-book-title': two.book_title,'data-image-url': two.image_url,'data-review-title': two.review_title,'data-review': two.review,'data-user-image': two.user.image_url,'data-url': "/book_reviews/#{two.id}"}
-            詳細
+    - if @reviews_two.present?
+      - @reviews_two.each do |two|  
+        .book-field
+          .book-freame
+            = image_tag "#{two.image_url}", class: ''
+            .pop-info{'data-book-id': two.id,'data-book-title': two.book_title,'data-image-url': two.image_url,'data-review-title': two.review_title,'data-review': two.review,'data-user-image': two.user.image_url,'data-url': "/book_reviews/#{two.id}"}
+              詳細
+    - else
+      .rate-shelf-none
+        登録された本はありません
 
+  - if current_user.id.to_i == @user.id
+    .shelf-name-edit.shelfc-name-edit
+      = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+    .shelf-edit.shelfc-edit
+      = submit_tag "変更する", class: "shelf-btn"
+    .shelf-cancel.shelfc-cancel
+      = submit_tag "変更しない", class: "shelf-btn"
+    .shelf-edit-input.shelfc-edit-input
+      = text_field_tag :shelfc,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
   .shelf-title
-    %p.shelf-title__text Rate:3 つまらなかった本
+    .shelf-name.shelfc-name
+      = @user.shelfc
   .rate-shelf
-    - @reviews_three.each do |three|  
-      .book-field
-        .book-freame
-          = image_tag "#{three.image_url}", class: ''
-          .pop-info{'data-book-title': three.book_title,'data-image-url': three.image_url,'data-review-title': three.review_title,'data-review': three.review,'data-user-image': three.user.image_url,'data-url': "/book_reviews/#{three.id}"}
-            詳細
+    - if @reviews_three.present?
+      - @reviews_three.each do |three|  
+        .book-field
+          .book-freame
+            = image_tag "#{three.image_url}", class: ''
+            .pop-info{'data-book-id': three.id,'data-book-title': three.book_title,'data-image-url': three.image_url,'data-review-title': three.review_title,'data-review': three.review,'data-user-image': three.user.image_url,'data-url': "/book_reviews/#{three.id}"}
+              詳細
+    - else
+      .rate-shelf-none
+        登録された本はありません                
 
+  - if current_user.id.to_i == @user.id
+    .shelf-name-edit.shelfd-name-edit
+      = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+    .shelf-edit.shelfd-edit
+      = submit_tag "変更する", class: "shelf-btn"
+    .shelf-cancel.shelfd-cancel
+      = submit_tag "変更しない", class: "shelf-btn"
+    .shelf-edit-input.shelfd-edit-input
+      = text_field_tag :shelfd,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
   .shelf-title
-    %p.shelf-title__text Rate:4 なんとも思わなかった本
+    .shelf-name.shelfd-name
+      = @user.shelfd
   .rate-shelf
-    - @reviews_four.each do |four|  
-      .book-field
-        .book-freame
-          = image_tag "#{four.image_url}", class: ''
-          .pop-info{'data-book-title': four.book_title,'data-image-url': four.image_url,'data-review-title': four.review_title,'data-review': four.review,'data-user-image': four.user.image_url,'data-url': "/book_reviews/#{four.id}"}
-            詳細
+    - if @reviews_four.present?
+      - @reviews_four.each do |four|  
+        .book-field
+          .book-freame
+            = image_tag "#{four.image_url}", class: ''
+            .pop-info{'data-book-id': four.id,'data-book-title': four.book_title,'data-image-url': four.image_url,'data-review-title': four.review_title,'data-review': four.review,'data-user-image': four.user.image_url,'data-url': "/book_reviews/#{four.id}"}
+              詳細
+    - else
+      .rate-shelf-none
+        登録された本はありません 
+
+  #add-shelf-point-five
+    - if @shelves[0].present?
+      #add-shelf-point-five-have
+        - if current_user.id.to_i == @user.id
+          .shelf-name-edit
+            = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+          .shelf-edit.shelfe-edit
+            = submit_tag "変更する", class: "shelf-btn"
+          .shelf-cancel
+            = submit_tag "変更しない", class: "shelf-btn"
+          .shelf-edit-input
+            = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+        .shelf-title
+          .shelf-name.shelfe-name
+            = @shelves[0].name
+        .rate-shelf
+          - if @reviews_five.present?
+            - @reviews_five.each do |five|  
+              .book-field
+                .book-freame
+                  = image_tag "#{five.image_url}", class: ''
+                  .pop-info{'data-book-id': five.id,'data-book-title': five.book_title,'data-image-url': five.image_url,'data-review-title': five.review_title,'data-review': five.review,'data-user-image': five.user.image_url,'data-url': "/book_reviews/#{five.id}"}
+                    詳細
+          - else
+            .rate-shelf-none
+              登録された本はありません
+
+      -# - if @shelves.count == 1 && current_user.id.to_i == @user.id
+      -#   #add-shelf-point-btn
+      -#     .add-shelf-submit.add-six
+      -#       = submit_tag "本棚を増やす", class: "shelf-btn"
+
+      - if @shelves.count == 1 && current_user.id.to_i == @user.id && @reviews_five.blank?
+        #delete-shelf-point-btn
+          .delete-shelf-submit.five{'data-shelf-id': @shelves[0].id, 'data-shelf-name': @shelves[0].name}
+            = submit_tag "本棚を減らす", class: "shelf-btn-delete"
+
+    -else
+      #add-shelf-first
+        - if @shelves.count < 10 && current_user.id.to_i == @user.id
+          #add-shelf-point-btn
+            .add-shelf-submit-first
+              = submit_tag "本棚を増やす", class: "shelf-btn-first"
+
+
+
+  #add-shelf-point-six
+  - if @shelves[1].present?
+    #add-shelf-point-six-have
+      - if current_user.id.to_i == @user.id
+        .shelf-name-edit
+          = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+        .shelf-edit
+          = submit_tag "変更する", class: "shelf-btn"
+        .shelf-cancel
+          = submit_tag "変更しない", class: "shelf-btn"
+        .shelf-edit-input
+          = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+      .shelf-title
+        .shelf-name
+          = @shelves[1].name
+      .rate-shelf
+        - if @reviews_six.present?
+          - @reviews_six.each do |six|  
+            .book-field
+              .book-freame
+                = image_tag "#{six.image_url}", class: ''
+                .pop-info{'data-book-title': six.book_title,'data-image-url': six.image_url,'data-review-title': six.review_title,'data-review': six.review,'data-user-image': six.user.image_url,'data-url': "/book_reviews/#{six.id}"}
+                  詳細
+        - else
+          .rate-shelf-none
+            登録された本はありません
+
+    - if @shelves.count == 2 && current_user.id.to_i == @user.id
+      #add-shelf-point-btn
+        .add-shelf-submit.add-seven
+          = submit_tag "本棚を増やす", class: "shelf-btn"
+
+    - if @shelves.count == 2 && current_user.id.to_i == @user.id
+      #delete-shelf-point-btn
+        .delete-shelf-submit.six{'data-shelf-id': @shelves[1].id, 'data-shelf-name': @shelves[1].name}
+          = submit_tag "本棚を減らす", class: "shelf-btn"
+    
+  #add-shelf-point-seven
+  - if @shelves[2].present?
+    #add-shelf-point-seven-have
+      - if current_user.id.to_i == @user.id
+        .shelf-name-edit
+          = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+        .shelf-edit
+          = submit_tag "変更する", class: "shelf-btn"
+        .shelf-cancel
+          = submit_tag "変更しない", class: "shelf-btn"
+        .shelf-edit-input
+          = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+      .shelf-title
+        .shelf-name
+          = @shelves[2].name
+      .rate-shelf
+        - if @reviews_seven.present?
+          - @reviews_seven.each do |seven|  
+            .book-field
+              .book-freame
+                = image_tag "#{seven.image_url}", class: ''
+                .pop-info{'data-book-title': seven.book_title,'data-image-url': seven.image_url,'data-review-title': seven.review_title,'data-review': seven.review,'data-user-image': seven.user.image_url,'data-url': "/book_reviews/#{seven.id}"}
+                  詳細
+        - else
+          .rate-shelf-none
+            登録された本はありません
+
+    - if @shelves.count == 3 && current_user.id.to_i == @user.id
+      #add-shelf-point-btn
+        .add-shelf-submit.add-eight
+          = submit_tag "本棚を増やす", class: "shelf-btn"
+
+    - if @shelves.count == 3 && current_user.id.to_i == @user.id
+      #delete-shelf-point-btn
+        .delete-shelf-submit.seven{'data-shelf-id': @shelves[2].id, 'data-shelf-name': @shelves[2].name}
+          = submit_tag "本棚を減らす", class: "shelf-btn"
+
+  #add-shelf-point-eight
+  - if @shelves[3].present?
+    #add-shelf-point-eight-have
+      - if current_user.id.to_i == @user.id
+        .shelf-name-edit
+          = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+        .shelf-edit
+          = submit_tag "変更する", class: "shelf-btn"
+        .shelf-cancel
+          = submit_tag "変更しない", class: "shelf-btn"
+        .shelf-edit-input
+          = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+      .shelf-title
+        .shelf-name
+          = @shelves[3].name
+      .rate-shelf
+        - if @reviews_eight.present?
+          - @reviews_eight.each do |eight|  
+            .book-field
+              .book-freame
+                = image_tag "#{eight.image_url}", class: ''
+                .pop-info{'data-book-title': eight.book_title,'data-image-url': eight.image_url,'data-review-title': eight.review_title,'data-review': eight.review,'data-user-image': eight.user.image_url,'data-url': "/book_reviews/#{eight.id}"}
+                  詳細
+        - else
+          .rate-shelf-none
+            登録された本はありません
+
+    - if @shelves.count == 4 && current_user.id.to_i == @user.id
+      #add-shelf-point-btn
+        .add-shelf-submit.add-nine
+          = submit_tag "本棚を増やす", class: "shelf-btn"
+
+    - if @shelves.count == 4 && current_user.id.to_i == @user.id
+      #delete-shelf-point-btn
+        .delete-shelf-submit.eight{'data-shelf-id': @shelves[3].id, 'data-shelf-name': @shelves[3].name}
+          = submit_tag "本棚を減らす", class: "shelf-btn"
+
+  #add-shelf-point-nine
+  - if @shelves[4].present?
+    #add-shelf-point-nine-have
+      - if current_user.id.to_i == @user.id
+        .shelf-name-edit
+          = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+        .shelf-edit
+          = submit_tag "変更する", class: "shelf-btn"
+        .shelf-cancel
+          = submit_tag "変更しない", class: "shelf-btn"
+        .shelf-edit-input
+          = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+      .shelf-title
+        .shelf-name
+          = @shelves[4].name
+      .rate-shelf
+        - if @reviews_nine.present?
+          - @reviews_nine.each do |nine|  
+            .book-field
+              .book-freame
+                = image_tag "#{nine.image_url}", class: ''
+                .pop-info{'data-book-title': nine.book_title,'data-image-url': nine.image_url,'data-review-title': nine.review_title,'data-review': nine.review,'data-user-image': nine.user.image_url,'data-url': "/book_reviews/#{nine.id}"}
+                  詳細
+        - else
+          .rate-shelf-none
+            登録された本はありません
+
+    - if @shelves.count == 5 && current_user.id.to_i == @user.id
+      #add-shelf-point-btn
+        .add-shelf-submit.add-ten
+          = submit_tag "本棚を増やす", class: "shelf-btn"
+
+    - if @shelves.count == 5 && current_user.id.to_i == @user.id
+      #delete-shelf-point-btn
+        .delete-shelf-submit.nine{'data-shelf-id': @shelves[4].id, 'data-shelf-name': @shelves[4].name}
+          = submit_tag "本棚を減らす", class: "shelf-btn"
+
+  #add-shelf-point-ten
+  - if @shelves[5].present?
+    #add-shelf-point-ten-have
+      - if current_user.id.to_i == @user.id
+        .shelf-name-edit
+          = submit_tag "本棚の名前を変更する", class: "shelf-btn"
+        .shelf-edit
+          = submit_tag "変更する", class: "shelf-btn"
+        .shelf-cancel
+          = submit_tag "変更しない", class: "shelf-btn"
+        .shelf-edit-input
+          = text_field_tag :name,"", class: "input_shelf_name", placeholder: "20文字まで", maxlength: "20"
+      .shelf-title
+        .shelf-name
+          = @shelves[5].name
+      .rate-shelf
+        - if @reviews_ten.present?
+          - @reviews_ten.each do |ten|  
+            .book-field
+              .book-freame
+                = image_tag "#{ten.image_url}", class: ''
+                .pop-info{'data-book-title': ten.book_title,'data-image-url': ten.image_url,'data-review-title': ten.review_title,'data-review': ten.review,'data-user-image': ten.user.image_url,'data-url': "/book_reviews/#{ten.id}"}
+                  詳細
+        - else
+          .rate-shelf-none
+            登録された本はありません
+
+    - if @shelves.count == 6 && current_user.id.to_i == @user.id
+      #delete-shelf-point-btn
+        .delete-shelf-submit.ten{'data-shelf-id': @shelves[4].id, 'data-shelf-name': @shelves[4].name}
+          = submit_tag "本棚を減らす", class: "shelf-btn"
+
+.my-review-foot
+
