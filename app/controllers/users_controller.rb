@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
     if current_user.id.to_i == params[:id]
     # rateごとに吸い出して違う変数に保管（5種類）
-      @book_review = BookReview.find(params[:id])
+      @book_review = BookReview.find_by(params[:id])
       @book_reviews = BookReview.where(user_id: params[:id])
       @reviews_one = BookReview.where(user_id: current_user.id, rate: 1).order("created_at DESC")
       @reviews_two = BookReview.where(user_id: current_user.id, rate: 2).order("created_at DESC")
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
       @reviews_five = BookReview.where(user_id: current_user.id, rate: 5).order("created_at DESC")
 
     else
-      @book_review = BookReview.find(params[:id])
+      @book_review = BookReview.find_by(params[:id])
       @book_reviews = BookReview.where(user_id: params[:id])
       @reviews_one = BookReview.where(user_id: params[:id], rate: 1).order("created_at DESC")
       @reviews_two = BookReview.where(user_id: params[:id], rate: 2).order("created_at DESC")
