@@ -8,14 +8,20 @@ class UsersController < ApplicationController
     # 最近読んだ本を読んだ他のユーザー一覧で使う
     user_new_reviews = BookReview.where(user_id: current_user.id).order("created_at DESC")
     other_new_reviews = BookReview.where(user_id: @user.id).order("created_at DESC")
-    @user_new_review = user_new_reviews.first
-    @other_new_review = other_new_reviews.first
+    if user_new_reviews.present?
+      @user_new_review = user_new_reviews.first
+    end
+    if other_new_reviews.present?
+      @other_new_review = other_new_reviews.first
+    end
     if @user_new_review.present?
       @match_reviews = BookReview.where(book_title: @user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
     end
     # ランダム既読本を読んだユーザー一覧
     rand_reviews = BookReview.where(user_id: current_user.id).order("RAND()").limit(10)
-    @rand_review = rand_reviews.first
+    if rand_reviews.present?
+      @rand_review = rand_reviews.first
+    end
     if @rand_review.present?
       @match_rand = BookReview.where(book_title: @rand_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
     end
