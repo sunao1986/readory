@@ -22,6 +22,7 @@
     }
     .guest-consept{
       width:500px;
+      height: 45px;
       font-size: 16px;
       font-family: 'Hiragino Mincho Pro';
       color: #182630;
@@ -36,31 +37,19 @@
       position: relative;
       .icon-left{
         position: absolute;
-        left: 190px;
-        .icon-l{
-          width: 20px;
-          height: 20px;
-          cursor: pointer;
-        }
-      }
-      .icon-middle{
-        position: absolute;
-        left: 240px;
-        .icon-m{
-          width: 20px;
-          height: 20px;
-          cursor: pointer;
-          
-        }       
-      }
-      .icon-right{
-        position: absolute;
-        left: 290px;
-        .icon-r{
-          width: 20px;
-          height: 20px;
-          cursor: pointer;
-        }
+        left: 250px;
+        width: 65px;
+        height: 65px;
+        font-size: 12px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 65px;
+        opacity: 0.9;
+        border-radius: 50%;
+        color:#ffffff;
+        border: solid 1px #ffc20e;
+        background-color:#182630;
+        cursor: pointer;
       }
     }
     .logpop-field{
@@ -72,15 +61,16 @@
     .guest-login-area{
       width:500px;
       height:40px;
+      margin-bottom: 15px;
       .guest-login-btn{
         cursor: pointer;
         margin: 0 auto;
-        width:150px;
-        height:30px;
+        width:250px;
+        height:35px;
         background-color: #182630;
         text-align: center;
         color:white;
-        line-height: 30px;
+        line-height: 35px;
         box-shadow: 1px 1px rgb(191, 191, 192);
         font-family: 'Yu Gothic';
         font-size: 12px;
@@ -93,11 +83,11 @@
       .guest-signin-btn{       
         cursor: pointer;
         margin: 10px auto 0 auto;
-        width:150px;
-        height:30px;
+        width:250px;
+        height:35px;
         background-color: #182630;
         text-align: center;
-        line-height: 30px;
+        line-height: 35px;
         box-shadow: 1px 1px rgb(191, 191, 192);
         font-family: 'Yu Gothic';
         font-size: 12px;

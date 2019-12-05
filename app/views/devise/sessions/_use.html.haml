@@ -1,7 +1,39 @@
 .how-wrape
   .how-page
     .how-field
+
       .how-title
-        「Readory」は読んだ本を本棚で管理できるサービスです
+        「Readory(リードリー)」は読んだ本を本棚で管理できるサービスです
+        .how-text
+          ※マイページの一例です。既読本として登録した本は自動で本棚に収納されます
+      .how-shelf
+        = image_tag "readory_shelf.png", class: "how_image" 
+
+      .how-title
+        まずは本を登録してみてください
+        .how-text
+          ※本を検索した一例です。楽天apiサービスを利用しています。
+      .how-shelf
+        = image_tag "readory_search.png", class: "how_image"
+
+      .how-title
+        フォームは本棚を選ぶだけで本が登録できます。
+        .how-text
+          内容は評価や感想だけはありません。メモでも本との関係性でも良いでしょう。
+      .how-shelf
+        = image_tag "readory_new.png", class: "how_image"
+
+      .how-title
+        本棚の本はマイページから詳細を見ることができます。
+        .how-text
+          ※誰でも簡単に既読本が管理できます。他のユーザーの本棚も覗き放題です。
+      .how-shelf
+        = image_tag "readory_show.png", class: "how_image"
+        
+      .how-title
+        ぜひ、お気軽に「Readory(リードリー)」をご利用ください
+        .how-text
+          現在も誠意開発中のサービスです。不具合は多数あると思いますが、何卒ご了承ください。
+
     .how-back-field
       = link_to "戻る", class: 'user-back'

@@ -17,7 +17,6 @@ window.addEventListener('DOMContentLoaded',function(){
     $('.hidden-isbn').attr('value',resultisbn);
     $('.hidden-item').attr('value',resultitem);
     $('.create-wrape').fadeIn();
-    // debugger;
   });
   // レビューフォームを閉じる
   $('.return-btn').on('click',function(){
@@ -25,9 +24,11 @@ window.addEventListener('DOMContentLoaded',function(){
   });
 
   // フッターの説明をドロップダウン
-  $('new-review-bottom').click(function(e){
+  $('.footer-btn').click(function(e){
     e.preventDefault();
-    $('.new-review-text-area',this).slideToggle();
+    $('.footer-hidden',this).slideToggle();
+    $('html,body').animate({scrollTop: 1500});
+
   });
 
   // ゲストページでインフルアイコンをクリックするとHowToを表示

@@ -6,9 +6,9 @@
     .user-ranking-title-new
       最新の既読本
     .user-ranking-title-new-name
-      - if @user_reviews.present?
+      - if @user_new_review.present?
         「
-        = @user_reviews.first.book_title
+        = @user_new_review.book_title
         」を読んだユーザー
       - else
         .user-ranking-title-new-name

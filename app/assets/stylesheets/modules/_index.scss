@@ -46,20 +46,49 @@
     height: 25px;
     clear: both;
     line-height: 25px;
-    // opacity: 0.7;
     color: #ffff;
     font-size: 12px;
     font-family: 'Yu Gothic';
-    padding-left:20px;
     background-color: #182630;
-    text-decoration: none;
-    .footlink{
-      text-decoration: none;
-      color: #ffff;
-    }
-    .footmessage{
-      text-decoration: none;
-      color: #ffff;
+    .footer-btn{
+      cursor: pointer;
+      p.footer-info{
+        padding-left: 30px;
+      }
+      .footer-hidden{
+        display:none;
+        .footer-text{
+          width: auto;
+          height: auto;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          font-size: 11px;
+          opacity: 0.97;
+          padding: 5px 5px 5px 20px;
+          background-color: #ffffff;
+          &--bold{
+            font-weight: bold;
+            font-size: 12px;
+          }
+          &--padding{
+            padding-left:5px;
+          }
+        }
+        .footer-bar{
+          width: 100vw;
+          height: 25px;
+          line-height: 25px;
+          color: #ffff;
+          font-size: 12px;
+          font-family: 'Yu Gothic';
+          background-color: #182630;
+          .footer-back{
+            cursor: pointer;
+            padding-left: 30px;
+          }
+        }
+      }
+
     }
   } 
 }
