@@ -66,6 +66,9 @@
     .logpop-field{
       display:none;
     }
+    .guest-hidden-field{
+      display:none;
+    }
     .guest-login-area{
       width:500px;
       height:40px;
@@ -105,31 +108,5 @@
       }
     }
   }
-  .guest-hidden-field{
-    // display: none;
-    // position: relative;
-    width:500px;
-    height:500px;
-    margin: 0 auto;
-    .readory-use{
-      display: none;
-      // width:300px;
-      // height:300px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      // background-color: antiquewhite;
-    }
-    .readory-introduction{
-      position: absolute;
-      // width:300px;
-      // height:300px;
-      top: 0;
-      left: 100;
-      right:0;
-      bottom: 0;
-      margin: auto;
-      // background-color: rgb(241, 172, 81);
-    }
-  }
+
 }

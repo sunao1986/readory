@@ -10,40 +10,187 @@
     height:auto;
     .sign-edit-logo{
       text-align: center;
+      font-size: 18px;
+      font-family: 'Yu Gothic';
+      color: #182630;
+      font-weight: bold; 
     }
     .sign-edit-field{
       .sign-edit-field-wrape{
         width:250px;
-        height:600px;
+        height:auto;
         margin: 0 auto;
+        padding-bottom: 30px;
         .sign-edit-page{
           width:250px;
           height:auto;
           margin: 0 auto;
-          .sign-input-field{
-            resize: none;
+          .sign-input-field-name{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
             &__label{
-      
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
             }
             &__text{
-              width: 250px;
-              height:40px;
-              // background-color: aqua;
+              #user_name{
+                width: 250px;
+                height:30px;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;          
+              }
+            }
+          }
+          .sign-input-field-image{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
               input {
                 width: 250px;
                 height:30px;          
               }
             }
           }
+          .sign-input-field-intro{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
+              #user_introduction{
+                width: 250px;
+                height: auto;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;
+              }
+              #user_introduction:focus{
+                outline: 0;
+              }
+            }
+          }
+          .sign-input-field-email{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
+              #user_email{
+                width: 250px;
+                height:30px;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;          
+              }
+            }
+          }
+          .sign-input-field-pass{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
+              #user_password{
+                width: 250px;
+                height:30px;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;          
+              }
+              #user_password::placeholder{
+                font-size: 12px;
+              }
+            }
+          }
+          .sign-input-field-passc{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
+              #user_password_confirmation{
+                width: 250px;
+                height:30px;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;          
+              }
+              #user_password_confirmation::placeholder{
+                font-size: 12px;
+              }
+            }
+          }
+          .sign-input-field-current{
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
+            &__label{
+              font-size: 14px;
+              font-family: 'Yu Gothic';
+              color: #182630;
+            }
+            &__text{
+              #user_current_password{
+                width: 250px;
+                height:30px;
+                padding-left: 5px;
+                font-family: 'Yu Gothic';
+                color: #182630;          
+              }
+            }
+          }
           .sign-btn-field{
-      
+            width: 250px;
+            height: auto;
+            margin-top: 15px;
           }
         }
         .cancel-account{
-
+          width: 250px;
+          height: auto;
+          margin-top: 30px;
+          font-size: 14px;
+          font-family: 'Yu Gothic';
+          color: #182630;
         }
         .login-return{
-
+          width: 250px;
+          height: auto;
+          margin-top: 15px;
+          font-size: 12px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          .back-text{
+            color: #182630;
+            text-decoration: none;
+            border: solid 1px #182630;
+            padding: 5px;
+          }
         }
       }
     }

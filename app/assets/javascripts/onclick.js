@@ -9,8 +9,6 @@ window.addEventListener('DOMContentLoaded',function(){
     var resultdetail = $(this).data("detail");
     var resultisbn = $(this).data("isbn");
     var resultitem = $(this).data("item-url");
-    console.log(resultdetail)
-    console.log(resultsrc)
     $('.book-thumbnail').attr('src',resultsrc);
     $('.hidden-image').attr('value',resultsrc);
     $('.hidden-title').attr('value',resulttitle);
@@ -26,7 +24,7 @@ window.addEventListener('DOMContentLoaded',function(){
     $('.create-wrape').fadeOut();
   });
 
-  // indexでレビューの詳細をドロップダウン
+  // フッターの説明をドロップダウン
   $('new-review-bottom').click(function(e){
     e.preventDefault();
     $('.new-review-text-area',this).slideToggle();
@@ -35,10 +33,11 @@ window.addEventListener('DOMContentLoaded',function(){
   // ゲストページでインフルアイコンをクリックするとHowToを表示
   $('.icon-left').on('click',function(e){
     e.preventDefault();
-    $('.readory-use').fadeIn();
+    $('#guest-empty-field').empty();
+    $('.guest-hidden-field').fadeIn();
   });
   $('use-back').on('click',function(){
-    $('.readory-use').fadeOut();
+    $('.guest-hidden-field').fadeOut();
   });
 
   // ゲストページでログインボタンを押すとボタンが消えて入力フォーム出現

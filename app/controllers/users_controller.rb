@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :show]
+  before_action :set_user, only: [:edit, :update, :show]
 
   def show
     # ユーザー情報用
@@ -82,6 +82,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if params[:shelfa].present?
       @user.update(shelfa: params[:shelfa])
@@ -95,6 +98,12 @@ class UsersController < ApplicationController
     if params[:shelfd].present?
       @user.update(shelfd: params[:shelfd])
     end
+
+    if params[:name].present? or params[:image_url].present? or params[:introduction].present?
+      @user.update(update_user)
+      redirect_to action: :show
+    end
+
     # if @user.update(shelfa: params[:shelfa])
     #   redirect_to action: :show
     # else

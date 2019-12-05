@@ -1,0 +1,48 @@
+<div class="sign-edit-wrape">
+  <div class="sign-edit-mount">
+    <div class="sign-edit-logo">ユーザー情報編集</div>
+    <div class="sign-edit-field">
+      <div class="sign-edit-field-wrape">
+        <div class="sign-edit-page">
+          <%= form_for @user do |f| %>
+            <div class="sign-input-field-name">
+              <div class="sign-input-field-name__label">
+                <%= f.label :name %><br />
+              </div>
+              <div class="sign-input-field-name__text">
+                <%= f.text_field :name %>
+              </div>
+            </div>
+
+            <div class="sign-input-field-image">
+              <div class="sign-input-field-image__label">
+                <%= f.label :image_url %><br />
+              </div>
+              <div class="sign-input-field-image__text">
+                <%= f.file_field :image_url %>
+              </div>
+            </div>
+
+            <div class="sign-input-field-intro">
+              <div class="sign-input-field-intro__label">
+                <%= f.label :introduction %><br />
+              </div>
+              <div class="sign-input-field-intro__text">
+                <%= f.text_area :introduction %>
+              </div>
+            </div>
+
+            <div class="sign-btn-field">
+              <%= f.submit "更新する" %>
+            </div>
+
+          <% end %>
+        </div>
+
+        <div class="login-return">
+          <%= link_to "一つ前に戻る", :back, class:"back-text" %>
+        </div> 
+      </div> 
+    </div>      
+  </div>
+</div>

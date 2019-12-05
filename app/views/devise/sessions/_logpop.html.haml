@@ -12,11 +12,7 @@
           = f.label :password 
         .logpop-input-field__text
           = f.password_field :password, autocomplete: "current-password" 
-        - if devise_mapping.rememberable?
-          .logpop-input-field
-            = f.check_box :remember_me 
-            = f.label :remember_me 
-          .logpop-btn-field
-            = f.submit "Log in" ,class: 'btn'
-          .logpop-back-field
-            = link_to "Back" ,class: 'back-btn'
+        .logpop-btn-field
+          = f.submit "ログイン" ,class: 'btn'
+        .logpop-back-field
+          = link_to "戻る", class: 'back-btn'

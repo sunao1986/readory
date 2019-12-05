@@ -10,9 +10,11 @@
       .icon-middle
         = image_tag "i_flu_y.png", class: "icon-m" 
       .icon-right
-        = image_tag "i_flu_g.png", class: "icon-r" 
-    .logpop-field     
+        = image_tag "i_flu_g.png", class: "icon-r"
+    .logpop-field
       = render 'logpop'
+    .guest-hidden-field
+      = render 'use'
     #guest-empty-field
       .guest-login-area
         .guest-login-btn
@@ -20,11 +22,6 @@
       .guest-signin-area
         .guest-signin-btn
           = link_to "新規登録", new_registration_path(resource_name), class: "sign-btn"
-    .guest-hidden-field
-      .readory-use
-        = render 'use'
-      .readory-introduction
-        = render 'introduction'
 
       
      

@@ -1,10 +1,27 @@
-.use{
-  width:100px;
-  height:50px;
-  background-color: aqua;
-  font-size: 22px;
-}
-.use-back-btn{
-  .use-back{
+.how-wrape{
+  width:500px;
+  height:auto;
+  margin: 0 auto;
+  .how-page{
+    width:250px;
+    height:auto;
+    margin: 0 auto;
+    .how-field{
+      .how-title
+      {
+        font-size: 16px;
+        font-family: 'Hiragino Mincho Pro';
+        color: #182630;
+        text-align: center;
+      }
+    }
+    .how-back-field{
+      margin-top:10px;
+      cursor: pointer;
+      .user-back{
+        text-decoration: none;
+        color: #182630;
+      }
+    }
   }
 }

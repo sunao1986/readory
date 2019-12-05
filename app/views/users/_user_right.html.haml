@@ -27,7 +27,8 @@
                   %a{:href => "/users/#{match_user.user.id}", class: "user-btn"} 
                     %img(src="#{match_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
                 - else
-                  = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+                  %a{:href => "/users/#{match_user.user.id}", class: "user-btn"}
+                    = image_tag 'i_flu_g.png', class: 'match-user-thumbnail'
             .user-ranking-review-right
               .user-ranking-review-right-top
                 .user-ranking-review-right-top__name
@@ -64,7 +65,8 @@
                   %a{:href => "/users/#{rand_user.user.id}", class: "user-btn"} 
                     %img(src="#{rand_user.user.image_url}" alt="ユーザーの画像" class="match-user-thumbnail")
                 - else
-                  = image_tag 'i_flu_g.png', class: 'user-thumbnail'
+                  %a{:href => "/users/#{rand_user.user.id}", class: "user-btn"} 
+                    = image_tag 'i_flu_g.png', class: 'match-user-thumbnail'
             .user-ranking-review-right
               .user-ranking-review-right-top
                 .user-ranking-review-right-top__name
