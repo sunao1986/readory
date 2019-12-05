@@ -12,10 +12,11 @@
 - Ruby 2.5.1
 - Ruby on Rails 5.2.3
 - MySQL
-- 楽天api 
+- 楽天api
 
 ## 本番環境Link
 https://appreadory.herokuapp.com/
+#### S3の契約はしていないのでプロフィール画像は登録できない状態です
 
 ## 機能紹介
 
