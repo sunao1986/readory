@@ -15,6 +15,6 @@ Rails.application.routes.draw do
       end
   end
   resources :shelves, only: [:create, :destroy, :update], defaults: { format: 'json' }
-  root 'book_reviews#index'
+  root 'devise/sessions#new'
   delete '/users/book_review/:id', to: 'book_reviews#destroy'
 end
