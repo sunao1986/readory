@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: :update, defaults: { format: 'json' }
-  resources :users, only: :show do
+  resources :users, only: [:show, :edit] do
     collection do 
       get 'search'
     end

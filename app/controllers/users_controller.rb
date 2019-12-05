@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :show]
+  before_action :set_user, only: [:edit, :update, :show]
 
   def show
     # ユーザー情報用
@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     @user_reviews = BookReview.where(user_id: params[:id]).order("created_at DESC")
     # 最近読んだ本を読んだ他のユーザー一覧で使う
     user_new_reviews = BookReview.where(user_id: current_user.id).order("created_at DESC")
-    other_new_reviews = BookReview.where(user_id: params[:id]).order("created_at DESC")
-    user_new_review = user_new_reviews.first
-    @user_new_review = other_new_reviews.first
-    if user_new_review.present?
-      @match_reviews = BookReview.where(book_title: user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
+    other_new_reviews = BookReview.where(user_id: @user.id).order("created_at DESC")
+    @user_new_review = user_new_reviews.first
+    @other_new_review = other_new_reviews.first
+    if @user_new_review.present?
+      @match_reviews = BookReview.where(book_title: @user_new_review.book_title).where.not(user_id: current_user.id).order("created_at DESC").limit(10)
     end
     # ランダム既読本を読んだユーザー一覧
     rand_reviews = BookReview.where(user_id: current_user.id).order("RAND()").limit(10)
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
       @reviews_one = BookReview.where(user_id: current_user.id, rate: 1).order("created_at DESC")
       @reviews_two = BookReview.where(user_id: current_user.id, rate: 2).order("created_at DESC")
       @reviews_three = BookReview.where(user_id: current_user.id, rate: 3).order("created_at DESC")
-      @reviews_four = BookReview.where(user_id: current_user.id, rate: null).order("created_at DESC")
+      @reviews_four = BookReview.where(user_id: current_user.id, rate: 4).order("created_at DESC")
       @reviews_five = BookReview.where(user_id: current_user.id, rate: 5).order("created_at DESC")
 
     else
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       @reviews_one = BookReview.where(user_id: params[:id], rate: 1).order("created_at DESC")
       @reviews_two = BookReview.where(user_id: params[:id], rate: 2).order("created_at DESC")
       @reviews_three = BookReview.where(user_id: params[:id], rate: 3).order("created_at DESC")
-      @reviews_four = BookReview.where(user_id: params[:id], rate: nil).order("created_at DESC")
+      @reviews_four = BookReview.where(user_id: params[:id], rate: 4).order("created_at DESC")
       @reviews_five = BookReview.where(user_id: params[:id], rate: 5).order("created_at DESC")
     end
 
@@ -82,19 +82,34 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if params[:shelfa].present?
       @user.update(shelfa: params[:shelfa])
+      return
     end
     if params[:shelfb].present?
       @user.update(shelfb: params[:shelfb])
+      return
     end
     if params[:shelfc].present?
       @user.update(shelfc: params[:shelfc])
+      return
     end
     if params[:shelfd].present?
       @user.update(shelfd: params[:shelfd])
+      return
     end
+
+    if params[:name].present? or params[:image_url].present? or params[:introduction].present?
+      @user.update(update_user)
+      redirect_to action: :show
+    else
+      redirect_to action: :show
+    end
+
     # if @user.update(shelfa: params[:shelfa])
     #   redirect_to action: :show
     # else

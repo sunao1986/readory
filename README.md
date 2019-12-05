@@ -1,77 +1,54 @@
-# README
+# アプリ名:Readory(リードリー)
+## 概要
+既読本を管理するWEBサービス
+## 特徴・機能
+- 楽天apiを利用した本の検索機能
+- 読書感想が苦手な人、文章が苦手な人も綺麗に管理できる
+- 本棚の名前を変えられるので、ジャンルを自由に振り分けできる
+- 他ユーザーの本棚も覗けるので、今後の読書の参考にもなる
+- 自分の趣味に近いユーザーを探せる
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境情報
+- Ruby 2.5.1
+- Ruby on Rails 5.2.3
+- MySQL
+- 楽天api 
 
-Things you may want to cover:
+## 本番環境Link
 
-* Ruby version
 
-* System dependencies
+## 機能紹介
 
-* Configuration
+### ユーザー新規登録/ログイン
+- 「はじめに」を押すと、簡単なHowToが見れます。
+- ユーザーの新規登録ができます。登録後、マイページにて編集ができます。
+- ログイン、ログアウトができます。
+参考動画
+https://gyazo.com/ff22a9e88777b61b3b1d693be118251b
+[![Image from Gyazo](https://i.gyazo.com/ff22a9e88777b61b3b1d693be118251b.gif)](https://gyazo.com/ff22a9e88777b61b3b1d693be118251b)
 
-* Database creation
+### 本の検索/登録/詳細/編集
+- 本のタイトルと著者名の２パターンで本の検索ができます。
+- 登録は本棚を選ぶだけで簡単にできます。あとで編集もできます。
+- マイページの本棚から登録内容が見れます。書く人も書かない人も綺麗に管理できます。
+参考動画
+https://gyazo.com/48bb0fd34257eb8e4f04c82c1ba48d07
+[![Image from Gyazo](https://i.gyazo.com/48bb0fd34257eb8e4f04c82c1ba48d07.gif)](https://gyazo.com/48bb0fd34257eb8e4f04c82c1ba48d07)
 
-* Database initialization
+### 本棚の名前変更/本棚の増減
+- 本棚の名前が編集できます。
+- 本棚を増やすことができます。現在は５段までになります。
+参考動画
+https://gyazo.com/cb8413ae874b762b40891c576c70c857
+[![Image from Gyazo](https://i.gyazo.com/cb8413ae874b762b40891c576c70c857.gif)](https://gyazo.com/cb8413ae874b762b40891c576c70c857)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-book_reviews
-  t.string :review_title, null: false
-  t.text :review
-  t.integer :rate
-  t.string :book_title
-  t.string :author
-  t.string :image_url
-  t.text :detail
-  t.integer :isbn
-  t.references :user, foreign_key: true
-  t.timestamps
-
-  belongs_to :user
-
-books（消去）
-  t.string :title
-  t.string :image_url
-  t.string :author
-  t.text :detail
-  t.timestamps
-
-  hasmany :reviews
-  hasmany :book_users
-  has_many :users, through: :book_users
-
-reviews（消去）
-  t.string :title, null: false
-  t.text :review 
-  t.integer :rate
-  t.references :book, foreign_key: true
-  t.references :user, foreign_key: true
-  t.timestamps
-
-  belongs_to :book
-  belongs_to :user
-
-book_users(消去)
-  t.references :book, foreign_key: true
-  t.references :user, foreign_key: true
-  t.timestamps
-
-  belongs_to :book
-  belongs_to :user
-
-users (追記)
-  t.string :name, null: false, unique: true, index: true
-  t.string :image_url
-  t.text :introduction, index: true
-
-  has_many :reviews
-  has_many :book_users
-  has_many :books, through: :book_users   
+### ランキング/自動ユーザー検索
+- Readoryで登録された全ての本の中からランキングを作ります
+- マイページでは自分が最近読んだ本を同じ時期に読んだユーザーを表示します。
+- 自分が読んだ本をランダムにピックアップして、その本を読んだユーザーを表示します。
+### ユーザーの検索/他ユーザーの本棚鑑賞
+- ユーザー名、自己紹介文から２パターンでユーザーを検索できます。
+- どのユーザーの本棚も見ることができます。
+参考動画
+https://gyazo.com/c55345320ca41292e704eb19c8930e15
+[![Image from Gyazo](https://i.gyazo.com/c55345320ca41292e704eb19c8930e15.gif)](https://gyazo.com/c55345320ca41292e704eb19c8930e15)

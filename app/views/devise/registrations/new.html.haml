@@ -4,48 +4,41 @@
       = image_tag "readory_logo.png", class: "main-logo" 
     .sign-consept
       自分を作る本と楽しく向き合う
-    .icon-area
-      .icon-left
-        = image_tag "i_flu_g.png", class: "icon-l" 
-      .icon-middle
-        = image_tag "i_flu_y.png", class: "icon-m" 
-      .icon-right
-        = image_tag "i_flu_g.png", class: "icon-r" 
     .sign-field
       .sign-field-wrape
         .sign-page
           = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
             = devise_error_messages!
-            .sign-input-field
-              .sign-input-field__label
+            .sign-input-field-name
+              .sign-input-field-name__label
                 = f.label :name
-              .sign-input-field__text
-                = f.text_field :name, autofocus: true
-            .sign-input-field
-              .sign-input-field__label
+              .sign-input-field-name__text
+                = f.text_field :name, autofocus: true, placeholder: "20字以内です", maxlength: "20"
+            .sign-input-field-image
+              .sign-input-field-image__label
                 = f.label :image_url
-              .sign-input-field__text
+              .sign-input-field-image__text
                 = f.file_field :image_url, autofocus: true
-            .sign-input-field
-              .sign-input-field__label
+            .sign-input-field-intro
+              .sign-input-field-intro__label
                 = f.label :introduction
-              .sign-input-field__intro
-                = f.text_area :introduction, class: "intro-control", autofocus: true
-            .sign-input-field
-              .sign-input-field__label
+              .sign-input-field-intro__text
+                = f.text_area :introduction, class: "intro-control", autofocus: true, placeholder: "自己紹介文を書いてください(500字以内)。後から記入も可能です", maxlength: "500"
+            .sign-input-field-email
+              .sign-input-field-email__label
                 = f.label :email
-              .sign-input-field__text
+              .sign-input-field-email__text
                 = f.email_field :email
-            .sign-input-field
-              .sign-input-field__label
+            .sign-input-field-pass
+              .sign-input-field-pass__label
                 = f.label :password
                 %i (英数字8文字以上)
-              .sign-input-field__text
+              .sign-input-field-pass__text
                 = f.password_field :password, autocomplete: "off"
-            .sign-input-field
-              .sign-input-field__label
+            .sign-input-field-passc
+              .sign-input-field-passc__label
                 = f.label :password_confirmation
-              .sign-input-field__text
+              .sign-input-field-passc__text
                 = f.password_field :password_confirmation, autocomplete: "off"
               .sign-hidden
                 = f.hidden_field :shelfa, value: "本棚1"
@@ -53,6 +46,6 @@
                 = f.hidden_field :shelfc, value: "本棚3"
                 = f.hidden_field :shelfd, value: "本棚4"
             .sign-btn-field
-              = f.submit "Create Account", class: 'btn'
+              = f.submit "新規登録をする", class: 'btn'
             .login-return
-              = link_to "Log in へ戻る", new_session_path(resource_name) 
+              = link_to "Log in へ戻る", new_session_path(resource_name), class:"login-back"

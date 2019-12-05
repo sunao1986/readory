@@ -16,7 +16,7 @@
         = simple_format(@user.introduction)
     - if current_user.id.to_i == @user.id
       .contents-mypage-box
-        = link_to '/users/edit', class: "contents-mypage-box__btn" do
+        = link_to "/users/#{@user.id}/edit", class: "contents-mypage-box__btn" do
           EDIT
     .user-bottom
       .status-top
@@ -29,23 +29,23 @@
       .user-new-book-title.status-title
         最新の既読本
       .user-new-book-name.status-text
-        - if @user_new_review.present?
-          = @user_new_review.book_title
+        - if @other_new_review.present?
+          = @other_new_review.book_title
           %p
-          = @user_new_review.author
+          = @other_new_review.author
         - else 
           まだ読まれた本はありません
       .user-book-shelf-title.status-title
         本棚の名前
       .user-book-shelf-name.status-text
       %p.status-text
-        = current_user.shelfa
+        = @user.shelfa
       %p.status-text
-        = current_user.shelfb
+        = @user.shelfb
       %p.status-text
-        = current_user.shelfc
+        = @user.shelfc
       %p.status-text
-        = current_user.shelfd
+        = @user.shelfd
       - if @shelf_add_name.present?
         %p.status-text
           = @shelf_add_name.name

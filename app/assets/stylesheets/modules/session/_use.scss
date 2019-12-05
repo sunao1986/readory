@@ -1,10 +1,48 @@
-.use{
-  width:100px;
-  height:50px;
-  background-color: aqua;
-  font-size: 22px;
-}
-.use-back-btn{
-  .use-back{
+.how-wrape{
+  width:600px;
+  height:auto;
+  margin: 0 auto;
+  .how-page{
+    width:600px;
+    height:auto;
+    margin: 0 auto;
+    padding-right: 80px;
+    padding-bottom: 40px;
+    .how-field{
+      .how-title{
+        font-size: 16px;
+        font-family: 'Yu Gothic';
+        font-weight: bold;
+        color: #182630;
+        text-align: center;
+        margin-top:30px;
+        .how-text{
+          margin-top:10px;
+          font-size: 12px;
+          font-family: 'Yu Gothic';
+          color: #182630;
+          text-align: center;
+        }
+      }
+      .how-shelf{
+        width: 450px;
+        height: 250px;
+        margin: 10px auto 0 auto;
+        border: solid 2px #182630;;
+        .how_image{
+          width: 446px;
+          height: 246px;
+        }
+      }
+    }
+    .how-back-field{
+      margin-top:20px;
+      text-align: center;
+      cursor: pointer;
+      .user-back{
+        text-decoration: none;
+        color: #182630;
+      }
+    }
   }
 }
