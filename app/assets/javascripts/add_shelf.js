@@ -1,27 +1,28 @@
 window.addEventListener('DOMContentLoaded',function(){ 
 
   function buildHTML(data) {
-    var html = `<div class="shelf-title">
-                  <div class="shelf-name">${data.name}</div>
-                </div>
-                <div class="rate-shelf">
-                  <div class="rate-shelf-none">登録された本はありません</div>
-                </div>
-                <div id="delete-shelf-point-btn">
-                  <div class="delete-shelf-submit" data-shelf-id="${data.id}">
-                    <input type='submit' value='本棚を減らす' class='shelf-btn-delete' name='commit'>
-                  </div>
-                </div>`
+    var html =  '<div class="shelf-title">' +
+                  '<div class="shelf-name">' + data.name +
+                  '</div>' +
+                '</div>' +
+                '<div class="rate-shelf">' +
+                  '<div class="rate-shelf-none">登録された本はありません</div>' +
+                '</div>' +
+                '<div id="delete-shelf-point-btn">' +
+                  '<div class="delete-shelf-submit" data-shelf-id="' + data.id + '">' +
+                    '<input type="submit" value="本棚を減らす" class="shelf-btn-delete" name="commit">' +
+                  '</div>' +
+                '</div>'
     return html; 
   }
   function shelfFirst() {
-    var shelfh = `<div id="add-shelf-first">
-                    <div id="add-shelf-point-btn">
-                      <div class="add-shelf-submit-first">
-                        <input type='submit' value='本棚を増やす' class='shelf-btn-first' name='commit'>
-                      </div>
-                    </div>
-                  </div>`
+    var shelfh = '<div id="add-shelf-first">' +
+                    '<div id="add-shelf-point-btn">' +
+                      '<div class="add-shelf-submit-first">' +
+                        '<input type="submit" value="本棚を増やす" class="shelf-btn-first" name="commit">' +
+                      '</div>' +
+                    '</div>' +
+                  '</div>'
     return shelfh ;
   }
   // ５段目をappendして増減ボタンclass変更を追加
